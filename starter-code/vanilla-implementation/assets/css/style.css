@@ -831,27 +831,6 @@ body:has(#menu-toggle:checked) {
     margin: 0;
   }
 
-  #btn1:checked ~ .imagenestabsfeatures::before,
-  #btn2:checked ~ .imagenestabsfeatures::before,
-  #btn3:checked ~ .imagenestabsfeatures::before {
-    left: -25rem;
-  }
-
-  #btn1:checked ~ .imagenestabsfeatures::before {
-    top: 50%;
-    height: 20rem;
-  }
-
-  #btn2:checked ~ .imagenestabsfeatures::before {
-    top: 50%;
-    height: 22rem;
-  }
-
-  #btn3:checked ~ .imagenestabsfeatures::before {
-    top: 50%;
-    height: 22rem;
-  }
-
   #btn1:checked ~ .cuadrotextotabs,
   #btn2:checked ~ .cuadrotextotabs,
   #btn3:checked ~ .cuadrotextotabs {
