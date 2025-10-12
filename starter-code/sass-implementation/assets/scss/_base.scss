@@ -1,0 +1,51 @@
+@use 'variables' as *;
+
+// BASE
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: 1px red;
+}
+
+body {
+  font-family: "Rubik";
+  background-color: $color-white;
+  color: $color-dark;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  text-align: center;
+}
+
+main {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+// TYPO
+h1 { 
+  font-size: $h1-font-size; 
+  font-weight: $h1-font-weight; 
+}
+
+h2 { 
+  font-size: $h2-font-size; 
+  font-weight: $h2-font-weight; 
+}
+
+p { 
+  font-size: $p-font-size; 
+  line-height: $p-line-height; 
+  font-weight: $p-font-weight; 
+}
+
+// MEDIA QUERIES
+@media (min-width: $breakpoint-lg) {
+  main {
+    width:90vw;
+  }
+
+}
