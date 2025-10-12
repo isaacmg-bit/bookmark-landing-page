@@ -19,11 +19,11 @@
   font-size: 0.85rem;
   width: 100%;
   text-align: center;
-}
 
-.btnbrowser:hover {
-  background-color: $color-primary;
-  color: $color-white;
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+  }
 }
 
 .btnadd {
@@ -32,12 +32,12 @@
   width: 100%;
   font-size: 0.9rem;
   margin-top: 1rem;
-}
 
-.btnadd:hover {
-  background-color: $color-white;
-  color: $color-primary;
-  border: 2px solid $color-primary;
+  &:hover {
+    background-color: $color-white;
+    color: $color-primary;
+    border: 2px solid $color-primary;
+  }
 }
 
 .btninfo,
@@ -48,6 +48,12 @@
   width: 100%;
   max-width: fit-content;
   box-shadow: 0 0.625rem 0.938rem 0 $color-shadow;
+
+  &:hover {
+    background-color: $color-white;
+    color: $color-primary;
+    border: 2px solid $color-primary;
+  }
 }
 
 .btninfo {
@@ -58,29 +64,24 @@
   display: none !important;
 }
 
-.btninfo:hover,
-.btninfodesktop:hover {
-  background-color: $color-white;
-  color: $color-primary;
-  border: 2px solid $color-primary;
-}
+
 
 // MEDIA QUERIES
 
 @media (min-width: $breakpoint-lg) {
 
-
  .btnbrowser {
     width: auto;
   }
 
-  // FEATURES
+// FEATURES
 
-    .btninfodesktop {
+  .btninfodesktop {
     display: block !important;
     margin: 3rem 0 0 1.2rem;
     transform: translateY(-2rem);
   }
+  
 // FAQS
 
   .btninfo {

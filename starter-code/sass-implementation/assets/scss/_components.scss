@@ -1,50 +1,56 @@
 @use 'variables' as *;
 
 /* Feature Tabs */
+  @mixin tab-label {
+    position: relative; 
+    width: 100%; 
+    padding: 1.2em 1.25rem; 
+    text-align: center; 
+    font-size: 1.1rem; 
+    font-weight: $p-font-weight; 
+    color: $color-gray; 
+    background-color: $color-white; 
+    cursor: pointer; 
+    border: none; 
+    border-bottom: 0.063rem solid #ccc;
+    
+    &:first-of-type {
+      border-top: 0.063rem solid #ccc; 
+    }
+
+    &::after {
+      content: ""; 
+      position: absolute; 
+      left: 50%; 
+      bottom: 0; 
+      width: 0; 
+      height: 0.25rem; 
+      background-color: $color-secondary; 
+      transition: width 0.2s ease, left 0.2s ease; 
+      transform: translateX(-50%); 
+    }
+}
+
 .botonesfeatures { 
   display: flex; 
   flex-direction: column; 
   align-items: center; 
   width: 100%; 
   margin: 1rem 0; 
-} 
 
-.botonesfeatures label { 
-  position: relative; 
-  width: 100%; 
-  padding: 1.2em 1.25rem; 
-  text-align: center; 
-  font-size: 1.1rem; 
-  font-weight: $p-font-weight; 
-  color: $color-gray; 
-  background-color: $color-white; 
-  cursor: pointer; 
-  border: none; 
-  border-bottom: 0.063rem solid #ccc;
-}
+  label {
+    @include tab-label;
+  }
 
-.botonesfeatures label:first-of-type { 
-  border-top: 0.063rem solid #ccc; 
-}
+    input[type="radio"] {
+    &:checked + label {
+      color: $color-dark; 
 
-.botonesfeatures label::after { 
-  content: ""; 
-  position: absolute; 
-  left: 50%; 
-  bottom: 0; 
-  width: 0; 
-  height: 0.25rem; 
-  background-color: $color-secondary; 
-  transition: width 0.2s ease, left 0.2s ease; 
-  transform: translateX(-50%); 
-}
-
-.botonesfeatures input[type="radio"]:checked + label { 
-  color: $color-dark; 
-}
-
-.botonesfeatures input[type="radio"]:checked + label::after { 
-  width: 50%; 
+      &::after {
+        width: 50%; 
+      }
+    }
+  }
 }
 
 .imagenestabsfeatures {
@@ -55,56 +61,56 @@
   height: auto;
   min-height: 24.75rem;
   align-items: center;
+
+  img {
+    display: none;
+    width: 100%;
+    max-width: 20.438rem;
+    height: auto;
+    position: relative;
+    transition: opacity 0.3s ease;
+    margin-top: 4rem;
+  }
+
+  #btn1:checked ~ .imgtab1,
+  #btn2:checked ~ .imgtab2,
+  #btn3:checked ~ .imgtab3 {
+    display: block;
+    margin-bottom: 3rem;
+  }
 }
 
-.imagenestabsfeatures img {
-  display: none;
-  width: 100%;
-  max-width: 20.438rem;
-  height: auto;
-  position: relative;
-  transition: opacity 0.3s ease;
-  margin-top: 4rem;
-}
+.cuadrotextotabs {
 
-#btn1:checked ~ .imagenestabsfeatures .imgtab1,
-#btn2:checked ~ .imagenestabsfeatures .imgtab2,
-#btn3:checked ~ .imagenestabsfeatures .imgtab3 {
-  display: block;
-  margin-bottom: 3rem;
-}
+  h1 {
+    margin: 1.25rem 1.25rem 0; 
+    line-height: 1.2; 
+    color: $color-dark; 
+  }
 
-.cuadrotextotabs > div { 
-  display: none; 
-  min-height: 12.948rem;
-}
+  p {
+    margin: 1rem 1.25rem 2.1875rem; 
+    color: $color-gray; 
+  }
 
-.cuadrotextotabs .texttab2, 
-.cuadrotextotabs .texttab3 {
-  min-height: 12.948rem;
-}
+  > div {
+    display: none; 
+    min-height: 12.948rem;
+  }
 
-#btn1:checked ~ .cuadrotextotabs .texttab1,
-#btn2:checked ~ .cuadrotextotabs .texttab2,
-#btn3:checked ~ .cuadrotextotabs .texttab3 { 
-  display: block; 
-}
+  .texttab2, .texttab3 {
+    min-height: 12.948rem;
+  }
 
-.cuadrotextotabs h1 { 
-  margin: 1.25rem 1.25rem 0; 
-  line-height: 1.2; 
-  color: $color-dark; 
-}
-
-.cuadrotextotabs p { 
-  margin: 1rem 1.25rem 2.1875rem; 
-  color: $color-gray; 
+  #btn1:checked ~ .texttab1,
+  #btn2:checked ~ .texttab2,
+  #btn3:checked ~ .texttab3 {
+    display: block;
+  }
 }
 
 /* Browser Cards */
-.browser-cardchrome, 
-.browser-cardfirefox, 
-.browser-cardopera {
+@mixin browser-card {
   margin: 0 auto 4rem;
   background-color: $color-white;
   border-radius: 0.625rem; 
@@ -112,27 +118,24 @@
   width: 100%;
   max-width: 18rem;
   box-shadow: 0 0.625rem 0.938rem 0 $color-shadow;
+  p {
+    color: $color-gray; 
+    margin: 0 1rem 2rem; 
+  }
+  h1 {
+    margin: 0.8rem 0;
+  }
+  .imgdots {
+    width: calc(100% + 4rem);
+    margin-left: -2rem;
+    display: block;
+  }
 }
 
-.browser-cardchrome p, 
-.browser-cardfirefox p, 
-.browser-cardopera p {
-  color: $color-gray; 
-  margin: 0 1rem 2rem; 
-} 
-
-.browser-cardchrome h1, 
-.browser-cardfirefox h1, 
-.browser-cardopera h1 {
-  margin: 0.8rem 0;
-}
-
-.browser-cardchrome .imgdots, 
-.browser-cardfirefox .imgdots, 
-.browser-cardopera .imgdots {
-  width: calc(100% + 4rem);
-  margin-left: -2rem;
-  display: block;
+.browser-cardchrome, 
+.browser-cardfirefox, 
+.browser-cardopera {
+  @include browser-card;
 }
 
 // FAQ ACCORDION MENU 
@@ -203,35 +206,35 @@
   flex-direction: column;
   align-items: center;
   background-color: transparent;
-}
 
-.email-wrapper.error {
+  &.error {
   background-color: $color-secondary;
   padding: 0.05rem 0.1rem 0.2rem;
+    p{
+      display: block;
+    }
+    .email-input {
+      border: 0.125rem solid $color-secondary;
+      background-image: url('../img/icon-error.svg');
+      background-repeat: no-repeat;
+      background-position: right 0.8rem center; 
+    }
+  }
+  p {
+    display: none;
+    align-self: flex-start;
+    margin: 0.3rem 0 0 0.8rem;
+    font-size: 0.563em; 
+    color: $color-white; 
+    letter-spacing: 0.05rem;
+    font-style: italic;
+  }
 }
 
-.email-wrapper p { 
-  display: none;
-  align-self: flex-start;
-  margin: 0.3rem 0 0 0.8rem;
-  font-size: 0.563em; 
-  color: $color-white; 
-  letter-spacing: 0.05rem;
-  font-style: italic;
-}
-
-.email-wrapper.error p {
-  display: block;
-}
-
-.email-wrapper.error .email-input {
-  border: 0.125rem solid $color-secondary;
-  background-image: url('../img/icon-error.svg');
-  background-repeat: no-repeat;
-  background-position: right 0.8rem center; 
-}
 
 // MEDIA QUERIES
+
+
 @media (min-width: $breakpoint-lg) {
 
 // FEATURE TABS
@@ -245,25 +248,24 @@
     width: 100%;
     max-width: auto;
     margin: 0;
-  }
 
-  .botonesfeatures label {
-    font-size: 1.1rem;
-    border-top: none;
-    border-bottom: 2px solid $color-shadow;
-    max-width: 16rem;
-  }
+    label {
+      font-size: 1.1rem;
+      border-top: none;
+      border-bottom: 2px solid $color-shadow;
+      max-width: 16rem;
 
-.botonesfeatures label:first-of-type {
-   border-top: none;
-}
+      &:first-of-type {
+        border-top: none;
+      }
+    }
 
-  .botonesfeatures input[type="radio"]:checked + label {
-    border-bottom: 2px solid $color-secondary;
-  }
-
-  .botonesfeatures input[type="radio"]:checked + label::after {
-    width: 100%;
+    input[type="radio"]:checked + label {
+      border-bottom: 2px solid $color-secondary;
+      &::after {
+        width: 100%;
+      }
+    }
   }
 
   .break {
