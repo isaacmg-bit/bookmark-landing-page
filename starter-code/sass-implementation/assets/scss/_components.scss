@@ -1,36 +1,63 @@
 @use 'variables' as *;
 
-/* Feature Tabs */
-  @mixin tab-label {
-    position: relative; 
-    width: 100%; 
-    padding: 1.2em 1.25rem; 
-    text-align: center; 
-    font-size: 1.1rem; 
-    font-weight: $p-font-weight; 
-    color: $color-gray; 
-    background-color: $color-white; 
-    cursor: pointer; 
-    border: none; 
-    border-bottom: 0.063rem solid #ccc;
-    
-    &:first-of-type {
-      border-top: 0.063rem solid #ccc; 
-    }
+// MIXINS
+@mixin tab-label {
+  position: relative; 
+  width: 100%; 
+  padding: 1.2em 1.25rem; 
+  text-align: center; 
+  font-size: 1.1rem; 
+  font-weight: $p-font-weight; 
+  color: $color-gray; 
+  background-color: $color-white; 
+  cursor: pointer; 
+  border: none; 
+  border-bottom: 0.063rem solid #ccc;
+  
+  &:first-of-type {
+    border-top: 0.063rem solid #ccc; 
+  }
 
-    &::after {
-      content: ""; 
-      position: absolute; 
-      left: 50%; 
-      bottom: 0; 
-      width: 0; 
-      height: 0.25rem; 
-      background-color: $color-secondary; 
-      transition: width 0.2s ease, left 0.2s ease; 
-      transform: translateX(-50%); 
-    }
+  &::after {
+    content: ""; 
+    position: absolute; 
+    left: 50%; 
+    bottom: 0; 
+    width: 0; 
+    height: 0.25rem; 
+    background-color: $color-secondary; 
+    transition: width 0.2s ease, left 0.2s ease; 
+    transform: translateX(-50%); 
+  }
 }
 
+@mixin browser-card {
+  margin: 0 auto 4rem;
+  background-color: $color-white;
+  border-radius: 0.625rem; 
+  padding: 2rem;
+  width: 100%;
+  max-width: 18rem;
+  box-shadow: 0 0.625rem 0.938rem 0 $color-shadow;
+  
+  p {
+    color: $color-gray; 
+    margin: 0 1rem 2rem; 
+  }
+  
+  h1 {
+    margin: 0.8rem 0;
+  }
+  
+  .imgdots {
+    width: calc(100% + 4rem);
+    margin-left: -2rem;
+    display: block;
+  }
+}
+
+
+// FEATURES TABS
 .botonesfeatures { 
   display: flex; 
   flex-direction: column; 
@@ -42,7 +69,7 @@
     @include tab-label;
   }
 
-    input[type="radio"] {
+  input[type="radio"] {
     &:checked + label {
       color: $color-dark; 
 
@@ -72,11 +99,11 @@
     margin-top: 4rem;
   }
 
-  #btn1:checked ~ .imgtab1,
-  #btn2:checked ~ .imgtab2,
-  #btn3:checked ~ .imgtab3 {
-    display: block;
-    margin-bottom: 3rem;
+  @each $num in 1, 2, 3 {
+    #btn#{$num}:checked ~ .imgtab#{$num} {
+      display: block;
+      margin-bottom: 3rem;
+    }
   }
 }
 
@@ -98,39 +125,15 @@
     min-height: 12.948rem;
   }
 
-  .texttab2, .texttab3 {
-    min-height: 12.948rem;
-  }
-
-  #btn1:checked ~ .texttab1,
-  #btn2:checked ~ .texttab2,
-  #btn3:checked ~ .texttab3 {
-    display: block;
+  @each $num in 1, 2, 3 {
+    #btn#{$num}:checked ~ .texttab#{$num} {
+      display: block;
+    }
   }
 }
 
-/* Browser Cards */
-@mixin browser-card {
-  margin: 0 auto 4rem;
-  background-color: $color-white;
-  border-radius: 0.625rem; 
-  padding: 2rem;
-  width: 100%;
-  max-width: 18rem;
-  box-shadow: 0 0.625rem 0.938rem 0 $color-shadow;
-  p {
-    color: $color-gray; 
-    margin: 0 1rem 2rem; 
-  }
-  h1 {
-    margin: 0.8rem 0;
-  }
-  .imgdots {
-    width: calc(100% + 4rem);
-    margin-left: -2rem;
-    display: block;
-  }
-}
+
+// DOWNLOAD CARDS
 
 .browser-cardchrome, 
 .browser-cardfirefox, 
@@ -138,49 +141,53 @@
   @include browser-card;
 }
 
-// FAQ ACCORDION MENU 
+
+// FAQ ACCORDION MENU
+
 .faq-item {
   border-bottom: 0.0625rem solid #ccc;
   text-align: left;
   padding: 1.5rem 0;
   margin: 0 1em;
+
+  p {
+    margin: 2rem 0 0;
+  }
+
+  summary {
+    list-style: none;
+    position: relative;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &::-webkit-details-marker { 
+      display: none; 
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1rem;
+      height: 1rem;
+      background-image: url('../img/icon-arrow.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      transition: transform 0.3s ease;
+    }
+  }
+
+  &[open] summary::after {
+    transform: translateY(-50%) rotate(180deg);
+    filter: invert(22%) sepia(83%) saturate(7487%) hue-rotate(348deg) brightness(95%) contrast(95%);
+  }
 }
 
-.faq-item p {
-  margin: 2rem 0 0;
-}
 
-.faq-item summary {
-  list-style: none;
-  position: relative;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
+// EMAIL FORM
 
-.faq-item summary::-webkit-details-marker { 
-  display: none; 
-}
-
-.faq-item summary::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 1rem;
-  height: 1rem;
-  background-image: url('../img/icon-arrow.svg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  transition: transform 0.3s ease;
-}
-
-.faq-item[open] summary::after {
-  transform: translateY(-50%) rotate(180deg);
-  filter: invert(22%) sepia(83%) saturate(7487%) hue-rotate(348deg) brightness(95%) contrast(95%);
-}
-
-// EMAIL FOOTER
 .emailbox { 
   display: grid; 
   place-items: center; 
@@ -207,19 +214,6 @@
   align-items: center;
   background-color: transparent;
 
-  &.error {
-  background-color: $color-secondary;
-  padding: 0.05rem 0.1rem 0.2rem;
-    p{
-      display: block;
-    }
-    .email-input {
-      border: 0.125rem solid $color-secondary;
-      background-image: url('../img/icon-error.svg');
-      background-repeat: no-repeat;
-      background-position: right 0.8rem center; 
-    }
-  }
   p {
     display: none;
     align-self: flex-start;
@@ -229,28 +223,36 @@
     letter-spacing: 0.05rem;
     font-style: italic;
   }
+
+  &.error {
+    background-color: $color-secondary;
+    padding: 0.05rem 0.1rem 0.2rem;
+    
+    p {
+      display: block;
+    }
+    
+    .email-input {
+      border: 0.125rem solid $color-secondary;
+      background-image: url('../img/icon-error.svg');
+      background-repeat: no-repeat;
+      background-position: right 0.8rem center; 
+    }
+  }
 }
 
-
-// MEDIA QUERIES
-
+// MEDIA QUERIES - DESKTOP
 
 @media (min-width: $breakpoint-lg) {
 
-// FEATURE TABS
-
+  // FEATURE TABS
   .botonesfeatures {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
     flex-direction: row;
-    width: 100%;
-    max-width: auto;
+    flex-wrap: wrap;
+    justify-content: center;
     margin: 0;
 
     label {
-      font-size: 1.1rem;
       border-top: none;
       border-bottom: 2px solid $color-shadow;
       max-width: 16rem;
@@ -262,6 +264,7 @@
 
     input[type="radio"]:checked + label {
       border-bottom: 2px solid $color-secondary;
+      
       &::after {
         width: 100%;
       }
@@ -274,111 +277,86 @@
   }
 
   .imagenestabsfeatures {
-    display: flex;
     justify-content: center;
-    align-items: center;
-    width: 100%;
     max-width: 45rem;
     margin: 4rem auto 0;
     min-height: 33.46rem;
-  }
 
-  .imagenestabsfeatures img {
-    max-width: 35rem;
-    margin: 0;
+    img {
+      max-width: 35rem;
+      margin: 0;
+    }
   }
-
-  #btn1:checked ~ .imagenestabsfeatures::before,
-  #btn2:checked ~ .imagenestabsfeatures::before,
-  #btn3:checked ~ .imagenestabsfeatures::before {
-    left: -25rem;
-  }
-
-  #btn1:checked ~ .imagenestabsfeatures::before {
-    top: 50%;
-    height: 20rem;
-  }
-
-  #btn2:checked ~ .imagenestabsfeatures::before {
-    top: 50%;
-    height: 22rem;
-  }
-
-  #btn3:checked ~ .imagenestabsfeatures::before {
-    top: 50%;
-    height: 22rem;
-  }
-
-  #btn1:checked ~ .cuadrotextotabs,
-  #btn2:checked ~ .cuadrotextotabs,
-  #btn3:checked ~ .cuadrotextotabs {
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
-  
+ 
   .cuadrotextotabs {
     max-width: 28.125rem;
     text-align: left;
     margin: 0 auto;
     min-height: 18.885rem;
+
+    h1 {
+      font-size: $h1-font-size-desktop;
+    }
+
+    p {
+      font-size: $p-font-size-desktop;
+      margin: 1rem 0 1.9rem 1.3rem;
+    }
+
+    // Loop mejorado para desktop
+    @each $num in 1, 2, 3 {
+      #btn#{$num}:checked ~ & {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+    }
   }
 
-  .cuadrotextotabs h1 {
-    font-size: $h1-font-size-desktop;
-  }
-
-  .cuadrotextotabs p {
-    font-size: $p-font-size-desktop;
-    margin: 1rem 0 1.9rem 1.3rem;
-  }
-
-// BROWSER CARDS
-
-.downloadcards {
+  // BROWSER CARDS
+  .downloadcards {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     gap: 2rem;
     height: 25rem;
+
+    .browser-cardchrome,
+    .browser-cardfirefox,
+    .browser-cardopera {
+      margin: 0;
+    }
+
+    // Loop para alinear cards
+    $browser-cards: (
+      chrome: flex-start,
+      firefox: center,
+      opera: flex-end
+    );
+
+    @each $browser, $align in $browser-cards {
+      .browser-card#{$browser} {
+        align-self: $align;
+      }
+    }
   }
 
-  .browser-cardchrome,
-  .browser-cardfirefox,
-  .browser-cardopera {
-    margin: 0;
+  // EMAIL FORM
+  .email-wrapper.error {
+    height: 5rem;
+    
+    p {
+      margin: 0 0 0 0.75rem;
+    }
   }
 
-  .browser-cardchrome {
-    align-self: flex-start;
-  }
-
-  .browser-cardfirefox {
-    align-self: center;
-  }
-
-  .browser-cardopera {
-    align-self: flex-end;
-  }
-
-  //EMAIL FOOTER
-
-    .emailbox form {
+  .emailbox form {
     display: flex;
     gap: 1rem;
   }
 
-    .email-input {
+  .email-input {
     height: 3.136rem;
   }
-
-  .email-wrapper.error {
-    height: 5rem;
-  }
-
-  .email-wrapper.error p {
-    margin: 0 0 0 0.75rem;
-  }
-
 }

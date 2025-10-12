@@ -745,30 +745,15 @@ body:has(#menu-toggle:checked) {
     max-width: 35rem;
     margin: 0;
   }
-  #btn1:checked ~ .imagenestabsfeatures::before,
-  #btn2:checked ~ .imagenestabsfeatures::before,
-  #btn3:checked ~ .imagenestabsfeatures::before {
+  #btn1:checked ~ .imagenestabsfeatures::before, #btn2:checked ~ .imagenestabsfeatures::before, #btn3:checked ~ .imagenestabsfeatures::before {
     left: -25rem;
+    top: 50%;
   }
   #btn1:checked ~ .imagenestabsfeatures::before {
-    top: 50%;
     height: 20rem;
   }
-  #btn2:checked ~ .imagenestabsfeatures::before {
-    top: 50%;
+  #btn2:checked ~ .imagenestabsfeatures::before, #btn3:checked ~ .imagenestabsfeatures::before {
     height: 22rem;
-  }
-  #btn3:checked ~ .imagenestabsfeatures::before {
-    top: 50%;
-    height: 22rem;
-  }
-  #btn1:checked ~ .cuadrotextotabs,
-  #btn2:checked ~ .cuadrotextotabs,
-  #btn3:checked ~ .cuadrotextotabs {
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    padding: 0 2rem;
   }
   .cuadrotextotabs {
     max-width: 28.125rem;
@@ -783,6 +768,24 @@ body:has(#menu-toggle:checked) {
     font-size: 1.1rem;
     margin: 1rem 0 1.9rem 1.3rem;
   }
+  #btn1:checked ~ .cuadrotextotabs {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  #btn2:checked ~ .cuadrotextotabs {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  #btn3:checked ~ .cuadrotextotabs {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
   .downloadcards {
     display: flex;
     justify-content: center;
@@ -790,19 +793,28 @@ body:has(#menu-toggle:checked) {
     gap: 2rem;
     height: 25rem;
   }
-  .browser-cardchrome,
-  .browser-cardfirefox,
-  .browser-cardopera {
+  .downloadcards .browser-cardchrome,
+  .downloadcards .browser-cardfirefox,
+  .downloadcards .browser-cardopera {
     margin: 0;
   }
-  .browser-cardchrome {
+  .downloadcards .browser-cardchrome {
+    margin: 0;
     align-self: flex-start;
   }
-  .browser-cardfirefox {
+  .downloadcards .browser-cardfirefox {
+    margin: 0;
     align-self: center;
   }
-  .browser-cardopera {
+  .downloadcards .browser-cardopera {
+    margin: 0;
     align-self: flex-end;
+  }
+  .email-wrapper.error {
+    height: 5rem;
+  }
+  .email-wrapper.error p {
+    margin: 0 0 0 0.75rem;
   }
   .emailbox form {
     display: flex;
@@ -810,12 +822,6 @@ body:has(#menu-toggle:checked) {
   }
   .email-input {
     height: 3.136rem;
-  }
-  .email-wrapper.error {
-    height: 5rem;
-  }
-  .email-wrapper.error p {
-    margin: 0 0 0 0.75rem;
   }
 }
 .btnbrowser,
