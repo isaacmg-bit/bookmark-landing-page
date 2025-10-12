@@ -7,7 +7,7 @@
   border: none;
   border-radius: 0.375rem;
   cursor: pointer;
-  font-weight:  $buttons-font-weight;
+  font-weight: $buttons-font-weight;
   transition: all 0.3s ease;
   padding: 1rem 1.5rem;
 }
@@ -23,6 +23,10 @@
   &:hover {
     background-color: $color-primary;
     color: $color-white;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    width: auto;
   }
 }
 
@@ -40,7 +44,26 @@
   }
 }
 
-.btninfo,
+.btninfo {
+  background-color: $color-primary;
+  color: $color-white;
+  font-size: 0.8rem;
+  width: 100%;
+  max-width: fit-content;
+  box-shadow: 0 0.625rem 0.938rem 0 $color-shadow;
+  margin: 3rem 0 6rem;
+
+  &:hover {
+    background-color: $color-white;
+    color: $color-primary;
+    border: 2px solid $color-primary;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    margin-top: 4rem;
+  }
+}
+
 .btninfodesktop {
   background-color: $color-primary;
   color: $color-white;
@@ -48,44 +71,17 @@
   width: 100%;
   max-width: fit-content;
   box-shadow: 0 0.625rem 0.938rem 0 $color-shadow;
+  display: none !important;
 
   &:hover {
     background-color: $color-white;
     color: $color-primary;
     border: 2px solid $color-primary;
   }
-}
 
-.btninfo {
-  margin: 3rem 0 6rem;
-}
-
-.btninfodesktop {
-  display: none !important;
-}
-
-
-
-// MEDIA QUERIES
-
-@media (min-width: $breakpoint-lg) {
-
- .btnbrowser {
-    width: auto;
-  }
-
-// FEATURES
-
-  .btninfodesktop {
+  @media (min-width: $breakpoint-lg) {
     display: block !important;
     margin: 3rem 0 0 1.2rem;
     transform: translateY(-2rem);
   }
-  
-// FAQS
-
-  .btninfo {
-    margin-top: 4rem;
-  }
-
 }

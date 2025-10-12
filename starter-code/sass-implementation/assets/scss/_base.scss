@@ -23,7 +23,12 @@ body {
 main {
   width: 100%;
   overflow-x: hidden;
+
+  @media (min-width: $breakpoint-lg) {
+    width: 90vw;
+  }
 }
+
 
 // TYPO
 h1 { 
@@ -40,12 +45,4 @@ p {
   font-size: $p-font-size; 
   line-height: $p-line-height; 
   font-weight: $p-font-weight; 
-}
-
-// MEDIA QUERIES
-@media (min-width: $breakpoint-lg) {
-  main {
-    width:90vw;
-  }
-
 }
