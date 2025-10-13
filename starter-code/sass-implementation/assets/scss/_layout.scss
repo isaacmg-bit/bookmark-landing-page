@@ -19,12 +19,15 @@
       display: inline-block;
       cursor: pointer;
       z-index: 200;
+      margin-left: auto;
+      gap: 1.5rem;
 
       .menu-image {
         width: auto;
         height: auto;
         display: block;
         transition: transform 0.3s ease;
+        align-items: right;
       }
     }
 
@@ -121,22 +124,10 @@
 
     .menu-toggle:checked + .menu-icon .menu-image {
       content: url('../img/icon-close.svg');
-    }
-
-    .bookmark-image-white {
-      display: none;
       z-index: 300;
     }
 
-    .menu-toggle:checked + .menu-icon .bookmark-image {
-      display: none;
-    }
 
-    .menu-toggle:checked + .menu-icon .bookmark-image-white {
-      display: block;
-    }
-
-    // ESTILOS DESKTOP - MEDIA QUERY DENTRO DE .nav
     @media (min-width: 1440px) {
       justify-content: space-evenly;
       max-width: 100%;
@@ -148,6 +139,8 @@
 
       .bookmark-image {
         margin-left: 5rem;
+        display: block;
+        width: 100%;
       }
 
       .menu {
@@ -347,6 +340,8 @@
 }
 
 // FOOTER
+
+
 .cuadrotextoemail {
   display: grid;
   place-items: center;
@@ -415,6 +410,10 @@
   margin-left: $center-margin;
   margin-right: $center-margin;
 
+ .logo-text { 
+  fill: white;
+ }
+
   p:hover { 
     color: $color-secondary; 
     cursor: pointer; }
@@ -447,16 +446,4 @@
       margin-left: auto; 
       gap: 2rem; }
   }
-}
-
-// BOOKMARK LOGO
-.bookmark-image-white { 
-  display: none; 
-  z-index: 300; 
-}
-
-@media (min-width: $breakpoint-lg) {
-  .bookmark-image { 
-    margin-left: 5rem; 
-    width: 100%; }
 }

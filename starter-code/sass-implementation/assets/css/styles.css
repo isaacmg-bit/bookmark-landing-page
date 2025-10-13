@@ -61,12 +61,15 @@ p {
   display: inline-block;
   cursor: pointer;
   z-index: 200;
+  margin-left: auto;
+  gap: 1.5rem;
 }
 .header .nav .menu-icon .menu-image {
   width: auto;
   height: auto;
   display: block;
   transition: transform 0.3s ease;
+  align-items: right;
 }
 .header .nav .menu-toggle {
   display: none;
@@ -150,16 +153,7 @@ p {
 }
 .header .nav .menu-toggle:checked + .menu-icon .menu-image {
   content: url("../img/icon-close.svg");
-}
-.header .nav .bookmark-image-white {
-  display: none;
   z-index: 300;
-}
-.header .nav .menu-toggle:checked + .menu-icon .bookmark-image {
-  display: none;
-}
-.header .nav .menu-toggle:checked + .menu-icon .bookmark-image-white {
-  display: block;
 }
 @media (min-width: 1440px) {
   .header .nav {
@@ -172,6 +166,8 @@ p {
   }
   .header .nav .bookmark-image {
     margin-left: 5rem;
+    display: block;
+    width: 100%;
   }
   .header .nav .menu {
     position: static;
@@ -431,6 +427,9 @@ p {
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
 }
+.cuadrotextofooter .logo-text {
+  fill: white;
+}
 .cuadrotextofooter p:hover {
   color: #fa5757;
   cursor: pointer;
@@ -464,17 +463,6 @@ p {
   }
 }
 
-.bookmark-image-white {
-  display: none;
-  z-index: 300;
-}
-
-@media (min-width: 1440px) {
-  .bookmark-image {
-    margin-left: 5rem;
-    width: 100%;
-  }
-}
 .botonesfeatures {
   display: flex;
   flex-direction: column;
