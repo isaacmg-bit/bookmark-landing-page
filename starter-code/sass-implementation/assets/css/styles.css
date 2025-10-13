@@ -11,8 +11,8 @@ body {
   color: #242a45;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   min-height: 100%;
   text-align: center;
 }
@@ -47,41 +47,75 @@ p {
   background: #ffffff;
   padding: 1.5rem;
   width: 100%;
-  z-index: 10;
   position: relative;
+  z-index: 10;
 }
 .header .nav {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   width: 90%;
   margin: 0 auto;
 }
+.header .nav .bookmark-image,
+.header .nav .bookmark-image-white {
+  position: absolute;
+  top: 1.5rem;
+  left: 2rem;
+  transition: opacity 0.3s ease;
+  z-index: 400;
+}
+@media (min-width: 1440px) {
+  .header .nav .bookmark-image,
+  .header .nav .bookmark-image-white {
+    margin-left: 5rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+.header .nav .bookmark-image-white {
+  opacity: 0;
+  pointer-events: none;
+}
+.header .nav:has(.menu-toggle:checked) .bookmark-image {
+  opacity: 0;
+}
+.header .nav:has(.menu-toggle:checked) .bookmark-image-white {
+  opacity: 1;
+}
+.header .nav .menu-toggle {
+  display: none;
+}
 .header .nav .menu-icon {
   display: inline-block;
   cursor: pointer;
-  z-index: 200;
   margin-left: auto;
   gap: 1.5rem;
+  z-index: 200;
+}
+@media (min-width: 1440px) {
+  .header .nav .menu-icon {
+    display: none;
+  }
 }
 .header .nav .menu-icon .menu-image {
   width: auto;
   height: auto;
   display: block;
   transition: transform 0.3s ease;
-  align-items: right;
-}
-.header .nav .menu-toggle {
-  display: none;
 }
 .header .nav .menu {
   list-style: none;
   position: absolute;
   top: 100%;
-  left: 0;
   right: 0;
-  display: none;
+  left: 0;
+  display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: none;
   text-align: center;
   gap: 1.5rem;
   background: #ffffff;
@@ -144,6 +178,8 @@ p {
   height: 100%;
   background: #242946;
   opacity: 0.9;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 2rem;
@@ -151,30 +187,18 @@ p {
   box-shadow: none;
   z-index: 100;
 }
-.header .nav .menu-toggle:checked + .menu-icon .menu-image {
-  content: url("../img/icon-close.svg");
-  z-index: 300;
-}
 @media (min-width: 1440px) {
   .header .nav {
     justify-content: space-evenly;
     max-width: 100%;
     margin: 0;
   }
-  .header .nav .menu-icon {
-    display: none;
-  }
-  .header .nav .bookmark-image {
-    margin-left: 5rem;
-    display: block;
-    width: 100%;
-  }
   .header .nav .menu {
     position: static;
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: right;
+    align-items: center;
     gap: 2rem;
     background: transparent;
     opacity: 1;
@@ -208,9 +232,16 @@ p {
 .hero {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   padding: 2rem 1.5rem;
+}
+@media (min-width: 1440px) {
+  .hero {
+    padding: 4rem 2rem;
+  }
+}
+.hero {
   width: 100%;
   position: relative;
   isolation: isolate;
@@ -231,8 +262,9 @@ p {
 }
 .hero .botones {
   display: flex;
-  align-items: center;
+  flex-direction: row;
   justify-content: center;
+  align-items: center;
   gap: 0.8rem;
   width: 100%;
 }
@@ -241,7 +273,6 @@ p {
     flex-direction: row-reverse;
     max-width: 100%;
     gap: 4rem;
-    padding: 4rem 2rem;
   }
   .hero .imghero {
     flex: 1;
@@ -268,45 +299,67 @@ p {
 .features {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   width: 100%;
   padding: 7rem 1.5rem 3rem;
 }
 .features .cuadrotextofeatures h1 {
-  margin-bottom: 1rem;
+  margin: 0 0 1rem;
+}
+@media (min-width: 1440px) {
+  .features .cuadrotextofeatures h1 {
+    font-size: 2rem;
+  }
 }
 .features .cuadrotextofeatures p {
   color: #9194a1;
   margin: 1rem 1.5rem 1.5rem;
 }
 @media (min-width: 1440px) {
+  .features .cuadrotextofeatures p {
+    font-size: 1.1rem;
+  }
+}
+@media (min-width: 1440px) {
   .features {
     max-width: 100%;
     padding: 2rem;
   }
-  .features .cuadrotextofeatures h1 {
-    font-size: 2rem;
-  }
   .features .cuadrotextofeatures p {
     margin: 1.5rem 22rem;
-    font-size: 1.1rem;
   }
 }
 
 .downloads {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   width: 100%;
   padding: 1rem 1.5rem;
 }
+@media (min-width: 1440px) {
+  .downloads {
+    padding: 2rem;
+  }
+}
 .downloads .cuadrotextodownloads h1 {
-  margin-bottom: 1rem;
+  margin: 0 0 1rem;
+}
+@media (min-width: 1440px) {
+  .downloads .cuadrotextodownloads h1 {
+    font-size: 2rem;
+  }
 }
 .downloads .cuadrotextodownloads p {
   color: #9194a1;
   margin: 0 1rem 2rem;
+}
+@media (min-width: 1440px) {
+  .downloads .cuadrotextodownloads p {
+    font-size: 1.1rem;
+  }
 }
 @media (min-width: 1440px) {
   .downloads {
@@ -320,11 +373,9 @@ p {
   }
   .downloads .cuadrotextodownloads h1 {
     margin: 0;
-    font-size: 2rem;
   }
   .downloads .cuadrotextodownloads p {
     margin: 1rem 18rem;
-    font-size: 1.1rem;
   }
 }
 
@@ -418,14 +469,14 @@ p {
 .cuadrotextofooter {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-evenly;
+  align-items: center;
   background-color: #242946;
   width: 100vw;
-  min-height: 22.5rem;
-  color: #ffffff;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
+  min-height: 22.5rem;
+  color: #ffffff;
 }
 .cuadrotextofooter .logo-text {
   fill: white;
@@ -436,6 +487,7 @@ p {
 }
 .cuadrotextofooter .smicons {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 3rem;
@@ -466,6 +518,7 @@ p {
 .botonesfeatures {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   width: 100%;
   margin: 1rem 0;
@@ -489,8 +542,8 @@ p {
 .botonesfeatures label::after {
   content: "";
   position: absolute;
-  left: 50%;
   bottom: 0;
+  left: 50%;
   width: 0;
   height: 0.25rem;
   background-color: #fa5757;
@@ -534,11 +587,13 @@ p {
 
 .imagenestabsfeatures {
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   position: relative;
   width: auto;
   max-width: 25rem;
   min-height: 24.75rem;
-  align-items: center;
 }
 .imagenestabsfeatures img {
   display: none;
@@ -551,8 +606,6 @@ p {
 }
 @media (min-width: 1440px) {
   .imagenestabsfeatures {
-    justify-content: center;
-    align-items: center;
     width: 100%;
     max-width: 45rem;
     margin: 4rem auto 0;
@@ -585,8 +638,8 @@ p {
   color: #242a45;
 }
 .cuadrotextotabs p {
-  margin: 1rem 1.25rem 2.1875rem;
   color: #9194a1;
+  margin: 1rem 1.25rem 2.1875rem;
 }
 @media (min-width: 1440px) {
   .cuadrotextotabs {
@@ -616,6 +669,8 @@ p {
   #btn3:checked ~ .cuadrotextotabs {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin: 0 auto;
     padding: 0 2rem;
   }
@@ -654,6 +709,7 @@ p {
 @media (min-width: 1440px) {
   .downloadcards {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: flex-start;
     gap: 2rem;
@@ -693,8 +749,8 @@ p {
 .faq-item summary::after {
   content: "";
   position: absolute;
-  right: 0;
   top: 50%;
+  right: 0;
   transform: translateY(-50%);
   width: 1rem;
   height: 1rem;
@@ -715,6 +771,9 @@ p {
 @media (min-width: 1440px) {
   .emailbox form {
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     gap: 1rem;
   }
 }
@@ -723,6 +782,7 @@ p {
   width: 19.1rem;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   background-color: transparent;
 }

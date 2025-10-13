@@ -1,33 +1,46 @@
 @use 'variables' as *;
+@use 'mixins' as *;
 
 // HEADER AND NAV
 .header {
   background: $color-white;
   padding: 1.5rem;
   width: 100%;
-  z-index: 10;
   position: relative;
+  z-index: 10;
 
   .nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex-center(row, space-between, center);
     width: 90%;
     margin: 0 auto;
 
-    .menu-icon {
-      display: inline-block;
-      cursor: pointer;
-      z-index: 200;
-      margin-left: auto;
-      gap: 1.5rem;
+    .bookmark-image,
+    .bookmark-image-white {
+      @include absolute-position($top: 1.5rem, $left: 2rem);
+      @include transition(opacity 0.3s ease);
+      z-index: 400;
+    }
 
-      .menu-image {
-        width: auto;
-        height: auto;
-        display: block;
-        transition: transform 0.3s ease;
-        align-items: right;
+    @include desktop {
+      .bookmark-image,
+      .bookmark-image-white {
+        margin-left: 5rem;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  
+    .bookmark-image-white {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    &:has(.menu-toggle:checked) {
+      .bookmark-image { 
+        opacity: 0; 
+      }
+      .bookmark-image-white { 
+        opacity: 1; 
       }
     }
 
@@ -35,35 +48,45 @@
       display: none;
     }
 
+    .menu-icon {
+      display: inline-block;
+      cursor: pointer;
+      margin-left: auto;
+      gap: 1.5rem;
+      z-index: 200;
+
+      @include desktop {
+        display: none;
+      }
+
+      .menu-image {
+        width: auto;
+        height: auto;
+        display: block;
+        @include transition(transform 0.3s ease);
+      }
+    }
+
     .menu {
       list-style: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
+      @include absolute-position($top: 100%, $left: 0, $right: 0);
+      @include flex-center(column, center, center);
       display: none;
-      flex-direction: column;
       text-align: center;
       gap: 1.5rem;
       background: $color-white;
-      box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.1);
+      @include box-shadow;
       border-radius: 0 0 0.5rem 0.5rem;
       width: 100%;
       opacity: 0;
-      transition: opacity 0.3s ease;
+      @include transition(opacity 0.3s ease);
 
       li {
         position: relative;
 
         &:first-child::before,
         &:not(:last-child)::after {
-          content: "";
-          position: absolute;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 80vw;
-          height: 0.063rem;
-          background-color: $color-gray;
+          @include separator-line;
         }
 
         &:first-child::before { 
@@ -79,7 +102,7 @@
           font-weight: 400;
           font-size: 1.5rem;
           letter-spacing: 0.063rem;
-          transition: color 0.3s;
+          @include transition(color 0.3s);
 
           &:hover { 
             color: $color-primary; 
@@ -114,41 +137,21 @@
       height: 100%;
       background: $color-primary2;
       opacity: 0.9;
-      justify-content: center;
-      align-items: center;
+      @include flex-center(column, center, center);
       gap: 2rem;
       border-radius: 0;
       box-shadow: none;
       z-index: 100;
     }
 
-    .menu-toggle:checked + .menu-icon .menu-image {
-      content: url('../img/icon-close.svg');
-      z-index: 300;
-    }
-
-
-    @media (min-width: 1440px) {
+    @include desktop {
       justify-content: space-evenly;
       max-width: 100%;
       margin: 0;
 
-      .menu-icon {
-        display: none;
-      }
-
-      .bookmark-image {
-        margin-left: 5rem;
-        display: block;
-        width: 100%;
-      }
-
       .menu {
         position: static;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: right;
+        @include flex-center(row, right, center);
         gap: 2rem;
         background: transparent;
         opacity: 1;
@@ -159,8 +162,8 @@
 
         li {
           &::before,
-          &::after {
-            display: none;
+          &::after { 
+            display: none; 
           }
 
           a {
@@ -182,19 +185,16 @@
   }
 }
 
-@media (min-width: 1440px) {
-  main {
-    width: 90vw;
+@include desktop {
+  main { 
+    width: 90vw; 
   }
 }
 
 // HERO
 .hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem 1.5rem;
+  @include flex-center(column, center, center);
+  @include section-padding(2rem 1.5rem, 4rem 2rem);
   width: 100%;
   position: relative;
   isolation: isolate;
@@ -209,38 +209,43 @@
   .cuadrotextohero {
     h1 { 
       margin-bottom: 1rem; 
-      line-height: 1.2; }
+      line-height: 1.2; 
+    }
     p { 
-      color: $color-gray; 
-      margin: 1.5rem 2rem; }
+      @include gray-text(1.5rem 2rem); 
+    }
   }
 
   .botones {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-center(row, center, center);
     gap: 0.8rem;
     width: 100%;
   }
 
-  @media (min-width: $breakpoint-lg) {
+  @include desktop {
     flex-direction: row-reverse;
     max-width: 100%;
     gap: 4rem;
-    padding: 4rem 2rem;
 
-    .imghero { flex: 1; max-width: 35rem; margin: 0; }
+    .imghero { 
+      flex: 1; 
+      max-width: 35rem; 
+      margin: 0; 
+    }
     .cuadrotextohero {
       flex: 1;
       text-align: left;
       margin-bottom: 3rem;
 
       h2 { 
-        font-size: $h2-font-size-desktop; }
+        font-size: $h2-font-size-desktop; 
+      }
       p { 
         margin: 1.5rem 2rem 1.5rem 0; 
-        font-size: $p-font-size-desktop; }
+        font-size: $p-font-size-desktop; 
+      }
     }
+
     .botones { 
       justify-content: flex-start; 
     }
@@ -249,52 +254,37 @@
 
 // FEATURES
 .features {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  @include flex-center;
   width: 100%;
   padding: 7rem 1.5rem 3rem;
 
   .cuadrotextofeatures {
-    h1 { 
-      margin-bottom: 1rem; }
-    p { 
-      color: $color-gray; 
-      margin: 1rem 1.5rem 1.5rem; }
+    @include text-container(0 0 1rem, 1rem 1.5rem 1.5rem);
   }
 
-  @media (min-width: $breakpoint-lg) {
+  @include desktop {
     max-width: 100%;
     padding: 2rem;
 
     .cuadrotextofeatures {
-      h1 { 
-        font-size: $h1-font-size-desktop; }
       p { 
         margin: 1.5rem 22rem; 
-        font-size: $p-font-size-desktop; }
+      }
     }
   }
 }
 
 // DOWNLOADS
 .downloads {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flex-center;
   width: 100%;
-  padding: 1rem 1.5rem;
+  @include section-padding;
 
   .cuadrotextodownloads {
-    h1 { 
-      margin-bottom: 1rem; }
-    p { 
-      color: $color-gray; 
-      margin: 0 1rem 2rem; }
+    @include text-container(0 0 1rem, 0 1rem 2rem);
   }
 
-  @media (min-width: $breakpoint-lg) {
+  @include desktop {
     gap: 1rem;
     max-width: 69.375rem;
     margin: 0 auto;
@@ -304,10 +294,10 @@
       gap: 2rem;
       h1 { 
         margin: 0; 
-        font-size: $h1-font-size-desktop; }
+      }
       p { 
         margin: 1rem 18rem; 
-        font-size: $p-font-size-desktop; }
+      }
     }
   }
 }
@@ -320,53 +310,54 @@
 
   h1 { 
     margin: 0 4rem 1rem; 
-    line-height: 1.2; }
+    line-height: 1.2; 
+  }
   p { 
-    color: $color-gray; 
-    margin: 0 2rem 3rem; }
+    @include gray-text(0 2rem 3rem); 
+  }
 
-  @media (min-width: $breakpoint-lg) {
+  @include desktop {
     width: 40%;
     max-width: 60rem;
     margin: 5rem auto;
 
     h1 { 
       margin: 0 0 1rem; 
-      font-size: $h1-font-size-desktop; }
+      font-size: $h1-font-size-desktop; 
+    }
     p { 
       margin: 2rem 0; 
-      font-size: $p-font-size-desktop; }
+      font-size: $p-font-size-desktop; 
+    }
   }
 }
 
 // FOOTER
-
-
 .cuadrotextoemail {
   display: grid;
   place-items: center;
   line-height: 1.2;
   background-color: $color-primary;
   padding: 3rem 1.5rem;
-  width: 100vw;
-  margin-left: $center-margin;
-  margin-right: $center-margin;
+  @include full-viewport-width;
 
   h2 { 
     color: $color-white; 
     margin: 0.75rem 0 2.5rem; 
-    font-size: 1.5rem; }
+    font-size: 1.5rem; 
+  }
   p { 
     color: $color-white; 
     margin-top: 1rem; 
     letter-spacing: 0.35em; 
-    font-size: 0.8rem; }
+    font-size: 0.8rem; 
+  }
 
   .submit-btn {
     border: none;
     border-radius: 0.375rem;
     cursor: pointer;
-    transition: all 0.3s ease;
+    @include transition(all 0.3s ease);
     padding: 1rem 1.5rem;
     background-color: $color-secondary;
     color: $color-white;
@@ -381,59 +372,55 @@
     }
   }
 
-  @media (min-width: $breakpoint-lg) {
+  @include desktop {
     padding: 2rem;
     width: 100vw;
     height: 20.5rem;
 
     h2 { 
       margin: 0 32rem 1rem; 
-      font-size: 1.75rem; }
+      font-size: 1.75rem; 
+    }
     p { 
-      margin-bottom: 0.5rem; }
+      margin-bottom: 0.5rem; 
+    }
     .submit-btn { 
       margin-top: 0; 
       width: auto; 
-      height: 3.136rem; }
+      height: 3.136rem; 
+    }
   }
 }
 
 .cuadrotextofooter {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
+  @include flex-center(column, space-evenly, center);
   background-color: $color-primary2;
-  width: 100vw;
+  @include full-viewport-width;
   min-height: 22.5rem;
   color: $color-white;
-  margin-left: $center-margin;
-  margin-right: $center-margin;
 
- .logo-text { 
-  fill: white;
- }
+  .logo-text { 
+    fill: white; 
+  }
 
   p:hover { 
     color: $color-secondary; 
-    cursor: pointer; }
+    cursor: pointer; 
+  }
 
   .smicons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center(row, center, center);
     gap: 3rem;
 
     img {
       cursor: pointer;
-
       &:hover {
         filter: invert(44%) sepia(92%) saturate(2829%) hue-rotate(330deg);
       }
     }
   }
 
-  @media (min-width: $breakpoint-lg) {
+  @include desktop {
     flex-direction: row;
     justify-content: flex-start;
     padding: 2rem 12rem;
@@ -441,9 +428,11 @@
     min-height: auto;
 
     p { 
-      margin: 0 1.5rem 0 0; }
+      margin: 0 1.5rem 0 0; 
+    }
     .smicons { 
       margin-left: auto; 
-      gap: 2rem; }
+      gap: 2rem; 
+    }
   }
 }

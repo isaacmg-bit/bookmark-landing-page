@@ -1,10 +1,9 @@
 @use 'variables' as *;
+@use 'mixins' as *;
 
 // FEATURES TABS
 .botonesfeatures {
-  display: flex; 
-  flex-direction: column; 
-  align-items: center; 
+  @include flex-center(column, center, center);
   width: 100%; 
   margin: 1rem 0; 
 
@@ -27,13 +26,11 @@
 
     &::after {
       content: ""; 
-      position: absolute; 
-      left: 50%; 
-      bottom: 0; 
+      @include absolute-position($left: 50%, $bottom: 0);
       width: 0; 
       height: 0.25rem; 
       background-color: $color-secondary; 
-      transition: width 0.2s ease, left 0.2s ease; 
+      @include transition(width 0.2s ease, left 0.2s ease);
       transform: translateX(-50%);
     }
   }
@@ -48,7 +45,7 @@
     }
   }
 
-  @media (min-width: $breakpoint-lg) {
+  @include desktop {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
@@ -85,12 +82,11 @@
 
 // IMAGES TABS
 .imagenestabsfeatures {
-  display: flex;
+  @include flex-center(row, center, center);
   position: relative;
   width: auto;
   max-width: 25rem;
   min-height: 24.75rem;
-  align-items: center;
 
   img {
     display: none;
@@ -98,13 +94,11 @@
     max-width: 20.438rem;
     height: auto;
     position: relative;
-    transition: opacity 0.3s ease;
+    @include transition(opacity 0.3s ease);
     margin-top: 4rem;
   }
 
-  @media (min-width: $breakpoint-lg) {
-    justify-content: center;
-    align-items: center;
+  @include desktop {
     width: 100%;
     max-width: 45rem;
     margin: 4rem auto 0;
@@ -143,11 +137,10 @@
   }
 
   p {
-    margin: 1rem 1.25rem 2.1875rem;
-    color: $color-gray;
+    @include gray-text(1rem 1.25rem 2.1875rem);
   }
 
-  @media (min-width: $breakpoint-lg) {
+  @include desktop {
     max-width: 28.125rem;
     text-align: left;
     margin: 0 auto;
@@ -174,9 +167,8 @@
 #btn1:checked ~ .cuadrotextotabs,
 #btn2:checked ~ .cuadrotextotabs,
 #btn3:checked ~ .cuadrotextotabs {
-  @media (min-width: $breakpoint-lg) {
-    display: flex;
-    flex-direction: column;
+  @include desktop {
+    @include flex-center;
     margin: 0 auto;
     padding: 0 2rem;
   }
@@ -192,15 +184,14 @@
   padding: 2rem;
   width: 100%;
   max-width: 18rem;
-  box-shadow: 0 0.625rem 0.938rem 0 $color-shadow;
+  @include box-shadow(0 0.625rem 0.938rem 0 $color-shadow);
 
   h1 {
     margin: 0.8rem 0;
   }
 
   p {
-    color: $color-gray; 
-    margin: 0 1rem 2rem; 
+    @include gray-text(0 1rem 2rem);
   }
 
   .imgdots {
@@ -210,11 +201,9 @@
   }
 }
 
-@media (min-width: $breakpoint-lg) {
+@include desktop {
   .downloadcards {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    @include flex-center(row, center, flex-start);
     gap: 2rem;
     height: 25rem;
   }
@@ -247,23 +236,21 @@
   summary {
     list-style: none;
     position: relative;
-    transition: all 0.3s ease;
+    @include transition(all 0.3s ease);
     cursor: pointer;
 
     &::-webkit-details-marker { display: none; }
 
     &::after {
       content: "";
-      position: absolute;
-      right: 0;
-      top: 50%;
+      @include absolute-position($right: 0, $top: 50%);
       transform: translateY(-50%);
       width: 1rem;
       height: 1rem;
       background-image: url('../img/icon-arrow.svg');
       background-size: contain;
       background-repeat: no-repeat;
-      transition: transform 0.3s ease;
+      @include transition(transform 0.3s ease);
     }
   }
 
@@ -279,8 +266,8 @@
   place-items: center; 
 
   form {
-    @media (min-width: $breakpoint-lg) {
-      display: flex;
+    @include desktop {
+      @include flex-center(row, center, center);
       gap: 1rem;
     }
   }
@@ -288,9 +275,7 @@
   .email-wrapper {
     border-radius: 0.5rem;
     width: 19.1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flex-center;
     background-color: transparent;
 
     &.error {
@@ -332,7 +317,8 @@
     padding: 1rem 3rem 1rem 1rem;
     text-align: left;
     font-weight: $h1-font-weight;  
-    @media (min-width: $breakpoint-lg) {
+    
+    @include desktop {
       height: 3.136rem;
     }
   }
