@@ -49,7 +49,6 @@
   font-size: 0.9rem;
   margin-top: 1rem;
   @include button-hover-inverse;
-
 }
 
 .btninfo,
@@ -61,6 +60,7 @@
   max-width: fit-content;
   box-shadow: 0 0.625rem 0.938rem 0 $color-shadow;
   @include button-hover-inverse;
+  }
 
   .btninfo {
     margin: 3rem 0 6rem;
@@ -69,7 +69,6 @@
     margin-top: 4rem;
     }
   }
-}
 
 .btninfodesktop {
   display: none;

@@ -161,7 +161,54 @@ p {
 .header .nav .menu-toggle:checked + .menu-icon .bookmark-image-white {
   display: block;
 }
+@media (min-width: 1440px) {
+  .header .nav {
+    justify-content: space-evenly;
+    max-width: 100%;
+    margin: 0;
+  }
+  .header .nav .menu-icon {
+    display: none;
+  }
+  .header .nav .bookmark-image {
+    margin-left: 5rem;
+  }
+  .header .nav .menu {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+    gap: 2rem;
+    background: transparent;
+    opacity: 1;
+    box-shadow: none;
+    max-width: 100%;
+    margin-right: 3rem;
+    border-radius: 0;
+  }
+  .header .nav .menu li::before, .header .nav .menu li::after {
+    display: none;
+  }
+  .header .nav .menu li a {
+    color: #242a45;
+    font-size: 0.7rem;
+    letter-spacing: 0.1rem;
+  }
+  .header .nav .menu li .login-btn {
+    margin: auto;
+    padding: 0.6rem 1.7rem;
+    font-size: 0.7rem;
+    background-color: #fa5757;
+    border-color: #fa5757;
+  }
+}
 
+@media (min-width: 1440px) {
+  main {
+    width: 90vw;
+  }
+}
 .hero {
   display: flex;
   flex-direction: column;
@@ -790,13 +837,12 @@ p {
   color: #5368df;
   border-color: #5368df;
 }
-.btninfo .btninfo,
-.btninfodesktop .btninfo {
+
+.btninfo {
   margin: 3rem 0 6rem;
 }
 @media (min-width: 1440px) {
-  .btninfo .btninfo,
-  .btninfodesktop .btninfo {
+  .btninfo {
     margin-top: 4rem;
   }
 }

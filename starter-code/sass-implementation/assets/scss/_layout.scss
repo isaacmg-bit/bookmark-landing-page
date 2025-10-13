@@ -135,6 +135,63 @@
     .menu-toggle:checked + .menu-icon .bookmark-image-white {
       display: block;
     }
+
+    // ESTILOS DESKTOP - MEDIA QUERY DENTRO DE .nav
+    @media (min-width: 1440px) {
+      justify-content: space-evenly;
+      max-width: 100%;
+      margin: 0;
+
+      .menu-icon {
+        display: none;
+      }
+
+      .bookmark-image {
+        margin-left: 5rem;
+      }
+
+      .menu {
+        position: static;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: right;
+        gap: 2rem;
+        background: transparent;
+        opacity: 1;
+        box-shadow: none;
+        max-width: 100%;
+        margin-right: 3rem;
+        border-radius: 0;
+
+        li {
+          &::before,
+          &::after {
+            display: none;
+          }
+
+          a {
+            color: $color-dark;
+            font-size: 0.7rem;
+            letter-spacing: 0.1rem;
+          }
+
+          .login-btn {
+            margin: auto;
+            padding: 0.6rem 1.7rem;
+            font-size: 0.7rem;
+            background-color: $color-secondary;
+            border-color: $color-secondary;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  main {
+    width: 90vw;
   }
 }
 
