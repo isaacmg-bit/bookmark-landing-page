@@ -1,0 +1,49 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// BASE
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Rubik";
+  background-color: $color-white;
+  color: $color-dark;
+  @include flex-center;
+  min-height: 100%;
+  text-align: center;
+}
+
+body:has(.menu-toggle:checked) {
+  overflow: hidden;
+  position: fixed;
+}
+
+main {
+  width: 100%;
+  overflow-x: hidden;
+
+  @include desktop {
+    width: 90vw;
+  }
+}
+
+// TYPO
+h1 { 
+  font-size: $h1-font-size; 
+  font-weight: $h1-font-weight; 
+}
+
+h2 { 
+  font-size: $h2-font-size; 
+  font-weight: $h2-font-weight; 
+}
+
+p { 
+  font-size: $p-font-size; 
+  line-height: $p-line-height; 
+  font-weight: $p-font-weight; 
+}
