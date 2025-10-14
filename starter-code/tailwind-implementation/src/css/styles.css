@@ -1,4 +1,4 @@
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -45,15 +45,16 @@ p {
   font-size: 0.95rem;
   line-height: 1.6rem;
   font-weight: 400;
-}
+} */
 
-.header {
+/* .header {
   background: #ffffff;
   padding: 1.5rem;
   width: 100%;
   position: relative;
   z-index: 10;
-}
+} */
+
 .header .nav {
   display: flex;
   flex-direction: row;
