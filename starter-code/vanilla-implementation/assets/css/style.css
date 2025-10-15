@@ -202,7 +202,7 @@ p {
   top: 100%;
   left: 0;
   right: 0;
-  display: none; /* 👈 evita que ocupe espacio */
+  display: none; 
   flex-direction: column;
   text-align: center;
   gap: 1.5rem;
@@ -426,7 +426,7 @@ body:has(#menu-toggle:checked) {
 }
 
 /* Feature Images & Content */
-.imagenestabsfeatures {
+.featuretabimages {
   display: flex;
   position: relative;
   width: auto;
@@ -436,7 +436,7 @@ body:has(#menu-toggle:checked) {
   align-items: center;
 }
 
-.imagenestabsfeatures img {
+.featuretabimages img {
   display: none;
   width: 100%;
   max-width: 20.438rem;
@@ -446,9 +446,9 @@ body:has(#menu-toggle:checked) {
   margin-top: 4rem;
 }
 
-#btn1:checked ~ .imagenestabsfeatures .imgtab1,
-#btn2:checked ~ .imagenestabsfeatures .imgtab2,
-#btn3:checked ~ .imagenestabsfeatures .imgtab3 {
+#btn1:checked ~ .featuretabimages .imgtab1,
+#btn2:checked ~ .featuretabimages .imgtab2,
+#btn3:checked ~ .featuretabimages .imgtab3 {
   display: block;
   margin-bottom: 3rem;
 }
@@ -772,7 +772,7 @@ body:has(#menu-toggle:checked) {
   }
 
    .menu .social-icons-item {
-    display: none; /* Ocultar iconos en desktop */
+    display: none;
   }
 
   /* Hero */
@@ -861,7 +861,7 @@ body:has(#menu-toggle:checked) {
     height: 0;
   }
 
-  .imagenestabsfeatures {
+  .featuretabimages {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -871,7 +871,7 @@ body:has(#menu-toggle:checked) {
     min-height: 33.46rem;
   }
 
-  .imagenestabsfeatures img {
+  .featuretabimages img {
     max-width: 35rem;
     margin: 0;
   }
