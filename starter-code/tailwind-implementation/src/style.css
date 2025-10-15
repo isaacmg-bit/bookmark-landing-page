@@ -1,2 +1,71 @@
 @import "tailwindcss";
 
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --color-primary: #5368df;
+  --color-primary2: #242946;
+  --color-secondary: #fa5757;
+  --color-dark: #242a45;
+  --color-gray: #9194a1;
+  --color-light-gray: #f7f7f7;
+  --color-white: #ffffff;
+  --color-shadow: rgba(128, 128, 128, 0.199);
+
+  --h1-font-size: 1.5rem; 
+  --h2-font-size: 1.9rem;
+  --p-font-size: 0.95rem;
+  --p-font-size-desktop: 1.10rem;
+  --h1-font-size-desktop: 2rem;
+  --h2-font-size-desktop: 3rem;
+  --p-line-height: 1.6rem;
+  --h1-font-weight: 500;
+  --h2-font-weight: 500;
+  --p-font-weight: 400;
+  --buttons-font-weight: 700;
+}
+
+/*  BASE  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  background-color: var(--color-white);
+  color: var(--color-dark);
+  min-height: 100vh;
+}
+
+main {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/*  TYPOGRAPHY  */
+h1 { 
+  font-size: var(--h1-font-size); 
+  font-weight: var(--h1-font-weight); 
+}
+
+h2 { 
+  font-size: var(--h2-font-size); 
+  font-weight: var(--h2-font-weight); 
+}
+
+p { 
+  font-size: var(--p-font-size); 
+  line-height: var(--p-line-height); 
+  font-weight: var(--p-font-weight); 
+}
+
+/* Estilos del menú */
+body:has(.menu-toggle:checked) {
+  overflow: hidden;
+  position: fixed;
+}
