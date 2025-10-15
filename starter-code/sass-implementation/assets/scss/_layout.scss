@@ -84,18 +84,36 @@
       opacity: 0;
       @include transition(opacity 0.3s ease);
 
+      .social-icons-item {
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+        gap: 3.125rem; 
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        margin-bottom: 2rem;
+        cursor: pointer;
+      }
+
+      @include desktop {
+        .social-icons-item {
+          display: none;
+        }
+      }
+
       li {
         position: relative;
 
         &:first-child::before,
-        &:not(:last-child)::after {
+        &:not(.social-icons-item):not(:last-child):not(:has(.login-btn))::after {
           @include separator-line;
         }
 
-        &:first-child::before { 
+        &:not(.social-icons-item):first-child::before { 
           top: -1rem; 
         }
-        &:not(:last-child)::after { 
+        &:not(.social-icons-item):not(:last-child)::after { 
           bottom: -1rem; 
         }
 
@@ -108,7 +126,7 @@
           @include transition(color 0.3s);
 
           &:hover { 
-            color: $color-primary; 
+            color: $color-secondary; 
           }
         }
 
@@ -123,9 +141,11 @@
           font-size: 1.2rem;
           padding: 0.6rem 8rem;
           margin-top: 0.8rem;
+          margin-bottom: 2rem;
 
           &:hover { 
-            background-color: #ff7070; 
+            background-color: rgba(0, 0, 0, 0);
+            color: $color-secondary;
           }
         }
       }
@@ -209,7 +229,7 @@
     margin-bottom: 4rem;
   }
 
-  .cuadrotextohero {
+  .herotextbox {
     h1 { 
       margin-bottom: 1rem; 
       line-height: 1.2; 
@@ -219,7 +239,7 @@
     }
   }
 
-  .botones {
+  .buttons {
     @include flex-center(row, center, center);
     gap: 0.8rem;
     width: 100%;
@@ -235,7 +255,7 @@
       max-width: 35rem; 
       margin: 0; 
     }
-    .cuadrotextohero {
+    .herotextbox {
       flex: 1;
       text-align: left;
       margin-bottom: 3rem;
@@ -244,12 +264,12 @@
         font-size: $h2-font-size-desktop; 
       }
       p { 
-        margin: 1.5rem 2rem 1.5rem 0; 
+        margin: 1.5rem 6rem 1.5rem 0; 
         font-size: $p-font-size-desktop; 
       }
     }
 
-    .botones { 
+    .buttons { 
       justify-content: flex-start; 
     }
   }
@@ -261,15 +281,15 @@
   width: 100%;
   padding: 7rem 1.5rem 3rem;
 
-  .cuadrotextofeatures {
-    @include text-container(0 0 1rem, 1rem 1.5rem 1.5rem);
+  .featurestextbox{
+    @include text-container(0 0 1rem, 1rem 1.4rem 1.5rem);
   }
 
   @include desktop {
     max-width: 100%;
     padding: 2rem;
 
-    .cuadrotextofeatures {
+    .featurestextbox{
       p { 
         margin: 1.5rem 22rem; 
       }
@@ -283,8 +303,8 @@
   width: 100%;
   @include section-padding;
 
-  .cuadrotextodownloads {
-    @include text-container(0 0 1rem, 0 1rem 2rem);
+  .downloadstextbox {
+    @include text-container(0 0 1rem, 0 2rem 2rem);
   }
 
   @include desktop {
@@ -292,14 +312,14 @@
     max-width: 69.375rem;
     margin: 0 auto;
 
-    .cuadrotextodownloads {
+    .downloadstextbox {
       flex: 1 1 100%;
       gap: 2rem;
       h1 { 
         margin: 0; 
       }
       p { 
-        margin: 1rem 18rem; 
+        margin: 1rem 16rem; 
       }
     }
   }
@@ -336,7 +356,7 @@
 }
 
 // FOOTER
-.cuadrotextoemail {
+.emailtextbox {
   display: grid;
   place-items: center;
   line-height: 1.2;
@@ -395,7 +415,7 @@
   }
 }
 
-.cuadrotextofooter {
+.footertextbox {
   @include flex-center(column, space-evenly, center);
   background-color: $color-primary2;
   @include full-viewport-width;

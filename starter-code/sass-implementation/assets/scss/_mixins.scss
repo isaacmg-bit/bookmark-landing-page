@@ -60,6 +60,13 @@
   }
 }
 
+@mixin button-width($desktop-width: auto) {
+  @include desktop {
+    width: $desktop-width;
+    background-color: $color-primary;
+  }
+}
+
 @mixin text-container($h1-margin: 0, $p-margin: 0) {
   h1 {
     @if $h1-margin != 0 {

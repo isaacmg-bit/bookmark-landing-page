@@ -2,7 +2,7 @@
 @use 'mixins' as *;
 
 // FEATURES TABS
-.botonesfeatures {
+.featurebuttons {
   @include flex-center(column, center, center);
   width: 100%; 
   margin: 1rem 0; 
@@ -33,6 +33,10 @@
       @include transition(width 0.2s ease, left 0.2s ease);
       transform: translateX(-50%);
     }
+
+    &:hover {
+        color: $color-secondary;
+      }
   }
 
   input[type="radio"] {
@@ -81,7 +85,7 @@
 }
 
 // IMAGES TABS
-.imagenestabsfeatures {
+.featuretabimages {
   @include flex-center(row, center, center);
   position: relative;
   width: auto;
@@ -111,15 +115,15 @@
   }
 }
 
-#btn1:checked ~ .imagenestabsfeatures .imgtab1,
-#btn2:checked ~ .imagenestabsfeatures .imgtab2,
-#btn3:checked ~ .imagenestabsfeatures .imgtab3 {
+#btn1:checked ~ .featuretabimages .imgtab1,
+#btn2:checked ~ .featuretabimages .imgtab2,
+#btn3:checked ~ .featuretabimages .imgtab3 {
   display: block;
   margin-bottom: 3rem;
 }
 
 // TEXT TABS
-.cuadrotextotabs {
+.tabstextbox {
   > div {
     display: none;
     min-height: 12.948rem;
@@ -137,37 +141,50 @@
   }
 
   p {
-    @include gray-text(1rem 1.25rem 2.1875rem);
+    @include gray-text(1rem 1.5rem 2.1875rem);
   }
 
   @include desktop {
     display: flex;
-    max-width: 28.125rem;
+    max-width: 30.125rem;
     text-align: left;
-    margin: 0 auto;
-    min-height: 18.885rem;
-    
+
     h1 {
       font-size: $h1-font-size-desktop;
     }
     
     p {
       font-size: $p-font-size-desktop;
-      margin: 1rem 0 1.9rem 1.3rem;
+      margin: 1rem 0 1rem 1.3rem;
     }
+
+    .texttab1 {
+    min-height: 150px;
+    min-width: 450px;
   }
+
+   .texttab2 {
+    min-height: 150px;
+    min-width: 450px;
+  }
+
+  .texttab3 {
+    min-height: 150px;
+    min-width: 450px;
+  }
+}
 }
 
 // Radio checked show text
-#btn1:checked ~ .cuadrotextotabs .texttab1,
-#btn2:checked ~ .cuadrotextotabs .texttab2,
-#btn3:checked ~ .cuadrotextotabs .texttab3 {
+#btn1:checked ~ .tabstextbox .texttab1,
+#btn2:checked ~ .tabstextbox .texttab2,
+#btn3:checked ~ .tabstextbox .texttab3 {
   display: block;
 }
 
-#btn1:checked ~ .cuadrotextotabs,
-#btn2:checked ~ .cuadrotextotabs,
-#btn3:checked ~ .cuadrotextotabs {
+#btn1:checked ~ .tabstextbox,
+#btn2:checked ~ .tabstextbox,
+#btn3:checked ~ .tabstextbox {
   @include desktop {
     @include flex-center;
     margin: 0 auto;
@@ -182,23 +199,24 @@
   margin: 0 auto 4rem;
   background-color: $color-white;
   border-radius: 0.625rem; 
-  padding: 2rem;
+  padding: 1rem 1.5rem;
   width: 100%;
   max-width: 18rem;
   @include box-shadow(0 0.625rem 0.938rem 0 $color-shadow);
 
   h1 {
-    margin: 0.8rem 0;
+    font-size: 1.2rem;
+    margin: 1.5rem 0 0;
   }
 
   p {
-    @include gray-text(0 1rem 2rem);
+    @include gray-text(0.5rem 0 2.3rem);
   }
 
   .imgdots {
-    width: calc(100% + 4rem);
-    margin-left: -2rem;
-    display: block;
+      width: 120%;
+      margin-left: -1.5rem;
+      display: flex;
   }
 }
 
@@ -252,6 +270,10 @@
       background-size: contain;
       background-repeat: no-repeat;
       @include transition(transform 0.3s ease);
+    }
+
+    &:hover {
+      color: $color-secondary;
     }
   }
 
