@@ -337,17 +337,17 @@ body:has(#menu-toggle:checked) {
   margin-bottom: 4rem;
 }
 
-.cuadrotextohero h1 { 
+.herotextbox h1 { 
   margin-bottom: 1rem; 
   line-height: 1.2; 
 }
 
-.cuadrotextohero p { 
+.herotextbox p { 
   color: var(--color-gray); 
   margin: 1.5rem 2rem; 
 }
 
-.botones {
+.buttons {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -365,17 +365,17 @@ body:has(#menu-toggle:checked) {
   padding: 7rem 1.5rem 3rem;
 }
 
-.cuadrotextofeatures h1 { 
+.featurestextbox h1 { 
   margin-bottom: 1rem; 
 }
 
-.cuadrotextofeatures p { 
+.featurestextbox p { 
   color: var(--color-gray); 
   margin: 1rem 1.4rem 1.5rem; 
 }
 
 /* Feature Tabs */
-.botonesfeatures { 
+.featurebuttons { 
   display: flex; 
   flex-direction: column; 
   align-items: center; 
@@ -383,7 +383,7 @@ body:has(#menu-toggle:checked) {
   margin: 1rem 0; 
 } 
 
-.botonesfeatures label { 
+.featurebuttons label { 
   position: relative; 
   width: 100%; 
   padding: 1.2em 1.25rem; 
@@ -397,15 +397,15 @@ body:has(#menu-toggle:checked) {
   border-bottom: 0.063rem solid #ccc;
 }
 
-.botonesfeatures label:hover { 
+.featurebuttons label:hover { 
   color: var(--color-secondary);
 }
 
-.botonesfeatures label:first-of-type { 
+.featurebuttons label:first-of-type { 
   border-top: 0.063rem solid #ccc; 
 }
 
-.botonesfeatures label::after { 
+.featurebuttons label::after { 
   content: ""; 
   position: absolute; 
   left: 50%; 
@@ -417,11 +417,11 @@ body:has(#menu-toggle:checked) {
   transform: translateX(-50%); 
 }
 
-.botonesfeatures input[type="radio"]:checked + label { 
+.featurebuttons input[type="radio"]:checked + label { 
   color: var(--color-dark); 
 }
 
-.botonesfeatures input[type="radio"]:checked + label::after { 
+.featurebuttons input[type="radio"]:checked + label::after { 
   width: 50%; 
 }
 
@@ -453,29 +453,29 @@ body:has(#menu-toggle:checked) {
   margin-bottom: 3rem;
 }
 
-.cuadrotextotabs > div { 
+.tabstextbox > div { 
   display: none; 
   min-height: 12.948rem;
 }
 
-.cuadrotextotabs .texttab2, 
-.cuadrotextotabs .texttab3 {
+.tabstextbox .texttab2, 
+.tabstextbox .texttab3 {
   min-height: 12.948rem;
 }
 
-#btn1:checked ~ .cuadrotextotabs .texttab1,
-#btn2:checked ~ .cuadrotextotabs .texttab2,
-#btn3:checked ~ .cuadrotextotabs .texttab3 { 
+#btn1:checked ~ .tabstextbox .texttab1,
+#btn2:checked ~ .tabstextbox .texttab2,
+#btn3:checked ~ .tabstextbox .texttab3 { 
   display: block; 
 }
 
-.cuadrotextotabs h1 { 
+.tabstextbox h1 { 
   margin: 1.25rem 1.25rem 0; 
   line-height: 1.2; 
   color: var(--color-dark); 
 }
 
-.cuadrotextotabs p { 
+.tabstextbox p { 
   margin: 1rem 1.5rem 2.1875rem; 
   color: var(--color-gray); 
 }
@@ -489,11 +489,11 @@ body:has(#menu-toggle:checked) {
   padding: 1rem 1.5rem;
 }
 
-.cuadrotextodownloads h1 { 
+.downloadstextbox h1 { 
   margin-bottom: 1rem; 
 }
 
-.cuadrotextodownloads p { 
+.downloadstextbox p { 
   color: var(--color-gray); 
   margin: 0 2rem 2rem; 
 }
@@ -596,7 +596,7 @@ body:has(#menu-toggle:checked) {
 }
 
 /*  FOOTER  */
-.cuadrotextoemail {
+.emailtextbox {
   display: grid;
   place-items: center;
   line-height: 1.2;
@@ -607,13 +607,13 @@ body:has(#menu-toggle:checked) {
   margin-right: calc(-50vw + 50%);
 }
 
-.cuadrotextoemail h2 {
+.emailtextbox h2 {
   color: var(--color-white);
   margin: 0.75rem 0 2.5rem;
   font-size: 1.5rem;
 }
 
-.cuadrotextoemail p {
+.emailtextbox p {
   color: var(--color-white);
   margin-top: 1rem;
   letter-spacing: 0.35em;
@@ -673,7 +673,7 @@ body:has(#menu-toggle:checked) {
   background-position: right 0.8rem center; 
 }
 
-.cuadrotextofooter {
+.footertextbox {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -686,12 +686,12 @@ body:has(#menu-toggle:checked) {
   margin-right: calc(-50vw + 50%);
 }
 
-.cuadrotextofooter p:hover {
+.footertextbox p:hover {
   color: var(--color-secondary);
   cursor: pointer;
 }
 
-.cuadrotextofooter .smicons {
+.footertextbox .smicons {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -712,7 +712,7 @@ body:has(#menu-toggle:checked) {
 
 /*  MEDIA QUERIES  */
 @media screen and (min-width: 768px) {
-  .botonesfeatures label:first-of-type {
+  .featurebuttons label:first-of-type {
     border-top: none;
   }
 }
@@ -789,22 +789,22 @@ body:has(#menu-toggle:checked) {
     margin: 0;
   }
   
-  .cuadrotextohero {
+  .herotextbox {
     flex: 1;
     text-align: left;
     margin-bottom: 3rem;
   }
   
-  .cuadrotextohero h2 {
+  .herotextbox h2 {
     font-size: var(--h2-font-size-desktop);
   }
   
-  .cuadrotextohero p {
+  .herotextbox p {
     margin: 1.5rem 6rem 1.5rem 0;
     font-size: var(--p-font-size-desktop);
   }
   
-  .botones {
+  .buttons {
     justify-content: flex-start;
   }
   
@@ -821,16 +821,16 @@ body:has(#menu-toggle:checked) {
     padding: 2rem;
   }
 
-  .cuadrotextofeatures h1 {
+  .featurestextbox h1 {
     font-size: var(--h1-font-size-desktop);
   }
 
-  .cuadrotextofeatures p {
+  .featurestextbox p {
     margin: 1.5rem 22rem;
     font-size: var(--p-font-size-desktop);
   }
   
-  .botonesfeatures {
+  .featurebuttons {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -841,18 +841,18 @@ body:has(#menu-toggle:checked) {
     margin: 0;
   }
 
-  .botonesfeatures label {
+  .featurebuttons label {
     font-size: 1.1rem;
     border-top: none;
     border-bottom: 2px solid var(--color-shadow);
     max-width: 16rem;
   }
 
-  .botonesfeatures input[type="radio"]:checked + label {
+  .featurebuttons input[type="radio"]:checked + label {
     border-bottom: 2px solid var(--color-secondary);
   }
 
-  .botonesfeatures input[type="radio"]:checked + label::after {
+  .featurebuttons input[type="radio"]:checked + label::after {
     width: 100%;
   }
 
@@ -876,41 +876,41 @@ body:has(#menu-toggle:checked) {
     margin: 0;
   }
 
-  #btn1:checked ~ .cuadrotextotabs,
-  #btn2:checked ~ .cuadrotextotabs,
-  #btn3:checked ~ .cuadrotextotabs {
+  #btn1:checked ~ .tabstextbox,
+  #btn2:checked ~ .tabstextbox,
+  #btn3:checked ~ .tabstextbox {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
     padding: 0 2rem;
   }
   
-  .cuadrotextotabs {
+  .tabstextbox {
     max-width: 30.125rem;
     text-align: left;
 
   }
 
-  .cuadrotextotabs h1 {
+  .tabstextbox h1 {
     font-size: var(--h1-font-size-desktop);
   }
 
-  .cuadrotextotabs p {
+  .tabstextbox p {
     font-size: var(--p-font-size-desktop);
     margin: 1rem 0 1rem 1.3rem;
   }
 
-  .cuadrotextotabs .texttab1 {
+  .tabstextbox .texttab1 {
     min-height: 150px;
     min-width: 450px;
   }
 
-  .cuadrotextotabs .texttab2 {
+  .tabstextbox .texttab2 {
        min-height: 150px;
     min-width: 450px;
   }
 
-  .cuadrotextotabs .texttab3 {
+  .tabstextbox .texttab3 {
        min-height: 150px;
     min-width: 450px;
   }
@@ -928,17 +928,17 @@ body:has(#menu-toggle:checked) {
     margin: 0 auto;
   }
 
-  .cuadrotextodownloads {
+  .downloadstextbox {
     flex: 1 1 100%;
     gap: 2rem;
   }
 
-  .cuadrotextodownloads h1 {
+  .downloadstextbox h1 {
     margin: 0;
     font-size: var(--h1-font-size-desktop);
   }
 
-  .cuadrotextodownloads p {
+  .downloadstextbox p {
     margin: 1rem 16rem;
     font-size: var(--p-font-size-desktop);
   }
@@ -992,18 +992,18 @@ body:has(#menu-toggle:checked) {
   }
 
   /* Footer */
-  .cuadrotextoemail {
+  .emailtextbox {
     padding: 2rem;
     width: 100vw;
     height: 20.5rem;
   }
 
-  .cuadrotextoemail h2 {
+  .emailtextbox h2 {
     margin: 0 32rem 1rem;
     font-size: 1.75rem;
   }
 
-  .cuadrotextoemail p {
+  .emailtextbox p {
     margin-bottom: 0.5rem;
   }
 
@@ -1030,7 +1030,7 @@ body:has(#menu-toggle:checked) {
     margin: 0 0 0 0.75rem;
   }
 
-  .cuadrotextofooter {
+  .footertextbox {
     flex-direction: row;
     justify-content: flex-start;
     padding: 2rem 12rem;
@@ -1038,7 +1038,7 @@ body:has(#menu-toggle:checked) {
     min-height: auto;
   }
 
-  .cuadrotextofooter p {
+  .footertextbox p {
     margin: 0 1.5rem 0 0;
   }
 
