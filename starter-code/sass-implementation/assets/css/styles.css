@@ -508,6 +508,9 @@ p {
   min-height: 22.5rem;
   color: #ffffff;
 }
+.footertextbox a {
+  text-decoration: none;
+}
 .footertextbox .logo-text {
   fill: white;
 }
@@ -946,7 +949,7 @@ p {
 .btnadd:hover {
   background-color: #ffffff;
   color: #5368df;
-  border-color: #5368df;
+  border: 2px solid #5368df;
 }
 
 .btninfo,
@@ -962,7 +965,7 @@ p {
 .btninfodesktop:hover {
   background-color: #ffffff;
   color: #5368df;
-  border-color: #5368df;
+  border: 2px solid #5368df;
 }
 
 .btninfo {

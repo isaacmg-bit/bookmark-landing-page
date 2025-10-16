@@ -426,6 +426,10 @@
   min-height: 22.5rem;
   color: $color-white;
 
+  a {
+    text-decoration: none;
+  }
+  
   .logo-text { 
     fill: white; 
   }
@@ -433,6 +437,7 @@
   p:hover { 
     color: $color-secondary; 
     cursor: pointer; 
+    
   }
 
   .smicons {
