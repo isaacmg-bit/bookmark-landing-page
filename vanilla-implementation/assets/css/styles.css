@@ -76,6 +76,8 @@ p {
   cursor: pointer;
   font-weight: var(--buttons-font-weight);
   padding: 1rem 1.5rem;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .btnbrowser {
@@ -85,6 +87,7 @@ p {
   font-size: 0.85rem;
   width: 100%;
   text-align: center;
+  font-weight: 500;
 }
 
 .btnbrowserchrome {
@@ -94,6 +97,7 @@ p {
   font-size: 0.85rem;
   width: 100%;
   text-align: center;
+  font-weight: 500;
 }
 
 .btnbrowser:hover {
@@ -340,15 +344,11 @@ body:has(#menu-toggle:checked) {
     border-radius: 0 0 0 7rem;
     z-index: -1;
   }
-    /* @media (min-width: 1440px) {
+    @media (min-width: 1440px) {
     &::before {
-      bottom: 0; 
-      right: 0;
-      width: 60%; 
-      height: 80%; 
-      border-radius: 7rem 0 0 7rem; 
+      display: none;
     }
-  } */
+  } 
 }
 
 .imghero {
@@ -456,15 +456,7 @@ body:has(#menu-toggle:checked) {
   align-items: center;
 
     &::before {
-    content: "";
-    position: absolute;
-    bottom: 10%;
-    right: 15%;
-    width: 100%;
-    height: 60%;
-    background-color: var(--color-primary);
-    border-radius: 0 0 7rem 0;
-    z-index: -1;
+    display: none;
   }
 }
 
