@@ -59,7 +59,7 @@
       z-index: 200;
 
       @include desktop {
-        display: none;
+        display: block;
       }
 
       .menu-image {
@@ -67,6 +67,10 @@
         height: auto;
         display: block;
         @include transition(transform 0.3s ease);
+
+        @include desktop {
+        display: none;
+        }
       }
     }
 

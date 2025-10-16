@@ -8,6 +8,8 @@
   font-weight: $buttons-font-weight;
   transition: background-color 0.3s ease;
   padding: $padding;
+  text-decoration: none;
+  display: inline-block;
 }
 
 @mixin button-hover-inverse {
@@ -33,6 +35,7 @@
   font-size: 0.85rem;
   width: 100%;
   text-align: center;
+  font-weight: 500;
 
   &:hover {
     background-color: $color-white;
@@ -52,6 +55,7 @@
   font-size: 0.85rem;
   width: 100%;
   text-align: center;
+  font-weight: 500;
 
   &:hover {
     background-color: $color-white;

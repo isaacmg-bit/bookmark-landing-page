@@ -103,7 +103,7 @@ p {
 }
 @media (min-width: 1440px) {
   .header .nav .menu-icon {
-    display: none;
+    display: block;
   }
 }
 .header .nav .menu-icon .menu-image {
@@ -111,6 +111,11 @@ p {
   height: auto;
   display: block;
   transition: transform 0.3s ease;
+}
+@media (min-width: 1440px) {
+  .header .nav .menu-icon .menu-image {
+    display: none;
+  }
 }
 .header .nav .menu {
   list-style: none;
@@ -881,6 +886,8 @@ p {
   font-weight: 700;
   transition: background-color 0.3s ease;
   padding: 1rem 1.5rem;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .btnbrowser {
@@ -890,6 +897,7 @@ p {
   font-size: 0.85rem;
   width: 100%;
   text-align: center;
+  font-weight: 500;
 }
 .btnbrowser:hover {
   background-color: #ffffff;
@@ -909,6 +917,7 @@ p {
   font-size: 0.85rem;
   width: 100%;
   text-align: center;
+  font-weight: 500;
 }
 .btnbrowserchrome:hover {
   background-color: #ffffff;
