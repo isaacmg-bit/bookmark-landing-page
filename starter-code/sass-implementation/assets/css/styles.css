@@ -526,6 +526,7 @@ p {
 }
 .footertextbox a {
   text-decoration: none;
+  color: inherit;
 }
 .footertextbox .logo-text {
   fill: white;
@@ -646,6 +647,22 @@ p {
   width: auto;
   max-width: 25rem;
   min-height: 24.75rem;
+}
+.featuretabimages::before {
+  content: "";
+  position: absolute;
+  bottom: 10%;
+  right: 15%;
+  width: 100%;
+  height: 60%;
+  background-color: #5368df;
+  border-radius: 0 0 7rem 0;
+  z-index: -1;
+}
+@media (min-width: 1440px) {
+  .featuretabimages::before {
+    display: none;
+  }
 }
 .featuretabimages img {
   display: none;
