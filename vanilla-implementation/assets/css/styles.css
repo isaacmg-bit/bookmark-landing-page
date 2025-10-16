@@ -1062,6 +1062,11 @@ body:has(#menu-toggle:checked) {
     min-height: auto;
   }
 
+  .footertextbox a {
+    text-decoration: none;
+    color: inherit;
+  }
+
   .footertextbox p {
     margin: 0 1.5rem 0 0;
   }
