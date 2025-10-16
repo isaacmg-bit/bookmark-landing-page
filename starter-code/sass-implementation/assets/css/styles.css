@@ -276,6 +276,22 @@ p {
   position: relative;
   isolation: isolate;
 }
+.hero::before {
+  content: "";
+  position: absolute;
+  bottom: 53%;
+  right: 0;
+  width: 80%;
+  height: 33%;
+  background-color: #5368df;
+  border-radius: 0 0 0 7rem;
+  z-index: -1;
+}
+@media (min-width: 1440px) {
+  .hero::before {
+    display: none;
+  }
+}
 .hero .imghero {
   position: relative;
   width: 100%;
