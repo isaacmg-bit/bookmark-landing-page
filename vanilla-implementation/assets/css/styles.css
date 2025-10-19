@@ -724,7 +724,12 @@ body:has(#menu-toggle:checked) {
   margin-right: calc(-50vw + 50%);
 }
 
-.footertextbox p:hover {
+  .footertextbox a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+.footertextbox a:hover {
   color: var(--color-secondary);
   cursor: pointer;
 }
@@ -1079,9 +1084,6 @@ body:has(#menu-toggle:checked) {
   .footertextbox a {
     text-decoration: none;
     color: inherit;
-  }
-
-  .footertextbox p {
     margin: 0 1.5rem 0 0;
   }
 
