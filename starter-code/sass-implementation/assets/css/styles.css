@@ -531,7 +531,7 @@ p {
 .footertextbox .logo-text {
   fill: white;
 }
-.footertextbox p:hover {
+.footertextbox a:hover {
   color: #fa5757;
   cursor: pointer;
 }
@@ -556,7 +556,7 @@ p {
     gap: 3rem;
     min-height: auto;
   }
-  .footertextbox p {
+  .footertextbox a {
     margin: 0 1.5rem 0 0;
   }
   .footertextbox .smicons {
