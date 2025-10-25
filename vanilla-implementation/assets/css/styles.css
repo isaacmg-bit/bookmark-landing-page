@@ -778,7 +778,8 @@ body:has(#menu-toggle:checked) {
   }
 
   .nav { 
-    justify-content: space-evenly;
+    justify-content: space-between;
+    gap: 3rem;
     max-width: 100%;
     margin: 0;
   }
@@ -842,12 +843,12 @@ body:has(#menu-toggle:checked) {
   }
   
   .herotextbox h2 {
-    font-size: var(--h2-font-size-desktop);
+    font-size: var(--h2-font-size);
   }
   
   .herotextbox p {
-    margin: 1.5rem 6rem 1.5rem 0;
-    font-size: var(--p-font-size-desktop);
+    margin: 1.5rem 0 1.5rem 0;
+    font-size: var(--p-font-size);
   }
   
   .buttons {
@@ -855,11 +856,11 @@ body:has(#menu-toggle:checked) {
   }
   
   .btnbrowser {
-    width: auto;
+    width: 8rem;
   }
 
   .btnbrowserchrome {
-    width: auto;
+    width: 8rem;
   }
   /* Features */
   .features {
@@ -872,7 +873,7 @@ body:has(#menu-toggle:checked) {
   }
 
   .featurestextbox p {
-    margin: 1.5rem 22rem;
+    margin: 1.5rem 5rem;
     font-size: var(--p-font-size-desktop);
   }
   
@@ -891,7 +892,7 @@ body:has(#menu-toggle:checked) {
     font-size: 1.1rem;
     border-top: none;
     border-bottom: 2px solid var(--color-shadow);
-    max-width: 16rem;
+    max-width: 39rem;
   }
 
   .featurebuttons input[type="radio"]:checked + label {
@@ -911,9 +912,9 @@ body:has(#menu-toggle:checked) {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 65%;
     max-width: 45rem;
-    margin: 4rem auto 0;
+
     min-height: 33.46rem;
   }
 
@@ -932,18 +933,22 @@ body:has(#menu-toggle:checked) {
   }
   
   .tabstextbox {
-    max-width: 30.125rem;
+    max-width: auto;
     text-align: left;
+    align-self: center;
 
   }
 
   .tabstextbox h1 {
-    font-size: var(--h1-font-size-desktop);
+    font-size: var(--h1-font-size);
+    text-align: center;
+    margin: 0;
   }
 
   .tabstextbox p {
-    font-size: var(--p-font-size-desktop);
-    margin: 1rem 0 1rem 1.3rem;
+    font-size: var(--p-font-size);
+    margin-top: 1rem;
+    text-align: center;
   }
 
   .tabstextbox .texttab1 {
@@ -962,7 +967,7 @@ body:has(#menu-toggle:checked) {
   }
 
   .btninfodesktop {
-    display: block !important;
+    display: none !important;
     margin: 3rem 0 0 1.2rem;
     transform: translateY(-2rem);
   }
@@ -972,6 +977,7 @@ body:has(#menu-toggle:checked) {
     gap: 1rem;
     max-width: 69.375rem;
     margin: 0 auto;
+    padding: 0 2rem;
   }
 
   .downloadstextbox {
@@ -981,12 +987,12 @@ body:has(#menu-toggle:checked) {
 
   .downloadstextbox h1 {
     margin: 0;
-    font-size: var(--h1-font-size-desktop);
+    font-size: var(--h1-font-size);
   }
 
   .downloadstextbox p {
-    margin: 1rem 16rem;
-    font-size: var(--p-font-size-desktop);
+    font-size: var(--p-font-size);
+    margin-top: 1rem;
   }
 
   .downloadcards {
@@ -1018,19 +1024,17 @@ body:has(#menu-toggle:checked) {
   /* FAQ */
   .faq-section {
     max-width: 90%;
-    width: 40%;
-    max-width: 60rem;
     margin: 5rem auto;
   }
 
   .faq-section h1 {
     margin: 0 0 1rem;
-    font-size: var(--h1-font-size-desktop);
+    font-size: var(--h1-font-size);
   }
 
   .faq-section p {
     margin: 2rem 0;
-    font-size: var(--p-font-size-desktop);
+    font-size: var(--p-font-size);
   }
 
   .btninfo {
@@ -1045,7 +1049,6 @@ body:has(#menu-toggle:checked) {
   }
 
   .emailtextbox h2 {
-    margin: 0 32rem 1rem;
     font-size: 1.75rem;
   }
 
@@ -1079,7 +1082,7 @@ body:has(#menu-toggle:checked) {
   .footertextbox {
     flex-direction: row;
     justify-content: flex-start;
-    padding: 2rem 12rem;
+    padding: 2rem 2rem;
     gap: 3rem;
     min-height: auto;
   }
@@ -1166,12 +1169,28 @@ body:has(#menu-toggle:checked) {
     flex: 1;
     max-width: 35rem;
     margin: 0;
+    scale: calc(1.5);
+    right: 30%;
+        transform: translateY(12%);
   }
+
+  .hero .imghero-wrapper::before {
+  content: "";
+  position: absolute;
+  bottom: -8rem;
+  right: -50%;
+  width: 40rem;
+  height: 21rem;
+  background-color: #5368df;
+  border-radius: 0 0 0 7rem;
+  z-index: -1;
+}
   
   .herotextbox {
     flex: 1;
     text-align: left;
     margin-bottom: 3rem;
+    padding-right: 10rem;
   }
   
   .herotextbox h2 {
@@ -1195,6 +1214,10 @@ body:has(#menu-toggle:checked) {
     width: auto;
   }
   /* Features */
+
+  .featurebuttons label:first-of-type { 
+  border-top: none; 
+}
   .features {
     max-width: 100%;
     padding: 2rem;
@@ -1235,6 +1258,13 @@ body:has(#menu-toggle:checked) {
     width: 100%;
   }
 
+  .featuretabimages .featuretabimages-wrapper {
+  &::before {
+  right: 40%;
+  }
+}
+
+
   .break {
     flex-basis: 100%;
     height: 0;
@@ -1272,11 +1302,13 @@ body:has(#menu-toggle:checked) {
 
   .tabstextbox h1 {
     font-size: var(--h1-font-size-desktop);
+    text-align: left;
   }
 
   .tabstextbox p {
     font-size: var(--p-font-size-desktop);
-    margin: 1rem 0 1rem 1.3rem;
+    margin: 1rem 0 0 0;
+    text-align: left;
   }
 
   .tabstextbox .texttab1 {
@@ -1296,7 +1328,7 @@ body:has(#menu-toggle:checked) {
 
   .btninfodesktop {
     display: block !important;
-    margin: 3rem 0 0 1.2rem;
+    margin: 3rem 0;
     transform: translateY(-2rem);
   }
 
