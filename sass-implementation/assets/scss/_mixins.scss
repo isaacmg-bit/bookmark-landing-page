@@ -52,6 +52,18 @@
   }
 }
 
+@mixin tablet {
+  @media (min-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin limbo {
+  @media (min-width: $breakpoint-lb) {
+    @content;
+  }
+}
+
 @mixin section-padding($mobile: 1rem 1.5rem, $desktop: 2rem) {
   padding: $mobile;
   

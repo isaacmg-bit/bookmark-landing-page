@@ -39,13 +39,17 @@
 
   &:hover {
     background-color: $color-white;
-    color: $color-primary;
-    border: 2px solid $color-primary;
+    color: $color-dark;
+    border: 2px solid $color-dark;
   }
-
-  @media (min-width: $breakpoint-lg) {
-    width: auto;
+  
+  @include tablet {
+    max-width: 6rem;
   }
+  @include desktop {
+    min-width: 11rem;
+  }
+  
 }
 
 .btnbrowserchrome {
@@ -63,11 +67,13 @@
     border: 2px solid $color-primary;
   }
 
-  @media (min-width: $breakpoint-lg) {
-    width: auto;
+  @include tablet {
+    max-width: 6rem;
+  }
+  @include desktop {
+    min-width: 11rem;
   }
   
-  @include button-width(auto);
 }
 
 .btnadd {
@@ -89,20 +95,35 @@
   max-width: fit-content;
   box-shadow: 0 0.625rem 0.938rem 0 $color-shadow;
   @include button-hover-inverse;
-  }
+}
 
-  .btninfo {
-    margin: 3rem 0 6rem;
-    
-    @media (min-width: $breakpoint-lg) {
+.btninfo {
+  margin: 3rem 0 6rem;
+  
+  @include tablet {
     margin-top: 4rem;
-    }
   }
+  @include desktop {
+    margin-top: 4rem;
+  }
+}
 
 .btninfodesktop {
   display: none;
 
-  @media (min-width: $breakpoint-lg) {
+  @include tablet {
+    display: block;
+    margin: 3rem 0 0 0.3rem;
+    transform: translateY(-2rem);
+    align-self: center;
+  }
+  @include limbo {
+    display: block;
+    margin: 3rem 0 0 0.3rem;
+    transform: translateY(-2rem);
+    align-self: flex-start;
+  }
+  @include desktop {
     display: block;
     margin: 3rem 0 0 0.3rem;
     transform: translateY(-2rem);

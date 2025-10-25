@@ -9,16 +9,30 @@
   position: relative;
   z-index: 10;
 
+  @include desktop {
+    width: 100vw;
+    padding-right: 15rem;
+  }
+
   .nav {
     @include flex-center(row, space-between, center);
     width: 90%;
     margin: 0 auto;
 
-    .bookmark-image,
+     .bookmark-image,
     .bookmark-image-white {
       @include absolute-position($top: 1.5rem, $left: 2rem);
       @include transition(opacity 0.3s ease);
       z-index: 400;
+    }
+
+    @include tablet { 
+      width: 100%;      
+      .bookmark-image,
+      .bookmark-image-white {
+        margin-left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
     }
 
     @include desktop {
@@ -28,6 +42,8 @@
         top: 50%;
         transform: translateY(-50%);
       }
+    }
+
     }
   
     .bookmark-image-white {
@@ -57,10 +73,14 @@
       margin-left: auto;
       gap: 1.5rem;
       z-index: 200;
-
+      
+      @include tablet {
+        display: block;
+      }
       @include desktop {
         display: block;
       }
+
 
       .menu-image {
         width: auto;
@@ -68,14 +88,18 @@
         display: block;
         @include transition(transform 0.3s ease);
 
-        @include desktop {
-        display: none;
+        @include tablet {
+          display: none;
         }
+        @include desktop {
+          display: none;
+        }
+
       }
     }
 
     .menu {
-      list-style: none;
+       list-style: none;
       @include absolute-position($top: 100%, $left: 0, $right: 0);
       @include flex-center(column, center, center);
       display: none;
@@ -98,12 +122,14 @@
         list-style: none;
         margin-bottom: 2rem;
         cursor: pointer;
-      }
 
-      @include desktop {
-        .social-icons-item {
+        @include tablet {
           display: none;
         }
+        @include desktop {
+          display: none;
+        }
+
       }
 
       li {
@@ -171,11 +197,10 @@
       z-index: 100;
     }
 
-    @include desktop {
+    @include tablet {
       justify-content: space-evenly;
       max-width: 100%;
-      margin: 0;
-
+      
       .menu {
         position: static;
         @include flex-center(row, right, center);
@@ -184,7 +209,6 @@
         opacity: 1;
         box-shadow: none;
         max-width: 100%;
-        margin-right: 3rem;
         border-radius: 0;
 
         li {
@@ -209,14 +233,60 @@
         }
       }
     }
+    @include desktop {
+      justify-content: space-evenly;
+      max-width: 100%;
+
+
+      .menu {
+        position: static;
+        @include flex-center(row, right, center);
+        gap: 2rem;
+        background: transparent;
+        opacity: 1;
+        box-shadow: none;
+        max-width: 100%;
+        margin-right: 3rem;
+        border-radius: 0;
+        margin: 0;
+
+        li {
+          &::before,
+          &::after { 
+            display: none; 
+          }
+
+          a {
+            color: $color-dark;
+            font-size: 0.7rem;
+            letter-spacing: 0.1rem;
+          }
+
+          .login-btn {
+            margin: auto;
+            padding: 0.6rem 1.7rem;
+            font-size: 0.7rem;
+            background-color: $color-secondary;
+            border-color: $color-secondary;
+          }
+        }
+      }
+    }
+
   }
 }
 
+@include tablet {
+  main { 
+    width: 90vw; 
+  }
+}
 @include desktop {
   main { 
     width: 90vw; 
   }
 }
+
 
 // HERO
 .hero {
@@ -225,32 +295,9 @@
   width: 100%;
   position: relative;
   isolation: isolate;
-     &::before {
-    content: "";
-    position: absolute;
-    bottom:53%;
-    right: 0;
-    width: 80%;
-    height: 33%;
-    background-color: $color-primary;
-    border-radius: 0 0 0 7rem;
-    z-index: -1;
-  }
-    @media (min-width: 1440px) {
-    &::before {
-      display: none;
-    }
-  } 
   
-  .imghero {
-    position: relative;
-    width: 100%;
-    max-width: 25rem;
-    margin-bottom: 4rem;
-  }
-
   .herotextbox {
-    h1 { 
+    h2 { 
       margin-bottom: 1rem; 
       line-height: 1.2; 
     }
@@ -258,27 +305,76 @@
       @include gray-text(1.5rem 2rem); 
     }
   }
-
+  
   .buttons {
     @include flex-center(row, center, center);
     gap: 0.8rem;
     width: 100%;
   }
 
-  @include desktop {
+  .imghero-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 25rem;
+    margin-bottom: 4rem;
+
+    .imghero {
+      position: relative;
+      width: 100%;
+      display: block;
+      z-index: 1;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -1rem;
+      right: -50%;
+      width: 130%;
+      height: 85%;
+      background-color: #5368df;
+      border-radius: 0 0 0 7rem;
+      z-index: -1;
+    }
+  }
+
+  @include tablet {
     flex-direction: row-reverse;
     max-width: 100%;
     gap: 4rem;
 
-    .imghero { 
-      flex: 1; 
-      max-width: 35rem; 
-      margin: 0; 
-    }
     .herotextbox {
       flex: 1;
       text-align: left;
       margin-bottom: 3rem;
+
+      h2 { 
+        font-size: $h2-font-size; 
+      }
+      p { 
+        margin: 1.5rem 1rem 1.5rem 0; 
+        font-size: $p-font-size; 
+      }
+    }
+
+    .buttons { 
+      justify-content: flex-start; 
+    }
+  }
+
+@include desktop {
+    flex-direction: row;
+    max-width: 100%;
+    gap: 21.2rem;
+    align-items: flex-start;
+    isolation: auto;
+
+    .herotextbox {
+      align-self: center;
+      text-align: left;
+      margin-bottom: 0;
+      flex: 0 0 50%;
+      order: 1; 
 
       h2 { 
         font-size: $h2-font-size-desktop; 
@@ -290,31 +386,57 @@
     }
 
     .buttons { 
-      justify-content: flex-start; 
+      justify-content: flex-start;
+      order: 2;
+    }
+
+    .imghero-wrapper {
+      flex: 1;
+      order: 3;
+        &::before {
+          content: "";
+          right: 10%;
+          width: 30rem;
+          height: 18rem;
+        }
+        .imghero {
+          width: 200%;
+          right: 120%;
+      }
     }
   }
 }
-
 // FEATURES
 .features {
   @include flex-center;
   width: 100%;
   padding: 7rem 1.5rem 3rem;
 
-  .featurestextbox{
+  .featurestextbox {
     @include text-container(0 0 1rem, 1rem 1.4rem 1.5rem);
   }
 
+  @include tablet {
+    max-width: 100%;
+    padding: 2rem;
+
+    .featurestextbox {
+      p { 
+        margin: 1.5rem 5rem; 
+      }
+    }
+  }
   @include desktop {
     max-width: 100%;
     padding: 2rem;
 
-    .featurestextbox{
+    .featurestextbox {
       p { 
         margin: 1.5rem 22rem; 
       }
     }
   }
+
 }
 
 // DOWNLOADS
@@ -327,6 +449,23 @@
     @include text-container(0 0 1rem, 0 2rem 2rem);
   }
 
+  @include tablet {
+    gap: 1rem;
+    max-width: 69.375rem;
+    margin: 0 auto;
+
+    .downloadstextbox {
+      flex: 1 1 100%;
+      gap: 2rem;
+
+      h1 { 
+        margin: 0; 
+      }
+      p { 
+        margin: 1rem 5rem; 
+      }
+    }
+  }
   @include desktop {
     gap: 1rem;
     max-width: 69.375rem;
@@ -335,6 +474,7 @@
     .downloadstextbox {
       flex: 1 1 100%;
       gap: 2rem;
+
       h1 { 
         margin: 0; 
       }
@@ -343,6 +483,7 @@
       }
     }
   }
+
 }
 
 // FAQ
@@ -359,10 +500,22 @@
     @include gray-text(0 2rem 3rem); 
   }
 
-  @include desktop {
-    width: 40%;
+  @include tablet {
+    width: 70%;
     max-width: 60rem;
     margin: 5rem auto;
+
+    h1 { 
+      margin: 0 0 1rem; 
+      font-size: $h1-font-size; 
+    }
+    p { 
+      margin: 2rem 0; 
+      font-size: $p-font-size; 
+    }
+  }
+  @include desktop {
+    max-width: 40%;
 
     h1 { 
       margin: 0 0 1rem; 
@@ -415,6 +568,24 @@
     }
   }
 
+  @include tablet {
+    padding: 2rem;
+    width: 100vw;
+    height: 20.5rem;
+
+    h2 { 
+      margin: 0 12rem 1rem; 
+      font-size: 1.75rem; 
+    }
+    p { 
+      margin-bottom: 0.5rem; 
+    }
+    .submit-btn { 
+      margin-top: 0; 
+      width: auto; 
+      height: 3.136rem; 
+    }
+  }
   @include desktop {
     padding: 2rem;
     width: 100vw;
@@ -433,6 +604,7 @@
       height: 3.136rem; 
     }
   }
+
 }
 
 .footertextbox {
@@ -454,7 +626,6 @@
   p:hover { 
     color: $color-secondary; 
     cursor: pointer; 
-    
   }
 
   .smicons {
@@ -469,6 +640,21 @@
     }
   }
 
+  @include tablet {
+    flex-direction: row;
+    justify-content: center;
+    padding: 2rem 12rem;
+    gap: 3rem;
+    min-height: auto;
+
+    p { 
+      margin: 0 1.5rem 0 0; 
+    }
+    .smicons { 
+      margin-left: auto; 
+      gap: 2rem; 
+    }
+  }
   @include desktop {
     flex-direction: row;
     justify-content: flex-start;
@@ -484,4 +670,5 @@
       gap: 2rem; 
     }
   }
+
 }

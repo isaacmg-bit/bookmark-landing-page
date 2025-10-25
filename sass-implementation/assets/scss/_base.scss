@@ -29,6 +29,10 @@ main {
   @include desktop {
     width: 90vw;
   }
+  @include tablet {
+    width: 90vw;
+  }
+  
 }
 
 // TYPO
