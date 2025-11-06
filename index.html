@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookmark</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/normalize.css">
+  <link rel="stylesheet" href="src/style.css">
+</head>
+
+<body>
+<div class="wrapper">
+  <header class="header">
+    <nav class="nav" aria-label="Main navigation">
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
+        <label for="menu-toggle" class="menu-icon" aria-label="Menu toggle button">
+        <img src="assets/img/bookmark.svg" alt="Bookmark icon" class="bookmark-image">
+        <img src="assets/img/bookmark-white.svg" alt="Bookmark icon" class="bookmark-image-white">
+        <img src="assets/img/icon-hamburger.svg" alt="Hamburger menu" class="menu-image">
+        </label>
+      <ul class="menu" role="list">
+        <li class="menu-item"><a href="#features">FEATURES</a></li>
+        <li class="menu-item"><a href="#pricing">PRICING</a></li>
+        <li class="menu-item"><a href="#contact">CONTACT</a></li>
+        <li><a href="#login" class="login-btn">LOGIN</a></li>
+        <li class="social-icons-item" role="listitem" aria-label="Social media links">
+          <img src="assets/img/icon-facebook.svg" alt="Facebook logo" class="facebookicon">
+          <img src="assets/img/icon-twitter.svg" alt="Twitter logo" class="twittericon">
+        </li>
+       
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+      <section class="hero" aria-labelledby="hero-heading">
+        <div class="imghero-wrapper">
+      <img src="assets/img/illustration-hero.svg" class="imghero" alt="Hero" aria-hidden="true">
+      </div>
+      <div class="herotextbox">
+        <h2 id="hero-heading">A Simple Bookmark Manager</h2>
+        <p>
+          A clean and simple interface to organize your favourite websites. Open a new browser tab and see your sites load instantly. Try it for free.
+        </p>
+        <div class="buttons">
+          <a href="#downloads" class="btnbrowserchrome">Get it on Chrome</a>
+          <a href="#downloads" class="btnbrowser">Get it on Firefox</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="features" aria-labelledby="features-heading">
+      <div class="featurestextbox">
+        <h1 id="features-heading">Features</h1>
+        <p>Our aim is to make quick and easy for you to access your favourite websites. Your bookmarks sync between your devices so you can access them on the go.</p>
+      </div>
+      <div class="featurebuttons">
+        <input type="radio" name="boton-seleccion" id="btn1" hidden checked aria-label="Show Simple Bookmarking">
+        <label for="btn1" role="tab" tabindex="0" aria-selected="true" aria-controls="tab1-content">Simple Bookmarking</label>
+        <input type="radio" name="boton-seleccion" id="btn2" hidden aria-label="Show Speedy Searching">
+        <label for="btn2" role="tab" tabindex="0" aria-selected="false" aria-controls="tab2-content">Speedy Searching</label>
+        <input type="radio" name="boton-seleccion" id="btn3" hidden aria-label="Show Easy Sharing">
+        <label for="btn3" role="tab" tabindex="0" aria-selected="false" aria-controls="tab3-content">Easy Sharing</label>
+        <div class="break"></div>
+        <div class="featuretabimages">
+          <div class="featuretabimages-wrapper">
+          <img src="assets/img/illustration-features-tab-1.svg" class="imgtab1" alt="Bookmarking">
+          <img src="assets/img/illustration-features-tab-2.svg" class="imgtab2" alt="Searching">
+          <img src="assets/img/illustration-features-tab-3.svg" class="imgtab3" alt="Sharing">
+          </div>
+        </div>
+        <div class="tabstextbox">
+          <div class="texttab1" id="tab1-content" role="tabpanel" aria-labelledby="btn1">
+            <h1>Bookmark in one click</h1>
+            <p>Organize your bookmarks however you like. Our simple drag-and-drop interface gives you complete control over how you manage your favorite sites.</p>
+          </div>
+          <div class="texttab2" id="tab2-content" role="tabpanel" aria-labelledby="btn2">
+            <h1>Intelligent search</h1>
+            <p>Our powerful search feature will help you find saved sites in no time at all. No need to trawl through all of your bookmarks</p>
+          </div>
+          <div class="texttab3" id="tab3-content" role="tabpanel" aria-labelledby="btn3">
+            <h1>Share your bookmarks</h1>
+            <p>Easily share your bookmarks and collections with others. Create a shareable link that you can send at the click of a button.</p>
+          </div>
+          <button class="btninfodesktop" aria-label="Get more information about features">More Info</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="downloads" class="downloads" aria-labelledby="downloads-heading">
+      <div class="downloadstextbox">
+        <h1 id="downloads-heading">Download the extension</h1>
+        <p>We've got more browsers in the pipeline. Please do let us know if you've got a favourite you'd like us to prioritize.</p>
+      </div>
+      <div class="downloadcards">
+         <div class="browser-card browser-cardchrome">
+            <img src="assets/img/logo-chrome.svg" alt="Chrome Logo">
+            <h1>Add to Chrome</h1>
+            <p>Minimum version 62</p>
+            <img src="assets/img/bg-dots.svg" class="imgdots" alt="Dots separator" aria-hidden="true">
+            <button class="btnadd" aria-label="Add and install Chrome extension">Add & Install extension</button>
+          </div>
+          <div class="browser-card browser-cardfirefox">
+            <img src="assets/img/logo-firefox.svg" alt="Firefox Logo">
+            <h1>Add to Firefox</h1>
+            <p>Minimum version 55</p>
+            <img src="assets/img/bg-dots.svg" class="imgdots" alt="Dots separator" aria-hidden="true">
+            <button class="btnadd" aria-label="Add and install Firefox extension">Add & Install extension</button>
+          </div>
+          <div class="browser-card browser-cardopera">
+            <img src="assets/img/logo-opera.svg" alt="Opera Logo">
+            <h1>Add to Opera</h1>
+            <p>Minimum version 46</p>
+            <img src="assets/img/bg-dots.svg" class="imgdots" alt="Dots separator" aria-hidden="true">
+            <button class="btnadd" aria-label="Add and install Opera extension">Add & Install extension</button>
+          </div>
+        </div>
+    </section>
+
+    <section class="faq-section" aria-labelledby="faq-heading">
+      <h1 id="faq-heading">Frequently Asked Questions</h1>
+      <p>Here are some of our FAQs. If you have any other questions you'd like answered please feel free to email us.</p>
+      <details class="faq-item">
+        <summary aria-label="What is Bookmark?">What is Bookmark?</summary>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </details>
+      <details class="faq-item">
+        <summary aria-label="How can I request a new browser?">How can I request a new browser?</summary>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </details>
+      <details class="faq-item">
+        <summary aria-label="Is there a mobile app?">Is there a mobile app?</summary>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </details>
+      <details class="faq-item">
+        <summary aria-label="What about other Chromium browsers?">What about other Chromium browsers?</summary>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </details>
+      <button class="btninfo" aria-label="Get more information">More Info</button>
+    </section>
+  </main>
+
+  <footer>
+    <div id="contact" class="emailtextbox">
+      <p>35.000+ ALREADY JOINED</p>
+      <h2>Stay up-to-date with what we're doing</h2>
+      <div class="emailbox">
+        <form aria-label="Newsletter subscription form">
+          <div class="email-wrapper">
+            <input class="email-input" type="email" required placeholder="Enter your email address" aria-label="Email address" aria-required="true" aria-describedby="email-error" />
+            <p id="email-error" role="alert" aria-live="polite">Whoops, make sure it's an email.</p>
+          </div>   
+          <input class="submit-btn" type="submit" value="Contact Us" />
+        </form>
+      </div>
+    </div>
+    <div class="footertextbox">
+      <a href="#" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;"><img src="assets/img/bookmark-logo-footer.svg" alt="Bookmark icon"/></a>
+       <a href="#features">FEATURES</a>
+      <a href="">PRICING</a>
+      <a href="#contact">CONTACT</a>
+      <div class="smicons" aria-label="Social media links">
+      <a href="#" aria-label="Visit our Facebook page"><img src="assets/img/icon-facebook.svg" alt="Facebook logo" class="facebookicon"></a>
+      <a href="#" aria-label="Visit our Twitter page"><img src="assets/img/icon-twitter.svg" alt="Twitter logo" class="twittericon"></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</div>
+</body>
+</html>
