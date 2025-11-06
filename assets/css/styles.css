@@ -146,19 +146,19 @@ p {
 .btninfodesktop:hover {
   background-color: var(--color-white);
   color: var(--color-primary);
-  border: 2px solid var(--color-primary);
+  border: 0.125rem solid var(--color-primary);
 }
 
 .btnbrowser:hover {
   background-color: var(--color-white);
   color: var(--color-primary);
-  border: 2px solid var(--color-primary);
+  border: 0.125rem solid var(--color-primary);
 }
 
 .submit-btn:hover {
   background-color: var(--color-white);
   color: var(--color-secondary);
-  border: 2px solid var(--color-secondary);
+  border: 0.125rem solid var(--color-secondary);
 }
 
 /*  HEADER & NAV  */
@@ -870,12 +870,12 @@ body:has(#menu-toggle:checked) {
   .featurebuttons label {
     font-size: 1.1rem;
     border-top: none;
-    border-bottom: 2px solid var(--color-shadow);
+    border-bottom: 0.125rem solid var(--color-shadow);
     max-width: 39rem;
   }
 
   .featurebuttons input[type="radio"]:checked + label {
-    border-bottom: 2px solid var(--color-secondary);
+    border-bottom: 0.125rem solid var(--color-secondary);
   }
 
   .featurebuttons input[type="radio"]:checked + label::after {
@@ -1070,8 +1070,10 @@ body:has(#menu-toggle:checked) {
 
 @media (min-width: 1440px) {
   /* Navigation */
+
   .wrapper {
     width: 1440px;
+    overflow-x: hidden;
     margin: 0 auto;
   }
 
@@ -1117,8 +1119,8 @@ body:has(#menu-toggle:checked) {
 
   .hero .imghero-wrapper::before {
     bottom: 8rem;
-    right: -8%;
-    width: 75%;
+    right: 7%;
+    width: 55%;
     height: 55%;
     background-color: #5368df;
     border-radius: 0 0 0 7rem;
@@ -1233,5 +1235,6 @@ body:has(#menu-toggle:checked) {
   .emailtextbox,
   .footertextbox {
     width: 100vw;
+    
   }
 }
