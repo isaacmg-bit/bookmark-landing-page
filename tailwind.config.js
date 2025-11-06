@@ -40,7 +40,7 @@ export default {
         sm: "640px",
         md: "768px",
         lg: "1024px",
-        xl: "1440px",
+        xxl: "1440px",
       },
       boxShadow: {
         base: "0 0.625rem 0.938rem 0 rgba(128, 128, 128, 0.199)",

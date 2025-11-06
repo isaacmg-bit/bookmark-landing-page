@@ -1,54 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bookmark</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="src/style.css">
 </head>
 
 <body class="font-rubik bg-white text-dark flex flex-col items-center justify-center min-h-screen text-center [&:has(#menu-toggle:checked)]:overflow-hidden">
-<div class="w-full mx-auto md:w-[768px] xl:w-[1440px] xl:overflow-x-hidden">
-  <header class="bg-white p-6 w-full z-10 max-w-[1440px]">
-    <nav class="flex items-center justify-between w-[90%] mx-auto md:gap-12 md:max-w-full md:mx-0 xl:justify-evenly" aria-label="Main navigation">
-      <input type="checkbox" id="menu-toggle" class="menu-toggle peer hidden" />
-        <label for="menu-toggle" class="menu-icon flex justify-between items-center w-full cursor-pointer z-[200] md:hidden md:pointer-events-none xl:ml-[5rem]">
-          <img src="assets/img/bookmark.svg" alt="Bookmark icon" class="bookmark-image hidden peer-checked:hidden md:block lg:block " />
-          <img src="assets/img/bookmark-white.svg" alt="Bookmark icon" class="bookmark-image-white hidden peer-checked:block z-[300]" />
-          <img src="assets/img/icon-hamburger.svg" alt="Hamburger menu" class="menu-image peer-checked:hidden transition-transform duration-300 ease-in-out md:hidden md:pointer-events-none" />
-          <img src="assets/img/icon-close.svg" alt="Close menu" class="menu-image hidden peer-checked:block transition-transform duration-300 ease-in-out md:hidden md:pointer-events-none" />
+  <div class="w-full mx-auto md:w-3xl xl:w-[1440px] xl:overflow-x-hidden">
+    <header class="bg-white p-10 w-full z-10 max-w-[1440px]">
+      <nav class="flex items-center justify-between w-[90%] mx-auto md:gap-12 md:max-w-full md:mx-0 xl:justify-evenly" aria-label="Main navigation">
+        <input type="checkbox" id="menu-toggle" class="menu-toggle peer hidden">
+        <label for="menu-toggle" class="menu-icon flex justify-between items-center w-full cursor-pointer z-200 md:hidden md:pointer-events-none xl:ml-20">
+          <img src="assets/img/bookmark.svg" alt="Bookmark icon" class="bookmark-image peer-checked:hidden">
+          <img src="assets/img/bookmark-white.svg" alt="Bookmark icon" class="bookmark-image-white hidden peer-checked:block z-300">
+          <img src="assets/img/icon-hamburger.svg" alt="Hamburger menu" class="menu-image peer-checked:hidden transition-transform duration-300 ease-in-out md:hidden md:pointer-events-none">
+          <img src="assets/img/icon-close.svg" alt="Close menu" class="menu-image hidden peer-checked:block transition-transform duration-300 ease-in-out md:hidden md:pointer-events-none">
         </label>
-      <ul class="menu hidden absolute top-full left-0 right-0 flex-col text-center gap-6 bg-white shadow-[0_0.5rem_1.25rem_rgba(0,0,0,0.1)] rounded-b-[0.5rem] w-full opacity-0 transition-opacity duration-300 ease-in-out list-none md:static md:flex md:flex-row md:items-center md:justify-end md:gap-8 md:bg-transparent md:opacity-100 md:shadow-none md:max-w-full md:mr-[3rem] md:rounded-none">
-        <li class="menu-item relative"><a class="no-underline text-white font-normal text-[1.5rem] tracking-[0.063rem] transition-colors duration-300 hover:text-secondary md:text-dark md:text-[0.7rem] md:tracking-[0.1rem]" href="#features">FEATURES</a></li>
-        <li class="menu-item relative"><a class="no-underline text-white font-normal text-[1.5rem] tracking-[0.063rem] transition-colors duration-300 hover:text-secondary md:text-dark md:text-[0.7rem] md:tracking-[0.1rem]" href="#pricing">PRICING</a></li>
-        <li class="menu-item relative"><a class="no-underline text-white font-normal text-[1.5rem] tracking-[0.063rem] transition-colors duration-300 hover:text-secondary md:text-dark md:text-[0.7rem] md:tracking-[0.1rem]" href="#contact">CONTACT</a></li>
-        <li><a href="#login" class="grid bg-primary2 text-white rounded-[0.313rem] border border-[0.125rem] border-white font-normal tracking-[0.188rem] text-[1.2rem] px-[8rem] py-[0.6rem] mt-[0.8rem] mb-8 hover:bg-transparent hover:text-secondary md:mx-auto md:px-[1.7rem] md:py-[0.6rem] md:text-[0.7rem] md:bg-secondary md:border-secondary">LOGIN</a></li>
-        <li class="flex justify-center items-center gap-[3.125rem] mb-8 p-0 list-none cursor-pointermd:hidden" role="listitem" aria-label="Social media links">
-          <img src="assets/img/icon-facebook.svg" alt="Facebook logo" class="facebookicon">
-          <img src="assets/img/icon-twitter.svg" alt="Twitter logo" class="twittericon">
-        </li>
-      </ul>
-    </nav>
-  </header>
 
+        <ul
+          class="menu hidden absolute top-full left-0 right-0 flex-col text-center gap-6 bg-white shadow-[0_0.5rem_1.25rem_rgba(0,0,0,0.1)] rounded-b-lg w-full opacity-0 transition-opacity duration-300 ease-in-out list-none md:static md:flex md:flex-row md:items-center md:justify-end md:gap-8 md:bg-transparent md:opacity-100 md:shadow-none md:max-w-full md:mr-12 md:rounded-none">
+          <li class="menu-item relative">
+            <a href="#features" class="no-underline text-white font-normal text-[1.5rem] tracking-[0.063rem] transition-colors duration-300 hover:text-secondary md:text-dark md:text-[0.7rem] md:tracking-[0.1rem]">
+              FEATURES
+            </a>
+          </li>
+          <li class="menu-item relative">
+            <a href="#pricing" class="no-underline text-white font-normal text-[1.5rem] tracking-[0.063rem] transition-colors duration-300 hover:text-secondary md:text-dark md:text-[0.7rem] md:tracking-[0.1rem]">
+              PRICING
+            </a>
+          </li>
+          <li class="menu-item relative">
+            <a href="#contact" class="no-underline text-white font-normal text-[1.5rem] tracking-[0.063rem] transition-colors duration-300 hover:text-secondary md:text-dark md:text-[0.7rem] md:tracking-[0.1rem]">
+              CONTACT
+            </a>
+          </li>
+          <li>
+            <a href="#login"
+              class="grid bg-primary2 text-white rounded-[0.313rem] border-2 border-white font-normal tracking-[0.188rem] text-[1.2rem] px-32 py-[0.6rem] mt-[0.8rem] mb-8 hover:bg-transparent hover:text-secondary md:mx-auto md:px-[1.7rem] md:py-[0.6rem] md:text-[0.7rem] md:bg-secondary md:border-secondary">
+              LOGIN
+            </a>
+          </li>
+          <li class="flex justify-center items-center gap-12.5 mb-8 p-0 list-none cursor-pointer md:hidden" role="listitem" aria-label="Social media links">
+            <img src="assets/img/icon-facebook.svg" alt="Facebook logo" class="facebookicon">
+            <img src="assets/img/icon-twitter.svg" alt="Twitter logo" class="twittericon">
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-  <main>
+    <main>
 
-      <section class="hero" aria-labelledby="hero-heading">
-        <div class="imghero-wrapper">
-      <img src="assets/img/illustration-hero.svg" class="imghero" alt="Hero" aria-hidden="true">
+    <section class="hero flex flex-col items-center justify-center px-6 py-8 relative isolate md:flex-row-reverse md:gap-16 md:px-8 md:py-16 xl:gap-8 xl:max-w-full">
+      <div class="imghero-wrapper relative w-full max-w-100 mb-16 md:flex-1 md:max-w-[20rem] md:mb-0 xl:min-w-225 xl:h-150 xl:flex xl:items-center xl:justify-center xl:max-w-none">
+        <img src="assets/img/illustration-hero.svg" alt="Hero image" class="w-auto xl:w-[75%] xl:h-[80%] relative z-1 mb-50">
+        <div class="absolute -bottom-[-35%] right-[-7%] w-[90%] h-[50%] bg-primary rounded-bl-[7rem] z-[-1] md:right-[-4.4rem] md:w-[18rem] xl:bottom-35 xl:right-[7%] xl:w-[55%] xl:h-[59%]">
+        </div>
       </div>
-      <div class="herotextbox">
-        <h2  id="hero-heading">A Simple Bookmark Manager</h2>
-        <p>
-          A clean and simple interface to organize your favourite websites. Open a new browser tab and see your sites load instantly. Try it for free.
+      <div class="herotextbox flex-1 text-center md:text-left md:mb-12 xl:flex-none xl:w-120 xl:self-start xl:mt-6 xl:ml-45">
+        <h2 class="mt-4 leading-[1.2] text-[1.5rem] md:text-[1.9rem] xl:text-[3rem] font-medium">
+          A Simple Bookmark Manager
+        </h2>
+        <p class="text-gray mt-6 mb-6 mx-8 md:mx-0 md:my-6 md:text-[0.95rem] xl:text-[1.10rem]">
+          A clean and simple interface to organize your favourite websites.
+          Open a new browser tab and see your sites load instantly. Try it for free.
         </p>
-        <div class="buttons">
-          <a href="#downloads" class="w-full text-center border-none rounded-md cursor-pointer font-medium px-6 py-4 no-underline inline-block shadow-base bg-primary text-white text-[0.85rem] hover:bg-white hover:text-primary hover:border hover:border-[0.125rem] hover:border-primary md:w-32 xl:w-auto">Get it on Chrome</a>
-          <a href="#downloads" class="border-none rounded-md cursor-pointer font-[700] px-6 py-4 no-underline inline-block shadow-base w-full text-center font-medium bg-lightGray text-dark text-[0.85rem] hover:bg-white hover:text-primary hover:border hover:border-[0.125rem] hover:border-primary md:w-32 xl:w-auto">Get it on Firefox</a>
+        <div class="flex flex-row gap-4 items-center justify-center md:justify-start md:items-start xl:gap-6 xl:mt-6">
+          <a href="#" class="bg-primary text-white font-buttons text-[0.8rem] px-7 py-4 rounded-md shadow-base hover:bg-white hover:text-primary hover:border-2 hover:border-primary transition duration-300 ease-in-out">Get it on Chrome</a>
+          <a href="#" class="bg-lightGray text-dark font-buttons text-[0.8rem] px-7 py-4 rounded-md shadow-base hover:bg-white hover:text-primary hover:border-2 hover:border-primary transition duration-300 ease-in-out">Get it on Firefox</a>
         </div>
       </div>
     </section>
@@ -67,7 +92,7 @@
         <label for="btn3" role="tab" tabindex="0" aria-selected="false" aria-controls="tab3-content">Easy Sharing</label>
         <div class="break"></div>
         <div class="featuretabimages">
-          <div class="featuretabimages-wrapper">
+          <!-- <div class="featuretabimages-wrapper"> -->
           <img src="assets/img/illustration-features-tab-1.svg" class="imgtab1" alt="Bookmarking">
           <img src="assets/img/illustration-features-tab-2.svg" class="imgtab2" alt="Searching">
           <img src="assets/img/illustration-features-tab-3.svg" class="imgtab3" alt="Sharing">
@@ -86,7 +111,7 @@
             <h1>Share your bookmarks</h1>
             <p>Easily share your bookmarks and collections with others. Create a shareable link that you can send at the click of a button.</p>
           </div>
-          <button class="hidden w-full max-w-fit border-none rounded-md cursor-pointer font-[700] px-6 py-4 no-underline inline-block shadow-base bg-primary text-white text-[0.8rem] hover:bg-white hover:text-primary hover:border hover:border-[0.125rem] hover:border-primary md:hidden md:mt-[3rem] md:ml-[1.2rem] md:translate-y-[-2rem] xl:block xl:mt-[3rem] xl:mb-0" aria-label="Get more information about features">More Info</button>
+          <button class="hidden w-full max-w-fit border-none rounded-md cursor-pointer font-[700] px-6 py-4 no-underline inline-block shadow-base bg-primary text-white text-[0.8rem] hover:bg-white hover:text-primary hover:border hover:border-[0.125rem] hover:border-primary md:hidden md:mt-[3rem] md:ml-[1.2rem] md:translate-y-[-2rem] xxl:block xxl:mt-[3rem] xxl:mb-0" aria-label="Get more information about features">More Info</button>
         </div>
       </div>
     </section>
