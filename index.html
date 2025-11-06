@@ -7,30 +7,29 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="src/normalize.css">
   <link rel="stylesheet" href="src/style.css">
 </head>
 
-<body>
-<div class="wrapper">
-  <header class="header">
-    <nav class="nav" aria-label="Main navigation">
-      <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
-        <label for="menu-toggle" class="menu-icon" aria-label="Menu toggle button">
-        <img src="assets/img/bookmark.svg" alt="Bookmark icon" class="bookmark-image">
-        <img src="assets/img/bookmark-white.svg" alt="Bookmark icon" class="bookmark-image-white">
-        <img src="assets/img/icon-hamburger.svg" alt="Hamburger menu" class="menu-image">
+<body class="font-rubik bg-white text-dark flex flex-col items-center justify-center min-h-screen text-center [&:has(#menu-toggle:checked)]:overflow-hidden">
+<div class="w-full mx-auto md:w-[768px] xl:w-[1440px] xl:overflow-x-hidden">
+  <header class="bg-white p-6 w-full z-10 max-w-[1440px]">
+    <nav class="flex items-center justify-between w-[90%] mx-auto md:gap-12 md:max-w-full md:mx-0 xl:justify-evenly" aria-label="Main navigation">
+      <input type="checkbox" id="menu-toggle" class="menu-toggle peer hidden" />
+        <label for="menu-toggle" class="menu-icon flex justify-between items-center w-full cursor-pointer z-[200] md:hidden md:pointer-events-none xl:ml-[5rem]">
+          <img src="assets/img/bookmark.svg" alt="Bookmark icon" class="bookmark-image hidden peer-checked:hidden md:block lg:block " />
+          <img src="assets/img/bookmark-white.svg" alt="Bookmark icon" class="bookmark-image-white hidden peer-checked:block z-[300]" />
+          <img src="assets/img/icon-hamburger.svg" alt="Hamburger menu" class="menu-image peer-checked:hidden transition-transform duration-300 ease-in-out md:hidden md:pointer-events-none" />
+          <img src="assets/img/icon-close.svg" alt="Close menu" class="menu-image hidden peer-checked:block transition-transform duration-300 ease-in-out md:hidden md:pointer-events-none" />
         </label>
-      <ul class="menu" role="list">
-        <li class="menu-item"><a href="#features">FEATURES</a></li>
-        <li class="menu-item"><a href="#pricing">PRICING</a></li>
-        <li class="menu-item"><a href="#contact">CONTACT</a></li>
-        <li><a href="#login" class="login-btn">LOGIN</a></li>
-        <li class="social-icons-item" role="listitem" aria-label="Social media links">
+      <ul class="menu hidden absolute top-full left-0 right-0 flex-col text-center gap-6 bg-white shadow-[0_0.5rem_1.25rem_rgba(0,0,0,0.1)] rounded-b-[0.5rem] w-full opacity-0 transition-opacity duration-300 ease-in-out list-none md:static md:flex md:flex-row md:items-center md:justify-end md:gap-8 md:bg-transparent md:opacity-100 md:shadow-none md:max-w-full md:mr-[3rem] md:rounded-none">
+        <li class="menu-item relative"><a class="no-underline text-white font-normal text-[1.5rem] tracking-[0.063rem] transition-colors duration-300 hover:text-secondary md:text-dark md:text-[0.7rem] md:tracking-[0.1rem]" href="#features">FEATURES</a></li>
+        <li class="menu-item relative"><a class="no-underline text-white font-normal text-[1.5rem] tracking-[0.063rem] transition-colors duration-300 hover:text-secondary md:text-dark md:text-[0.7rem] md:tracking-[0.1rem]" href="#pricing">PRICING</a></li>
+        <li class="menu-item relative"><a class="no-underline text-white font-normal text-[1.5rem] tracking-[0.063rem] transition-colors duration-300 hover:text-secondary md:text-dark md:text-[0.7rem] md:tracking-[0.1rem]" href="#contact">CONTACT</a></li>
+        <li><a href="#login" class="grid bg-primary2 text-white rounded-[0.313rem] border border-[0.125rem] border-white font-normal tracking-[0.188rem] text-[1.2rem] px-[8rem] py-[0.6rem] mt-[0.8rem] mb-8 hover:bg-transparent hover:text-secondary md:mx-auto md:px-[1.7rem] md:py-[0.6rem] md:text-[0.7rem] md:bg-secondary md:border-secondary">LOGIN</a></li>
+        <li class="flex justify-center items-center gap-[3.125rem] mb-8 p-0 list-none cursor-pointermd:hidden" role="listitem" aria-label="Social media links">
           <img src="assets/img/icon-facebook.svg" alt="Facebook logo" class="facebookicon">
           <img src="assets/img/icon-twitter.svg" alt="Twitter logo" class="twittericon">
         </li>
-       
       </ul>
     </nav>
   </header>
@@ -43,7 +42,7 @@
       <img src="assets/img/illustration-hero.svg" class="imghero" alt="Hero" aria-hidden="true">
       </div>
       <div class="herotextbox">
-        <h2 id="hero-heading">A Simple Bookmark Manager</h2>
+        <h2  id="hero-heading">A Simple Bookmark Manager</h2>
         <p>
           A clean and simple interface to organize your favourite websites. Open a new browser tab and see your sites load instantly. Try it for free.
         </p>
