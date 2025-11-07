@@ -4,6 +4,14 @@ export default {
     "./index.html",
     "./src/**/*.{html,js,ts,jsx,tsx}",
   ],
+  safelist: [
+    'text-h1',
+    'text-h2',
+    'text-p',
+    'text-h1-desktop',
+    'text-h2-desktop',
+    'text-p-desktop',
+  ],
   theme: {
     extend: {
       colors: {

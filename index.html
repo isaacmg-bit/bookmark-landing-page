@@ -13,11 +13,11 @@
 </head>
 
 <body class="font-rubik bg-white text-dark flex flex-col items-center justify-center min-h-screen text-center [&:has(#menu-toggle:checked)]:overflow-hidden">
-  <div class="w-full mx-auto md:w-3xl xl:w-[1440px] xl:overflow-x-hidden">
-    <header class="bg-white p-10 w-full z-10 max-w-[1440px]">
-      <nav class="flex items-center justify-between w-[90%] mx-auto md:gap-12 md:max-w-full md:mx-0 xl:justify-evenly" aria-label="Main navigation">
+  <div class="w-full overflow-x-hidden mx-auto md:max-w-[768px] xxl:max-w-[1440px] xxl:w-full">
+    <header class="bg-white p-10 w-full z-10 max-w-[1440px] xxl:min-w-[1440px]">
+      <nav class="flex items-center justify-between  mx-auto md:w-full md:gap-12 md:max-w-full md:mx-0 xxl:w-[90%] xxl:justify-evenly" aria-label="Main navigation">
         <input type="checkbox" id="menu-toggle" class="menu-toggle peer hidden">
-        <label for="menu-toggle" class="menu-icon flex justify-between items-center w-full cursor-pointer z-200 md:hidden md:pointer-events-none xl:ml-20">
+        <label for="menu-toggle" class="menu-icon flex justify-between items-center w-full cursor-pointer z-200 xxl:ml-20">
           <img src="assets/img/bookmark.svg" alt="Bookmark icon" class="bookmark-image peer-checked:hidden">
           <img src="assets/img/bookmark-white.svg" alt="Bookmark icon" class="bookmark-image-white hidden peer-checked:block z-300">
           <img src="assets/img/icon-hamburger.svg" alt="Hamburger menu" class="menu-image peer-checked:hidden transition-transform duration-300 ease-in-out md:hidden md:pointer-events-none">
@@ -25,7 +25,7 @@
         </label>
 
         <ul
-          class="menu hidden absolute top-full left-0 right-0 flex-col text-center gap-6 bg-white shadow-[0_0.5rem_1.25rem_rgba(0,0,0,0.1)] rounded-b-lg w-full opacity-0 transition-opacity duration-300 ease-in-out list-none md:static md:flex md:flex-row md:items-center md:justify-end md:gap-8 md:bg-transparent md:opacity-100 md:shadow-none md:max-w-full md:mr-12 md:rounded-none">
+          class="menu hidden absolute top-full left-0 right-0 flex-col text-center gap-6 bg-white shadow-[0_0.5rem_1.25rem_rgba(0,0,0,0.1)] rounded-b-lg w-full opacity-0 transition-opacity duration-300 ease-in-out list-none md:static md:flex md:flex-row md:items-center md:justify-end md:gap-8 md:bg-transparent md:opacity-100 md:shadow-none md:max-w-full md:mr-0 md:rounded-none">
           <li class="menu-item relative">
             <a href="#features" class="no-underline text-white font-normal text-[1.5rem] tracking-[0.063rem] transition-colors duration-300 hover:text-secondary md:text-dark md:text-[0.7rem] md:tracking-[0.1rem]">
               FEATURES
@@ -57,64 +57,81 @@
 
     <main>
 
-    <section class="hero flex flex-col items-center justify-center px-6 py-8 relative isolate md:flex-row-reverse md:gap-16 md:px-8 md:py-16 xl:gap-8 xl:max-w-full">
-      <div class="imghero-wrapper relative w-full max-w-100 mb-16 md:flex-1 md:max-w-[20rem] md:mb-0 xl:min-w-225 xl:h-150 xl:flex xl:items-center xl:justify-center xl:max-w-none">
-        <img src="assets/img/illustration-hero.svg" alt="Hero image" class="w-auto xl:w-[75%] xl:h-[80%] relative z-1 mb-50">
-        <div class="absolute -bottom-[-35%] right-[-7%] w-[90%] h-[50%] bg-primary rounded-bl-[7rem] z-[-1] md:right-[-4.4rem] md:w-[18rem] xl:bottom-35 xl:right-[7%] xl:w-[55%] xl:h-[59%]">
+    <section class="hero flex flex-col items-center justify-center px-6 py-8 relative isolate md:flex-row-reverse md:gap-16 md:px-8 md:py-16 xxl:gap-8 xxl:max-w-full">
+      <div class="imghero-wrapper relative w-full max-w-100 mb-16 md:flex-1 md:max-w-[20rem] md:mb-0 xxl:min-w-225 xxl:h-150 xxl:flex xxl:items-center xxl:justify-center xxl:max-w-none">
+        <img src="assets/img/illustration-hero.svg" alt="Hero image" class="w-auto xxl:w-[75%] xxl:h-[80%] relative z-1 mb-50">
+        <div class="absolute -bottom-[-35%] right-[-7%] w-[90%] h-[50%] bg-primary rounded-bl-[7rem] z-[-1] md:right-[-4.4rem] md:w-[18rem] xxl:bottom-35 xxl:right-[7%] xxl:w-[55%] xxl:h-[59%]">
         </div>
       </div>
-      <div class="herotextbox flex-1 text-center md:text-left md:mb-12 xl:flex-none xl:w-120 xl:self-start xl:mt-6 xl:ml-45">
-        <h2 class="mt-4 leading-[1.2] text-[1.5rem] md:text-[1.9rem] xl:text-[3rem] font-medium">
+      <div class="herotextbox flex-1 text-center md:text-left md:mb-12 xxl:flex-none xxl:w-120 xxl:self-start xxl:mt-6 xxl:ml-45">
+        <h2 class="mt-4 leading-[1.2] text-[1.5rem] md:text-[1.9rem] xxl:text-[3rem] font-medium">
           A Simple Bookmark Manager
         </h2>
-        <p class="text-gray mt-6 mb-6 mx-8 md:mx-0 md:my-6 md:text-[0.95rem] xl:text-[1.10rem]">
+        <p class="text-gray mt-6 mb-6 mx-8 md:mx-0 md:my-6 md:text-[0.95rem] xxl:text-[1.10rem]">
           A clean and simple interface to organize your favourite websites.
           Open a new browser tab and see your sites load instantly. Try it for free.
         </p>
-        <div class="flex flex-row gap-4 items-center justify-center md:justify-start md:items-start xl:gap-6 xl:mt-6">
+        <div class="flex flex-row gap-4 items-center justify-center md:justify-start md:items-start xxl:gap-6 xxl:mt-6">
           <a href="#" class="bg-primary text-white font-buttons text-[0.8rem] px-7 py-4 rounded-md shadow-base hover:bg-white hover:text-primary hover:border-2 hover:border-primary transition duration-300 ease-in-out">Get it on Chrome</a>
           <a href="#" class="bg-lightGray text-dark font-buttons text-[0.8rem] px-7 py-4 rounded-md shadow-base hover:bg-white hover:text-primary hover:border-2 hover:border-primary transition duration-300 ease-in-out">Get it on Firefox</a>
         </div>
       </div>
     </section>
 
-    <section id="features" class="features" aria-labelledby="features-heading">
+    <section id="features" class="flex flex-col items-center w-full my-4 md:flex md:justify-center md:items-center md:flex-wrap md:flex-row md:max-w-none md:my-0" aria-labelledby="features-heading">
       <div class="featurestextbox">
-        <h1 id="features-heading">Features</h1>
-        <p>Our aim is to make quick and easy for you to access your favourite websites. Your bookmarks sync between your devices so you can access them on the go.</p>
+        <h1 class="mt-4 leading-[1.2] text-[1.5rem] md:text-[1.9rem] xxl:text-[3rem] font-medium" id="features-heading">Features</h1>
+        <p class="text-gray mt-6 mb-6 mx-8 md:mx-0 md:my-6 md:text-[0.95rem] xxl:text-[1.10rem]">Our aim is to make quick and easy for you to access your favourite websites. Your bookmarks sync between your devices so you can access them on the go.</p>
       </div>
-      <div class="featurebuttons">
-        <input type="radio" name="boton-seleccion" id="btn1" hidden checked aria-label="Show Simple Bookmarking">
-        <label for="btn1" role="tab" tabindex="0" aria-selected="true" aria-controls="tab1-content">Simple Bookmarking</label>
-        <input type="radio" name="boton-seleccion" id="btn2" hidden aria-label="Show Speedy Searching">
-        <label for="btn2" role="tab" tabindex="0" aria-selected="false" aria-controls="tab2-content">Speedy Searching</label>
-        <input type="radio" name="boton-seleccion" id="btn3" hidden aria-label="Show Easy Sharing">
-        <label for="btn3" role="tab" tabindex="0" aria-selected="false" aria-controls="tab3-content">Easy Sharing</label>
-        <div class="break"></div>
-        <div class="featuretabimages">
-          <!-- <div class="featuretabimages-wrapper"> -->
-          <img src="assets/img/illustration-features-tab-1.svg" class="imgtab1" alt="Bookmarking">
-          <img src="assets/img/illustration-features-tab-2.svg" class="imgtab2" alt="Searching">
-          <img src="assets/img/illustration-features-tab-3.svg" class="imgtab3" alt="Sharing">
-          </div>
+      <div class="flex flex-col items-center w-full my-4 md:flex md:justify-center md:items-center md:flex-wrap md:flex-row md:max-w-none md:my-0">
+        <input type="radio" name="boton-seleccion" id="btn1" class="hidden peer/btn1" checked />
+        <input type="radio" name="boton-seleccion" id="btn2" class="hidden peer/btn2" />
+        <input type="radio" name="boton-seleccion" id="btn3" class="hidden peer/btn3" />
+        <label for="btn1" class="relative w-full px-5 py-[1.2rem] text-center text-[1.10rem] font-p text-gray bg-white cursor-pointer border-b border-[#ccc] hover:text-secondary md:border-t-0 md:border-b-[0.125rem] md:border-b-shadow md:max-w-[39rem] xxl:first:border-t-0 xxl:max-w-[16rem] after:content-[''] after:block after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-1 after:bg-secondary after:transition-[width,left] after:duration-200 after:ease-in-out after:-translate-x-1/2 peer-checked/btn1:text-dark peer-checked/btn1:after:w-1/2">
+          Simple Bookmarking
+        </label>
+        <label for="btn2" class="relative w-full px-5 py-[1.2rem] text-center text-[1.10rem] font-p text-gray bg-white cursor-pointer border-b border-[#ccc] hover:text-secondary md:border-t-0 md:border-b-[0.125rem] md:border-b-shadow md:max-w-[39rem] xxl:first:border-t-0 xxl:max-w-[16rem] after:content-[''] after:block after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-1 after:bg-secondary after:transition-[width,left] after:duration-200 after:ease-in-out after:-translate-x-1/2 peer-checked/btn2:text-dark peer-checked/btn2:after:w-1/2">
+          Speedy Searching
+        </label>
+        <label for="btn3" class="relative w-full px-5 py-[1.2rem] text-center text-[1.10rem] font-p text-gray bg-white cursor-pointer border-b border-[#ccc] hover:text-secondary md:border-t-0 md:border-b-[0.125rem] md:border-b-shadow md:max-w-[39rem] xxl:first:border-t-0 xxl:max-w-[16rem] after:content-[''] after:block after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-1 after:bg-secondary after:transition-[width,left] after:duration-200 after:ease-in-out after:-translate-x-1/2 peer-checked/btn3:text-dark peer-checked/btn3:after:w-1/2">
+          Easy Sharing
+        </label>
+        <div class="md:basis-full md:h-0"></div>
+        <div class="relative flex flex-col items-center justify-center w-full min-h-[460px] max-w-[min(25rem,90vw)] md:justify-center md:max-w-[30rem] md:min-h-[33.46rem] xxl:w-full xxl:mt-[4rem] xxl:mx-auto peer-checked/btn1:block peer-checked/btn2:hidden peer-checked/btn3:hidden">
+          <div class="absolute bottom-[10%] right-[15%] w-[100%] h-[60%] bg-primary rounded-br-[7rem] -z-10 md:w-[30rem]"></div>
+            <img src="assets/img/illustration-features-tab-1.svg" class="block w-full relative transition-opacity duration-300 ease-in mt-16 mb-12 md:max-w-[35rem] md:mt-0" alt="Bookmarking">
         </div>
-        <div class="tabstextbox">
-          <div class="texttab1" id="tab1-content" role="tabpanel" aria-labelledby="btn1">
+        <div class="relative hidden flex-col items-center justify-center w-full min-h-[460px] max-w-[min(25rem,90vw)] md:justify-center md:max-w-[30rem] md:min-h-[33.46rem] xxl:w-full xxl:mt-[4rem] xxl:mx-auto peer-checked/btn1:hidden peer-checked/btn2:block peer-checked/btn3:hidden">
+          <div class="absolute bottom-[10%] right-[15%] w-[100%] h-[60%] bg-primary rounded-br-[7rem] -z-10 md:w-[30rem]"></div>
+          <img src="assets/img/illustration-features-tab-2.svg" class="block w-full relative transition-opacity duration-300 ease-in mt-16 mb-12 md:max-w-[35rem] md:mt-0" alt="Searching">
+      </div>
+      <div class="relative hidden flex-col items-center justify-center w-full min-h-[460px] max-w-[min(25rem,90vw)] md:justify-center md:max-w-[30rem] md:min-h-[33.46rem] xxl:w-full xxl:mt-[4rem] xxl:mx-auto peer-checked/btn1:hidden peer-checked/btn2:hidden peer-checked/btn3:block">
+        <div class="absolute bottom-[10%] right-[15%] w-[100%] h-[60%] bg-primary rounded-br-[7rem] -z-10 md:w-[30rem]"></div>
+        <img src="assets/img/illustration-features-tab-3.svg" class="block w-full relative transition-opacity duration-300 ease-in mt-16 mb-12 md:max-w-[35rem] md:mt-0" alt="Sharing">
+      </div>
+        <div class="tabstextbox block peer-checked/btn1:block peer-checked/btn2:hidden peer-checked/btn3:hidden">
+          <div id="tab1-content" role="tabpanel" aria-labelledby="btn1">
             <h1>Bookmark in one click</h1>
             <p>Organize your bookmarks however you like. Our simple drag-and-drop interface gives you complete control over how you manage your favorite sites.</p>
           </div>
-          <div class="texttab2" id="tab2-content" role="tabpanel" aria-labelledby="btn2">
+          <button class="hidden w-full max-w-fit border-none rounded-md cursor-pointer font-[700] px-6 py-4 no-underline shadow-base bg-primary text-white text-[0.8rem] hover:bg-white hover:text-primary hover:border hover:border-[0.125rem] hover:border-primary md:hidden md:mt-[3rem] md:ml-[1.2rem] md:translate-y-[-2rem] xxl:block xxl:mt-[3rem] xxl:mb-0" aria-label="Get more information about features">More Info</button>
+        </div>
+        <div class="tabstextbox hidden peer-checked/btn1:hidden peer-checked/btn2:block peer-checked/btn3:hidden">
+          <div id="tab2-content" role="tabpanel" aria-labelledby="btn2">
             <h1>Intelligent search</h1>
             <p>Our powerful search feature will help you find saved sites in no time at all. No need to trawl through all of your bookmarks</p>
           </div>
-          <div class="texttab3" id="tab3-content" role="tabpanel" aria-labelledby="btn3">
+          <button class="hidden w-full max-w-fit border-none rounded-md cursor-pointer font-[700] px-6 py-4 no-underline shadow-base bg-primary text-white text-[0.8rem] hover:bg-white hover:text-primary hover:border hover:border-[0.125rem] hover:border-primary md:hidden md:mt-[3rem] md:ml-[1.2rem] md:translate-y-[-2rem] xxl:block xxl:mt-[3rem] xxl:mb-0" aria-label="Get more information about features">More Info</button>
+        </div>
+        <div class="tabstextbox hidden peer-checked/btn1:hidden peer-checked/btn2:hidden peer-checked/btn3:block">
+          <div id="tab3-content" role="tabpanel" aria-labelledby="btn3">
             <h1>Share your bookmarks</h1>
             <p>Easily share your bookmarks and collections with others. Create a shareable link that you can send at the click of a button.</p>
           </div>
-          <button class="hidden w-full max-w-fit border-none rounded-md cursor-pointer font-[700] px-6 py-4 no-underline inline-block shadow-base bg-primary text-white text-[0.8rem] hover:bg-white hover:text-primary hover:border hover:border-[0.125rem] hover:border-primary md:hidden md:mt-[3rem] md:ml-[1.2rem] md:translate-y-[-2rem] xxl:block xxl:mt-[3rem] xxl:mb-0" aria-label="Get more information about features">More Info</button>
+          <button class="hidden w-full max-w-fit border-none rounded-md cursor-pointer font-[700] px-6 py-4 no-underline shadow-base bg-primary text-white text-[0.8rem] hover:bg-white hover:text-primary hover:border hover:border-[0.125rem] hover:border-primary md:hidden md:mt-[3rem] md:ml-[1.2rem] md:translate-y-[-2rem] xxl:block xxl:mt-[3rem] xxl:mb-0" aria-label="Get more information about features">More Info</button>
         </div>
-      </div>
-    </section>
+  </div>
+</section>
 
     <section id="downloads" class="downloads" aria-labelledby="downloads-heading">
       <div class="downloadstextbox">

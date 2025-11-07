@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
 @theme {
+   --breakpoint-md: 768px;
+  --breakpoint-xxl: 1440px;
+
   --color-primary: #5368df;
   --color-primary2: #242946;
   --color-secondary: #fa5757;
@@ -10,21 +13,17 @@
   --color-white: #ffffff;
   --color-shadow: rgba(128, 128, 128, 0.199);
 
-  --h1-font-size: 1.5rem;
-  --h2-font-size: 1.9rem;
-  --p-font-size: 0.95rem;
-  --p-font-size-desktop: 1.10rem;
-  --h1-font-size-desktop: 2rem;
-  --h2-font-size-desktop: 3rem;
+  --font-rubik: "Rubik", sans-serif;
 
-  --h1-font-weight: 500;
-  --h2-font-weight: 500;
-  --p-font-weight: 400;
-  --buttons-font-weight: 700;
+  --text-h1: 1.5rem;
+  --text-h2: 1.9rem;
+  --text-p: 0.95rem;
+  --text-p-desktop: 1.1rem;
+  --text-h1-desktop: 2rem;
+  --text-h2-desktop: 3rem;
 
-  --p-line-height: 1.6rem;
+  --shadow-base: 0 0.625rem 0.938rem 0 rgba(128, 128, 128, 0.199);
 }
-
 
 .menu-toggle { 
   display: none; 
@@ -85,132 +84,18 @@
   
 
 /*
-/*  MENU MOBILE  
-
-
-/*  HERO   
-
-
-
-
-
-
-
-.buttons {
-  display: flex;
-  width: 100% !important;
-}
 
 /*  FEATURES   
-.features {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  padding: 7rem 1.5rem 3rem;
-}
 
-.featurestextbox h1 { 
-  margin-bottom: 1rem; 
-}
 
-.featurestextbox p { 
-  color: var(--color-gray); 
-  margin: 1rem 1.4rem 1.5rem; 
-}
+
 
 /* Feature Tabs  
-.featurebuttons { 
-  display: flex; 
-  flex-direction: column; 
-  align-items: center; 
-  width: 100%; 
-  margin: 1rem 0; 
-} 
 
-.featurebuttons label { 
-  position: relative; 
-  width: 100%; 
-  padding: 1.2rem 1.25rem; 
-  text-align: center; 
-  font-size: 1.1rem; 
-  font-weight: var(--p-font-weight); 
-  color: var(--color-gray); 
-  background-color: var(--color-white); 
-  cursor: pointer; 
-  border: none; 
-  border-bottom: 0.063rem solid #ccc;
-}
-
-.featurebuttons label:hover { 
-  color: var(--color-secondary);
-}
-
-.featurebuttons label:first-of-type { 
-  border-top: 0.063rem solid #ccc; 
-}
-
-.featurebuttons label::after { 
-  content: ""; 
-  position: absolute; 
-  left: 50%; 
-  bottom: 0; 
-  width: 0; 
-  height: 0.25rem; 
-  background-color: var(--color-secondary); 
-  transition: width 0.2s ease, left 0.2s ease; 
-  transform: translateX(-50%); 
-}
-
-.featurebuttons input[type="radio"]:checked + label { 
-  color: var(--color-dark); 
-}
-
-.featurebuttons input[type="radio"]:checked + label::after { 
-  width: 50%; 
-}
 
 /* Feature Images & Content  
-.featuretabimages {
-  display: flex;
-  position: relative;
-  width: auto;
-  width: 100%;
-  max-width: min(25rem, 90vw);
-  height: auto;
-  min-height: 24.75rem;
-  align-items: center;
-}
 
-.featuretabimages img {
-  display: none;
-  width: 100%;
-  max-width: 20.438rem;
-  height: auto;
-  position: relative;
-  transition: opacity 0.3s ease;
-  margin-top: 4rem;
-}
 
-.featuretabimages .featuretabimages-wrapper::before {
-  content: "";
-  position: absolute;
-  bottom: 10%;
-  right: 35%;
-  width: 86%;
-  height: 60%;
-  background-color: #5368df;
-  border-radius: 0 0 7rem 0;
-  z-index: -1;
-  }
-
-#btn1:checked ~ .featuretabimages .imgtab1,
-#btn2:checked ~ .featuretabimages .imgtab2,
-#btn3:checked ~ .featuretabimages .imgtab3 {
-  display: block;
-  margin-bottom: 3rem;
-}
 
 .tabstextbox > div { 
   display: none; 
@@ -469,85 +354,11 @@
 
 /*  MEDIA QUERIES   
 
-@media (min-width: 768px) {
-
+@media (min-width: 768px) { |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
   
-
-
-
-
-
-  
-
-  .buttons {
-    justify-content: flex-start;
-  }
-  
-
-
   /* Features  
-  .features {
-    max-width: 100%;
-    padding: 2rem;
-  }
 
-  .featurestextbox h1 {
-    font-size: var(--h1-font-size-desktop);
-  }
 
-  .featurestextbox p {
-    margin: 1.5rem 5rem;
-    font-size: var(--p-font-size-desktop);
-  }
-  
-  .featurebuttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width: 100%;
-    max-width: auto;
-    margin: 0;
-  }
-
-  .featurebuttons label {
-    font-size: 1.1rem;
-    border-top: none;
-    border-bottom: 0.125rem solid var(--color-shadow);
-    max-width: 39rem;
-  }
-
-  .featurebuttons input[type="radio"]:checked + label {
-    border-bottom: 0.125rem solid var(--color-secondary);
-  }
-
-  .featurebuttons input[type="radio"]:checked + label::after {
-    width: 100%;
-  }
-
-  .break {
-    flex-basis: 100%;
-    height: 0;
-  }
-
-  .featuretabimages {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 30rem;
-    min-height: 33.46rem;
-  }
-
-  .featuretabimages img {
-    max-width: 35rem;
-    margin: 0;
-  }
-
-    .featuretabimages .featuretabimages-wrapper::before {
-    right: 27%;
-    width: 30rem;
-  }
 
   #btn1:checked ~ .tabstextbox,
   #btn2:checked ~ .tabstextbox,
@@ -702,55 +513,12 @@
   }
 }
 
-@media (min-width: 1440px) {
-  /* Navigation  
+@media (min-width: 1440px) { |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
-
-
-
-
-
-  .buttons {
-  display: flex;
-  justify-self: left;
-  gap: 0.8rem;
-  width: 50%;
-}
-
-  /* Hero  
-  
-
-
-
-
-  
 
   /* Features  
-  .featurebuttons label:first-of-type { 
-    border-top: none; 
-  }
 
-  .featurestextbox h1 {
-    font-size: var(--h1-font-size-desktop);
-  }
 
-  .featurestextbox p {
-    margin: 1.5rem 22rem;
-    font-size: var(--p-font-size-desktop);
-  }
-
-  .featurebuttons label {
-    max-width: 16rem;
-  }
-
-  .featuretabimages .featuretabimages-wrapper::before {
-    right: 40%;
-  }
-
-  .featuretabimages {
-    width: 100%;
-    margin: 4rem auto 0;
-  }
   
   .tabstextbox {
     max-width: 30.125rem;
