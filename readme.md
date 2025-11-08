@@ -97,10 +97,15 @@ npm run build # Builds the project for production in the dist/ folder
 ## Screenshots
 
 ### Desktop
-![Desktop version](./assets/img/screenshots/desktopscreen1.png), (./assets/img/screenshots/desktopscreen2.png)
+![Desktop version](./assets/img/screenshots/desktopscreen1.png) 
+(./assets/img/screenshots/desktopscreen2.png)
 
 ### Mobile
-![Mobile version](./assets/img/screenshots/mobilescreen1.png), (./assets/img/screenshots/mobilescreen2.png), (./assets/img/screenshots/mobilescreen3.png), (./assets/img/screenshots/mobilescreen4.png), (./assets/img/screenshots/mobilescreen5.png)
+![Mobile version](./assets/img/screenshots/mobilescreen1.png)
+(./assets/img/screenshots/mobilescreen2.png)
+(./assets/img/screenshots/mobilescreen3.png) 
+(./assets/img/screenshots/mobilescreen4.png)
+(./assets/img/screenshots/mobilescreen5.png)
 
 ---
 
