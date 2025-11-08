@@ -87,43 +87,6 @@
 
 /*  FEATURES   
 
-
-
-
-/* Feature Tabs  
-
-
-/* Feature Images & Content  
-
-
-
-.tabstextbox > div { 
-  display: none; 
-  min-height: 12.948rem;
-}
-
-.tabstextbox .texttab2, 
-.tabstextbox .texttab3 {
-  min-height: 12.948rem;
-}
-
-#btn1:checked ~ .tabstextbox .texttab1,
-#btn2:checked ~ .tabstextbox .texttab2,
-#btn3:checked ~ .tabstextbox .texttab3 { 
-  display: block; 
-}
-
-.tabstextbox h1 { 
-  margin: 1.25rem 1.25rem 0; 
-  line-height: 1.2; 
-  color: var(--color-dark); 
-}
-
-.tabstextbox p { 
-  margin: 1rem 1.5rem 2.1875rem; 
-  color: var(--color-gray); 
-}
-
 /*  DOWNLOADS   
 .downloads {
   display: grid;
@@ -357,44 +320,7 @@
 @media (min-width: 768px) { |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
   
   /* Features  
-
-
-
-  #btn1:checked ~ .tabstextbox,
-  #btn2:checked ~ .tabstextbox,
-  #btn3:checked ~ .tabstextbox {
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
   
-  .tabstextbox {
-    max-width: auto;
-    text-align: left;
-    align-self: center;
-  }
-
-  .tabstextbox h1 {
-    font-size: var(--h1-font-size);
-    text-align: center;
-    margin: 0;
-  }
-
-  .tabstextbox p {
-    font-size: var(--p-font-size);
-    margin-top: 1rem;
-    text-align: center;
-  }
-
-  .tabstextbox .texttab1,
-  .tabstextbox .texttab2,
-  .tabstextbox .texttab3 {
-    min-height: 9.375rem;
-    min-width: 28.125rem;
-  }
-
-
 
   /* Downloads  
   .downloads {
