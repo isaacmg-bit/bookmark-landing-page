@@ -1,4 +1,4 @@
-# bookmark-vanilla-implementation
+# tailwind-implementation
 
 [![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 <!-- TODO: Add more badges here (e.g. license, build, etc.) -->
