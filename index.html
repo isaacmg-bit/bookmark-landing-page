@@ -1,16 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Bookmark</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link
       href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
       rel="stylesheet"
-    />
-    <link rel="stylesheet" href="src/style.css" />
+   />
+    <link rel="stylesheet" href="src/style.css"/>   
+    <style>
+      .menu-toggle:checked ~ .menu {
+        display: flex;
+        position: fixed;
+        top: -1rem;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--color-primary2);
+        opacity: 0.9;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        border-radius: 0;
+        box-shadow: none;
+        z-index: 100;
+        padding: 0;
+      }
+
+      .menu-toggle:checked + .menu-icon .menu-image {
+        content: url("../assets/img/icon-close.svg");
+      }
+
+      .menu-toggle:checked + .menu-icon .bookmark-image {
+        display: none;
+      }
+
+      .menu-toggle:checked + .menu-icon .bookmark-image-white {
+        display: block;
+      }
+    </style>
   </head>
 
   <header>
@@ -31,7 +62,7 @@
               type="checkbox"
               id="menu-toggle"
               class="menu-toggle peer hidden"
-            />
+           />
             <label
               for="menu-toggle"
               class="menu-icon flex justify-between items-center w-full cursor-pointer z-200 xxl:ml-20"
@@ -40,22 +71,22 @@
                 src="assets/img/bookmark.svg"
                 alt="Bookmark icon"
                 class="bookmark-image peer-checked:hidden"
-              />
+             />
               <img
                 src="assets/img/bookmark-white.svg"
                 alt="Bookmark icon"
                 class="bookmark-image-white hidden peer-checked:block z-300"
-              />
+             />
               <img
                 src="assets/img/icon-hamburger.svg"
                 alt="Hamburger menu"
                 class="menu-image peer-checked:hidden transition-transform duration-300 ease-in-out md:hidden md:pointer-events-none"
-              />
+             />
               <img
                 src="assets/img/icon-close.svg"
                 alt="Close menu"
                 class="menu-image hidden peer-checked:block transition-transform duration-300 ease-in-out md:hidden md:pointer-events-none"
-              />
+             />
             </label>
             <ul
               class="menu hidden absolute top-full left-0 right-0 flex-col text-center gap-6 bg-white shadow-[0_0.5rem_1.25rem_rgba(0,0,0,0.1)] rounded-b-lg w-full opacity-0 transition-opacity duration-300 ease-in-out list-none md:static md:flex md:flex-row md:items-center md:justify-end md:gap-8 md:bg-transparent md:opacity-100 md:shadow-none md:max-w-full md:mr-0 md:rounded-none"
@@ -67,6 +98,9 @@
                 >
                   FEATURES
                 </a>
+                <span
+                  class="absolute left-1/2 bottom-[-1rem] translate-x-[-50%] w-[80vw] h-[0.063rem] bg-gray md:hidden xxl:hidden"
+                ></span>
               </li>
               <li class="menu-item relative">
                 <a
@@ -75,6 +109,9 @@
                 >
                   PRICING
                 </a>
+                <span
+                  class="absolute left-1/2 bottom-[-1rem] translate-x-[-50%] w-[80vw] h-[0.063rem] bg-gray md:hidden xxl:hidden"
+                ></span>
               </li>
               <li class="menu-item relative">
                 <a
@@ -83,6 +120,9 @@
                 >
                   CONTACT
                 </a>
+                <span
+                  class="absolute left-1/2 bottom-[-1rem] translate-x-[-50%] w-[80vw] h-[0.063rem] bg-gray md:hidden xxl:hidden"
+                ></span>
               </li>
               <li>
                 <a
@@ -101,12 +141,12 @@
                   src="assets/img/icon-facebook.svg"
                   alt="Facebook logo"
                   class="facebookicon"
-                />
+               />
                 <img
                   src="assets/img/icon-twitter.svg"
                   alt="Twitter logo"
                   class="twittericon"
-                />
+               />
               </li>
             </ul>
           </nav>
@@ -123,7 +163,7 @@
                 src="assets/img/illustration-hero.svg"
                 alt="Hero image"
                 class="w-auto xxl:w-[75%] xxl:h-[80%] xxl:bottom-[13%] relative z-1"
-              />
+             />
               <div
                 class="absolute -bottom-[3%] right-[-15%] w-[90%] h-[80%] bg-primary rounded-bl-[7rem] z-[-1] md:right-[-4.4rem] md:w-[18rem] xxl:bottom-35 xxl:right-[7%] xxl:w-[55%] xxl:h-[59%]"
               ></div>
@@ -134,7 +174,7 @@
               <h2
                 class="mt-4 w-full leading-[1.2] text-h1 md:text-h2 xxl:text-h2-desktop font-medium"
               >
-                A Simple Bookmark <br />
+                A Simple Bookmark <br/>
                 Manager
               </h2>
               <p
@@ -189,19 +229,19 @@
                 id="btn1"
                 class="hidden peer/btn1"
                 checked
-              />
+             />
               <input
                 type="radio"
                 name="boton-seleccion"
                 id="btn2"
                 class="hidden peer/btn2"
-              />
+             />
               <input
                 type="radio"
                 name="boton-seleccion"
                 id="btn3"
                 class="hidden peer/btn3"
-              />
+             />
               <label
                 for="btn1"
                 class="relative w-full px-5 py-[1.2rem] text-center text-p-desktop font-p text-gray bg-white cursor-pointer border-b border-[#ccc] hover:text-secondary md:border-t-0 md:border-b-2 md:border-b-shadow md:max-w-156 xxl:first:border-t-0 xxl:max-w-[16rem] after:content-[''] after:block after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-1 after:bg-secondary after:transition-[width,left] after:duration-200 after:ease-in-out after:-translate-x-1/2 peer-checked/btn1:text-dark peer-checked/btn1:after:w-1/2"
@@ -231,7 +271,7 @@
                   src="assets/img/illustration-features-tab-1.svg"
                   class="block w-full relative transition-opacity duration-300 ease-in mt-16 mb-12 md:max-w-140 md:mt-20 xxl:w-full xxl:max-w-none xxl:mt-0"
                   alt="Bookmarking"
-                />
+               />
               </div>
               <div
                 class="relative hidden flex-col items-center justify-center w-full min-h-[460px] max-w-[min(25rem,90vw)] md:justify-center md:max-w-120 md:min-h-[33.46rem] xxl:w-[40%] xxl:mt-16 xxl:mr-45 xxl:max-w-none xxl:ml-45 peer-checked/btn1:hidden peer-checked/btn2:block peer-checked/btn3:hidden"
@@ -243,7 +283,7 @@
                   src="assets/img/illustration-features-tab-2.svg"
                   class="block w-full relative transition-opacity duration-300 ease-in mt-16 mb-12 md:max-w-140 md:mt-20 xxl:w-[85%] xxl:max-w-none xxl:mt-0"
                   alt="Searching"
-                />
+               />
               </div>
               <div
                 class="relative hidden flex-col items-center justify-center w-full min-h-[460px] max-w-[min(25rem,90vw)] md:justify-center md:max-w-120 md:min-h-[33.46rem] xxl:w-[40%] xxl:mt-16 xxl:mr-45 xxl:max-w-none xxl:ml-45 peer-checked/btn1:hidden peer-checked/btn2:hidden peer-checked/btn3:block"
@@ -255,7 +295,7 @@
                   src="assets/img/illustration-features-tab-3.svg"
                   class="block w-full relative transition-opacity duration-300 ease-in mt-16 mb-12 md:max-w-140 md:mt-20 xxl:w-[90%] xxl:max-w-none xxl:mt-0"
                   alt="Sharing"
-                />
+               />
               </div>
               <div
                 class="tabstextbox w-[80%] block peer-checked/btn1:block peer-checked/btn2:hidden peer-checked/btn3:hidden xxl:w-[30%] xxl:mr-15 xxl:-mt-20"
@@ -360,7 +400,7 @@
                   src="assets/img/logo-chrome.svg"
                   class="mx-auto"
                   alt="Chrome Logo"
-                />
+               />
                 <h1 class="text-[1.2rem] mt-6 mb-0">Add to Chrome</h1>
                 <p class="text-gray mt-2 mb-[2.3rem]">Minimum version 62</p>
                 <img
@@ -368,7 +408,7 @@
                   class="max-w-none w-[calc(100%+48px)] -mx-6"
                   alt="Dots separator"
                   aria-hidden="true"
-                />
+               />
                 <button
                   class="w-full text-center border-none rounded-md cursor-pointer font-medium px-6 py-4 no-underline inline-block bg-primary text-white text-[0.9rem] mt-[1.3rem] mb-2 hover:bg-white hover:text-primary hover:border-2 hover:border-primary"
                   aria-label="Add and install Chrome extension"
@@ -383,7 +423,7 @@
                   src="assets/img/logo-firefox.svg"
                   class="mx-auto"
                   alt="Firefox Logo"
-                />
+               />
                 <h1 class="text-[1.2rem] mt-6 mb-0">Add to Firefox</h1>
                 <p class="text-gray mt-2 mb-[2.3rem]">Minimum version 55</p>
                 <img
@@ -391,7 +431,7 @@
                   class="max-w-none w-[calc(100%+48px)] -mx-6"
                   alt="Dots separator"
                   aria-hidden="true"
-                />
+               />
                 <button
                   class="w-full text-center border-none rounded-md cursor-pointer font-medium px-6 py-4 no-underline inline-block bg-primary text-white text-[0.9rem] mt-[1.3rem] mb-2 hover:bg-white hover:text-primary hover:border-2 hover:border-primary"
                   aria-label="Add and install Firefox extension"
@@ -406,7 +446,7 @@
                   src="assets/img/logo-opera.svg"
                   class="mx-auto"
                   alt="Opera Logo"
-                />
+               />
                 <h1 class="text-[1.2rem] mt-6 mb-0">Add to Opera</h1>
                 <p class="text-gray mt-2 mb-[2.3rem]">Minimum version 46</p>
                 <img
@@ -414,7 +454,7 @@
                   class="max-w-none w-[calc(100%+48px)] -mx-6"
                   alt="Dots separator"
                   aria-hidden="true"
-                />
+               />
                 <button
                   class="w-full text-center border-none rounded-md cursor-pointer font-medium px-6 py-4 no-underline inline-block bg-primary text-white text-[0.9rem] mt-[1.3rem] mb-2 hover:bg-white hover:text-primary hover:border-2 hover:border-primary"
                   aria-label="Add and install Opera extension"
@@ -544,7 +584,7 @@
                     aria-label="Email address"
                     aria-required="true"
                     aria-describedby="email-error"
-                  />
+                 />
                   <p id="email-error" role="alert" aria-live="polite">
                     Whoops, make sure it's an email.
                   </p>
@@ -553,7 +593,7 @@
                   class="w-full max-w-[20rem] border-none rounded-md cursor-pointer font-[600] px-6 py-4 no-underline inline-block bg-secondary text-white mt-4 text-[1rem] hover:bg-white hover:text-secondary hover:border hover:border-[0.125rem] hover:border-secondary md:mt-0 md:w-auto md:h-[3.136rem]"
                   type="submit"
                   value="Contact Us"
-                />
+               />
               </form>
             </div>
           </div>
@@ -564,7 +604,7 @@
               ><img
                 src="assets/img/bookmark-logo-footer.svg"
                 alt="Bookmark icon"
-            /></a>
+           /></a>
             <a href="#features">FEATURES</a>
             <a href="">PRICING</a>
             <a href="#contact">CONTACT</a>
@@ -574,13 +614,13 @@
                   src="assets/img/icon-facebook.svg"
                   alt="Facebook logo"
                   class="facebookicon"
-              /></a>
+             /></a>
               <a href="#" aria-label="Visit our Twitter page"
                 ><img
                   src="assets/img/icon-twitter.svg"
                   alt="Twitter logo"
                   class="twittericon"
-              /></a>
+             /></a>
             </div>
           </div>
         </footer>
