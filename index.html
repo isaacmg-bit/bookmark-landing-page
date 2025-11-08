@@ -15,7 +15,7 @@
       .menu-toggle:checked ~ .menu {
         display: flex;
         position: fixed;
-        top: -1rem;
+        top: 0;
         left: 0;
         width: 100%;
         height: 100%;
@@ -205,7 +205,7 @@
             class="flex flex-col items-center w-full my-4 md:flex md:justify-center md:items-center md:flex-wrap md:flex-row md:max-w-none md:my-0"
             aria-labelledby="features-heading"
           >
-            <div class="featurestextbox w-[80%] xxl:w-[40%] xxl:mb-3">
+            <div class="featurestextbox mt-20 md:mt-0 w-[80%] xxl:w-[40%] xxl:mb-3">
               <h1
                 class="mt-4 leading-[1.2] text-h1 md:text-h2 xxl:text-h2-desktop font-medium"
                 id="features-heading"
@@ -277,7 +277,7 @@
                 class="relative hidden flex-col items-center justify-center w-full min-h-[460px] max-w-[min(25rem,90vw)] md:justify-center md:max-w-120 md:min-h-[33.46rem] xxl:w-[40%] xxl:mt-16 xxl:mr-45 xxl:max-w-none xxl:ml-45 peer-checked/btn1:hidden peer-checked/btn2:block peer-checked/btn3:hidden"
               >
                 <div
-                  class="absolute bottom-[10%] right-[30%] w-full h-[60%] bg-primary rounded-br-[7rem] -z-10 md:w-120 xxl:w-full xxl:left-[-33%] xxl:bottom-[20%]"
+                  class="absolute bottom-[10%] right-[30%] w-full h-[60%] bg-primary rounded-br-[10rem] -z-10 md:w-120 xxl:w-full xxl:left-[-33%] xxl:bottom-[20%]"
                 ></div>
                 <img
                   src="assets/img/illustration-features-tab-2.svg"
@@ -378,7 +378,7 @@
           >
             <div class="downloadstextbox">
               <h1
-                class="mt-4 leading-[1.2] text-h1 md:text-h2 xxl:text-h2-desktop font-medium"
+                class="mt-8 leading-[1.2] text-h1 md:text-h2 md:mt-4 xxl:text-h2-desktop font-medium"
                 id="downloads-heading"
               >
                 Download the extension
@@ -401,7 +401,7 @@
                   class="mx-auto"
                   alt="Chrome Logo"
                 />
-                <h1 class="text-[1.2rem] mt-6 mb-0">Add to Chrome</h1>
+                <h1 class="text-[1.2rem] font-bold mt-6 mb-0">Add to Chrome</h1>
                 <p class="text-gray mt-2 mb-[2.3rem]">Minimum version 62</p>
                 <img
                   src="assets/img/bg-dots.svg"
@@ -424,7 +424,7 @@
                   class="mx-auto"
                   alt="Firefox Logo"
                 />
-                <h1 class="text-[1.2rem] mt-6 mb-0">Add to Firefox</h1>
+                <h1 class="text-[1.2rem] font-bold mt-6 mb-0">Add to Firefox</h1>
                 <p class="text-gray mt-2 mb-[2.3rem]">Minimum version 55</p>
                 <img
                   src="assets/img/bg-dots.svg"
@@ -447,7 +447,7 @@
                   class="mx-auto"
                   alt="Opera Logo"
                 />
-                <h1 class="text-[1.2rem] mt-6 mb-0">Add to Opera</h1>
+                <h1 class="text-[1.2rem] font-bold mt-6 mb-0">Add to Opera</h1>
                 <p class="text-gray mt-2 mb-[2.3rem]">Minimum version 46</p>
                 <img
                   src="assets/img/bg-dots.svg"
@@ -469,7 +469,7 @@
             aria-labelledby="faq-heading"
           >
             <h1
-              class="mt-4 leading-[1.2] text-h1 md:text-h2 xxl:text-h2-desktop font-medium"
+              class="mt-4 mx-8 md:mx-auto leading-[1.2] text-h1 md:text-h2 xxl:text-h2-desktop font-medium"
               id="faq-heading"
             >
               Frequently Asked Questions
@@ -570,14 +570,30 @@
         </main>
 
         <footer>
-          <div id="contact" class="emailtextbox">
-            <p>35.000+ ALREADY JOINED</p>
-            <h2>Stay up-to-date with what we're doing</h2>
-            <div class="emailbox">
-              <form aria-label="Newsletter subscription form">
-                <div class="email-wrapper">
+          <div
+            id="contact"
+            class="grid place-items-center leading-[1.2] bg-primary px-6 py-12 w-screen ml-[calc(-50vw+50%)] mr-[calc(-50vw+50%)] md:px-8 md:py-8 md:h-82 xxl:w-screen"
+          >
+            <p
+              class="text-white text-[0.8rem] mt-4 tracking-[0.35em] md:mb-2 font-rubik"
+            >
+              35.000+ ALREADY JOINED
+            </p>
+            <h2
+              class="text-white text-h1 my-3 mb-10 md:text-[1.75rem] font-rubik"
+            >
+              Stay up-to-date with what we're doing
+            </h2>
+            <div class="grid place-items-center">
+              <form
+                class="flex flex-col gap-4 md:flex-row"
+                aria-label="Newsletter subscription form"
+              >
+                <div
+                  class="email-wrapper group flex flex-col items-start rounded-lg w-[19.1rem] bg-transparent [&.error]:bg-secondary [&.error]:p-[0.05rem_0.1rem_0.5rem] md:[&.error]:h-20"
+                >
                   <input
-                    class="email-input"
+                    class="email-input bg-white text-dark border-none rounded-md text-p cursor-text w-full max-w-[20rem] px-4 pr-12 py-4 text-left font-bold md:h-[3.136rem] border border-transparent [&.error]:border-2 [&.error]:border-secondary [&.error]:bg-[url('../img/icon-error.svg')] [&.error]:bg-no-repeat [&.error]:bg-position-[right_0.8rem_center]"
                     type="email"
                     required
                     placeholder="Enter your email address"
@@ -585,19 +601,28 @@
                     aria-required="true"
                     aria-describedby="email-error"
                   />
-                  <p id="email-error" role="alert" aria-live="polite">
+
+                  <p
+                    id="email-error"
+                    class="hidden text-[0.563rem] italic tracking-[0.05rem] mt-2 ml-[0.2rem] px-2 group-[.error]:block group-[.error]:text-white md:group-[.error]:ml-3"
+                    role="alert"
+                    aria-live="polite"
+                  >
                     Whoops, make sure it's an email.
                   </p>
                 </div>
+
                 <input
-                  class="w-full max-w-[20rem] border-none rounded-md cursor-pointer font-semibold px-6 py-4 no-underline inline-block bg-secondary text-white mt-4 text-[1rem] hover:bg-white hover:text-secondary hover:border-2 hover:border-secondary md:mt-0 md:w-auto md:h-[3.136rem]"
+                  class="submit-btn w-full max-w-[20rem] border-none rounded-md cursor-pointer font-semibold px-6 py-4 no-underline inline-block bg-secondary text-white mt-0 text-[1rem] hover:bg-white hover:text-secondary hover:border-2 hover:border-secondary md:mt-0 md:w-auto md:h-[3.136rem]"
                   type="submit"
                   value="Contact Us"
                 />
               </form>
             </div>
           </div>
-          <div class="footertextbox">
+          <div
+            class="flex flex-col items-center justify-evenly bg-primary2 text-white w-screen min-h-90 ml-[calc(-50vw+50%)] mr-[calc(-50vw+50%)] xxl:pl-30 xxl:pr-30 md:flex-row md:justify-start md:gap-12 md:px-8 md:py-8 md:min-h-auto xxl:w-screen xxl:justify-between"
+          >
             <a
               href="#"
               onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;"
@@ -605,21 +630,36 @@
                 src="assets/img/bookmark-logo-footer.svg"
                 alt="Bookmark icon"
             /></a>
-            <a href="#features">FEATURES</a>
-            <a href="">PRICING</a>
-            <a href="#contact">CONTACT</a>
-            <div class="smicons" aria-label="Social media links">
+            <a
+              href="#features"
+              class="no-underline text-inherit hover:text-secondary hover:cursor-pointer md:mr-6 xxl:left"
+              >FEATURES</a
+            >
+            <a
+              href=""
+              class="no-underline text-inherit hover:text-secondary hover:cursor-pointer md:mr-6"
+              >PRICING</a
+            >
+            <a
+              href="#contact"
+              class="no-underline text-inherit hover:text-secondary hover:cursor-pointer md:mr-6"
+              >CONTACT</a
+            >
+            <div
+              class="flex justify-end items-center gap-12 md:ml-auto md:gap-8 md:flex"
+              aria-label="Social media links"
+            >
               <a href="#" aria-label="Visit our Facebook page"
                 ><img
                   src="assets/img/icon-facebook.svg"
                   alt="Facebook logo"
-                  class="facebookicon"
+                  class="cursor-pointer h-5 w-5 hover:[filter] hover:[invert(44%)_sepia(92%)_saturate(2829%)_hue-rotate(330deg)]"
               /></a>
               <a href="#" aria-label="Visit our Twitter page"
                 ><img
                   src="assets/img/icon-twitter.svg"
                   alt="Twitter logo"
-                  class="twittericon"
+                  class="cursor-pointer h-5 w-5 hover:[filter] hover:[invert(44%)_sepia(92%)_saturate(2829%)_hue-rotate(330deg)]"
               /></a>
             </div>
           </div>
