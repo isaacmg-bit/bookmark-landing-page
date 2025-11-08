@@ -85,52 +85,8 @@
 
 /*
 
-/*  FEATURES   
 
-/*  DOWNLOADS   
-.downloads {
-  display: grid;
 
-  width: 100%;
-  padding: 1rem 1.5rem;
-}
-
-.downloadstextbox h1 { 
-  margin-bottom: 1rem; 
-}
-
-.downloadstextbox p { 
-  color: var(--color-gray); 
-  margin: 0 2rem 2rem; 
-}
-
-/* Browser Cards Base  
-.browser-card {
-  margin: 0 auto 4rem;
-  background-color: var(--color-white);
-  border-radius: 0.625rem; 
-  width: 100%;
-  max-width: 18rem;
-  min-width: min(18rem, 100%);
-  box-shadow: 0 0.625rem 0.938rem 0 var(--color-shadow);
-  padding: 1rem 1.5rem;
-}
-
-.browser-card p {
-  color: var(--color-gray); 
-  margin: 0.5rem 0 2.3rem; 
-} 
-
-.browser-card h1 {
-  font-size: 1.2rem;
-  margin: 1.5rem 0 0;
-}
-
-.browser-card .imgdots {
-  width: 120%;
-  margin-left: -1.5rem;
-  display: flex;
-}
 
 /*  FAQ   
 .faq-section {
@@ -318,54 +274,7 @@
 /*  MEDIA QUERIES   
 
 @media (min-width: 768px) { |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-  
-  /* Features  
-  
 
-  /* Downloads  
-  .downloads {
-    gap: 1rem;
-    max-width: 69.375rem;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
-
-  .downloadstextbox {
-    flex: 1 1 100%;
-    gap: 2rem;
-  }
-
-  .downloadstextbox h1 {
-    margin: 0;
-    font-size: var(--h1-font-size);
-  }
-
-  .downloadstextbox p {
-    font-size: var(--p-font-size);
-    margin-top: 1rem;
-  }
-
-  .downloadcards {
-    display: grid;
-    gap: 2rem;
-    justify-content: center;
-  }
-
-  .browser-card {
-    margin: 0;
-  }
-
-  .browser-cardchrome {
-    align-self: flex-start;
-  }
-
-  .browser-cardfirefox {
-    align-self: center;
-  }
-
-  .browser-cardopera {
-    align-self: flex-end;
-  }
 
   /* FAQ  
   .faq-section {
@@ -441,49 +350,6 @@
 
 @media (min-width: 1440px) { |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
-
-  /* Features  
-
-
-  
-  .tabstextbox {
-    max-width: 30.125rem;
-  }
-
-  .tabstextbox h1 {
-    font-size: var(--h1-font-size-desktop);
-    text-align: left;
-  }
-
-  .tabstextbox p {
-    font-size: var(--p-font-size-desktop);
-    margin: 1rem 0 0 0;
-    text-align: left;
-  }
-
-
-
-  /* Downloads  
-  .downloads {
-    padding: 0 2rem;
-  }
-
-  .downloadstextbox h1 {
-    font-size: var(--h1-font-size-desktop);
-  }
-
-  .downloadstextbox p {
-    margin: 1rem 16rem;
-    font-size: var(--p-font-size-desktop);
-  }
-
-    .downloadcards {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 2rem;
-    height: 25rem;
-  }
 
 
   /* FAQ  
