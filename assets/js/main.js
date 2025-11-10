@@ -26,3 +26,21 @@
         emailWrapper.classList.remove('error');
       }
     });
+
+        // DINAMIC ARIA BTNS //
+document.addEventListener('DOMContentLoaded', () => {
+  const tabs = document.querySelectorAll('.featurebuttons label');
+  const radios = document.querySelectorAll('.featurebuttons input[type="radio"]');
+
+  radios.forEach((radio, index) => {
+    radio.addEventListener('change', () => {
+      tabs.forEach((tab, i) => {
+        if (i === index) {
+          tab.setAttribute('aria-selected', 'true');
+        } else {
+          tab.setAttribute('aria-selected', 'false');
+        }
+      });
+    });
+  });
+});

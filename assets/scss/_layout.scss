@@ -1,5 +1,5 @@
-@use 'variables' as *;
-@use 'mixins' as *;
+@use "variables" as *;
+@use "mixins" as *;
 
 // HEADER AND NAV
 .header {
@@ -7,10 +7,11 @@
   padding: 1.5rem;
   width: 100%;
   position: relative;
-  z-index: 10;
+  z-index: $z-index10;
 
   @include desktop {
     width: 100vw;
+    max-width: 100%;
     padding-right: 15rem;
   }
 
@@ -19,47 +20,44 @@
     width: 90%;
     margin: 0 auto;
 
-     .bookmark-image,
+    .bookmark-image,
     .bookmark-image-white {
       @include absolute-position($top: 1.5rem, $left: 2rem);
-      @include transition(opacity 0.3s ease);
-      z-index: 400;
+      @include transition;
+      z-index: $z-index400;
     }
 
-    @include tablet { 
-      width: 100%;      
+    @include tablet {
+      width: 100%;
       .bookmark-image,
       .bookmark-image-white {
         margin-left: 1rem;
         top: 50%;
         transform: translateY(-50%);
-    }
+      }
 
-    @include desktop {
-      .bookmark-image,
-      .bookmark-image-white {
-        margin-left: 5rem;
-        top: 50%;
-        transform: translateY(-50%);
+      @include desktop {
+        .bookmark-image,
+        .bookmark-image-white {
+          margin-left: 5rem;
+        }
       }
     }
 
-    }
-  
     .bookmark-image-white {
       opacity: 0;
       pointer-events: none;
     }
 
     &:has(.menu-toggle:checked) {
-      .bookmark-image { 
-        opacity: 0; 
+      .bookmark-image {
+        opacity: 0;
       }
-      .bookmark-image-white { 
-        opacity: 1; 
+      .bookmark-image-white {
+        opacity: 1;
       }
       .menu-image {
-        content: url('../img/icon-close.svg');
+        content: url("../img/icon-close.svg");
       }
     }
 
@@ -72,29 +70,21 @@
       cursor: pointer;
       margin-left: auto;
       gap: 1.5rem;
-      z-index: 200;
-      
+      z-index: $z-index200;
+
       @include tablet {
         display: block;
       }
-      @include desktop {
-        display: block;
-      }
-
 
       .menu-image {
         width: auto;
         height: auto;
         display: block;
-        @include transition(transform 0.3s ease);
+        @include transition;
 
         @include tablet {
           display: none;
         }
-        @include desktop {
-          display: none;
-        }
-
       }
     }
 
@@ -107,51 +97,47 @@
       gap: 1.5rem;
       background: $color-white;
       @include box-shadow;
-      border-radius: 0 0 0.5rem 0.5rem;
+      border-radius: $border2;
       width: 100%;
       opacity: 0;
-      @include transition(opacity 0.3s ease);
+      @include transition;
 
       .social-icons-item {
         display: flex;
-        justify-content: center; 
+        justify-content: center;
         align-items: center;
-        gap: 3.125rem; 
+        gap: 3.125rem;
         margin: 0;
         padding: 0;
         list-style: none;
         margin-bottom: 2rem;
         cursor: pointer;
 
-            img {
-      cursor: pointer;
-      &:hover {
-        filter: invert(44%) sepia(92%) saturate(2829%) hue-rotate(330deg);
-      }
-    }
+        img {
+          cursor: pointer;
+          @include hover($filter: $filtercolor);
+        }
 
         @include tablet {
           display: none;
         }
-        @include desktop {
-          display: none;
-        }
-
       }
 
       li {
         position: relative;
 
         &:first-child::before,
-        &:not(.social-icons-item):not(:last-child):not(:has(.login-btn))::after {
+        &:not(.social-icons-item):not(:last-child):not(
+            :has(.login-btn)
+          )::after {
           @include separator-line;
         }
 
-        &:not(.social-icons-item):first-child::before { 
-          top: -1rem; 
+        &:not(.social-icons-item):first-child::before {
+          top: -1rem;
         }
-        &:not(.social-icons-item):not(:last-child)::after { 
-          bottom: -1rem; 
+        &:not(.social-icons-item):not(:last-child)::after {
+          bottom: -1rem;
         }
 
         a {
@@ -160,18 +146,15 @@
           font-weight: 400;
           font-size: 1.5rem;
           letter-spacing: 0.063rem;
-          @include transition(color 0.3s);
-
-          &:hover { 
-            color: $color-secondary; 
-          }
+          @include transition;
+          @include hover($color: $color-secondary);
         }
 
         .login-btn {
           display: grid;
-          background-color: $color-primary2;
+          background-color: $color-primary-dark;
           color: $color-white;
-          border-radius: 0.313rem;
+          border-radius: $border3;
           border: 0.125rem solid $color-white;
           font-weight: 400;
           letter-spacing: 0.188rem;
@@ -179,11 +162,10 @@
           padding: 0.6rem 8rem;
           margin-top: 0.8rem;
           margin-bottom: 2rem;
-
-          &:hover { 
-            background-color: rgba(0, 0, 0, 0);
-            color: $color-secondary;
-          }
+          @include hover(
+            $background-color: rgba(0, 0, 0, 0),
+            $color: $color-secondary
+          );
         }
       }
     }
@@ -195,19 +177,19 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: $color-primary2;
+      background: $color-primary-dark;
       opacity: 0.9;
       @include flex-center(column, center, center);
       gap: 2rem;
-      border-radius: 0;
+      border-radius: $border0;
       box-shadow: none;
-      z-index: 100;
+      z-index: $z-index100;
     }
 
     @include tablet {
       justify-content: space-evenly;
       max-width: 100%;
-      
+
       .menu {
         position: static;
         @include flex-center(row, right, center);
@@ -216,12 +198,12 @@
         opacity: 1;
         box-shadow: none;
         max-width: 100%;
-        border-radius: 0;
+        border-radius: $border0;
 
         li {
           &::before,
-          &::after { 
-            display: none; 
+          &::after {
+            display: none;
           }
 
           a {
@@ -241,59 +223,20 @@
       }
     }
     @include desktop {
-      justify-content: space-evenly;
-      max-width: 100%;
-
-
       .menu {
-        position: static;
-        @include flex-center(row, right, center);
-        gap: 2rem;
-        background: transparent;
-        opacity: 1;
-        box-shadow: none;
-        max-width: 100%;
         margin-right: 3rem;
-        border-radius: 0;
         margin: 0;
-
-        li {
-          &::before,
-          &::after { 
-            display: none; 
-          }
-
-          a {
-            color: $color-dark;
-            font-size: 0.7rem;
-            letter-spacing: 0.1rem;
-          }
-
-          .login-btn {
-            margin: auto;
-            padding: 0.6rem 1.7rem;
-            font-size: 0.7rem;
-            background-color: $color-secondary;
-            border-color: $color-secondary;
-          }
-        }
       }
     }
-
   }
 }
 
 @include tablet {
-  main { 
-    width: 90vw; 
+  main {
+    width: 90vw;
+    max-width: 100%;
   }
 }
-@include desktop {
-  main { 
-    width: 90vw; 
-  }
-}
-
 
 // HERO
 .hero {
@@ -302,17 +245,17 @@
   width: 100%;
   position: relative;
   isolation: isolate;
-  
+
   .herotextbox {
-    h2 { 
-      margin-bottom: 1rem; 
-      line-height: 1.2; 
+    h2 {
+      margin-bottom: 1rem;
+      line-height: 1.2;
     }
-    p { 
-      @include gray-text(1.5rem 2rem); 
+    p {
+      @include text-margin-color(1.5rem 2rem);
     }
   }
-  
+
   .buttons {
     @include flex-center(row, center, center);
     gap: 0.8rem;
@@ -329,20 +272,9 @@
       position: relative;
       width: 100%;
       display: block;
-      z-index: 1;
+      z-index: $z-index1;
     }
-
-    &::before {
-      content: "";
-      position: absolute;
-      bottom: -1rem;
-      right: -50%;
-      width: 130%;
-      height: 85%;
-      background-color: #5368df;
-      border-radius: 0 0 0 7rem;
-      z-index: -1;
-    }
+    @include decorative-before(130%, 85%, -1rem, -50%);
   }
 
   @include tablet {
@@ -355,60 +287,53 @@
       text-align: left;
       margin-bottom: 3rem;
 
-      h2 { 
-        font-size: $h2-font-size; 
+      h2 {
+        font-size: $h2-font-size;
       }
-      p { 
-        margin: 1.5rem 1rem 1.5rem 0; 
-        font-size: $p-font-size; 
+      p {
+        margin: 1.5rem 1rem 1.5rem 0;
+        font-size: $p-font-size;
       }
     }
 
-    .buttons { 
-      justify-content: flex-start; 
+    .buttons {
+      justify-content: flex-start;
     }
   }
 
-@include desktop {
+  @include desktop {
     flex-direction: row;
-    max-width: 100%;
     justify-content: space-evenly;
 
     .herotextbox {
-
       margin-bottom: 0;
       flex: 0 0 50%;
-      order: 1; 
+      order: 1;
       margin-right: 10rem;
 
-      h2 { 
-        font-size: $h2-font-size-desktop; 
+      h2 {
+        font-size: $h2-font-size-desktop;
       }
-      p { 
-        margin: 1.5rem 6rem 1.5rem 0; 
-        font-size: $p-font-size-desktop; 
+      p {
+        margin: 1.5rem 6rem 1.5rem 0;
+        font-size: $p-font-size-desktop;
       }
     }
 
-    .buttons { 
-      justify-content: flex-start;
+    .buttons {
       order: 2;
     }
 
     .imghero-wrapper {
       flex: 1;
       order: 3;
-        &::before {
-          content: "";
-          right: -20%;
-          width: 30rem;
-          height: 20rem;
-          top: 30%;
-        }
-        .imghero {
-            transform: scale(1.5);
-  transform-origin: right center; 
-  top: 3rem;
+
+      @include decorative-before(30rem, 20rem, inherit, -20%);
+
+      .imghero {
+        transform: scale(1.5);
+        transform-origin: right center;
+        top: 3rem;
       }
     }
   }
@@ -428,22 +353,18 @@
     padding: 2rem;
 
     .featurestextbox {
-      p { 
-        margin: 1.5rem 5rem; 
+      p {
+        margin: 1.5rem 5rem;
       }
     }
   }
   @include desktop {
-    max-width: 100%;
-    padding: 2rem;
-
     .featurestextbox {
-      p { 
-        margin: 1.5rem 22rem; 
+      p {
+        margin: 1.5rem 22rem;
       }
     }
   }
-
 }
 
 // DOWNLOADS
@@ -465,32 +386,21 @@
       flex: 1 1 100%;
       gap: 2rem;
 
-      h1 { 
-        margin: 0; 
+      h1 {
+        margin: 0;
       }
-      p { 
-        margin: 1rem 5rem; 
+      p {
+        margin: 1rem 5rem;
       }
     }
   }
   @include desktop {
-    gap: 1rem;
-    max-width: 69.375rem;
-    margin: 0 auto;
-
     .downloadstextbox {
-      flex: 1 1 100%;
-      gap: 2rem;
-
-      h1 { 
-        margin: 0; 
-      }
-      p { 
-        margin: 1rem 16rem; 
+      p {
+        margin: 1rem 16rem;
       }
     }
   }
-
 }
 
 // FAQ
@@ -499,12 +409,12 @@
   margin: 3rem 0;
   padding: 0 1rem;
 
-  h1 { 
-    margin: 0 4rem 1rem; 
-    line-height: 1.2; 
+  h1 {
+    margin: 0 4rem 1rem;
+    line-height: 1.2;
   }
-  p { 
-    @include gray-text(0 2rem 3rem); 
+  p {
+    @include text-margin-color(0 2rem 3rem);
   }
 
   @include tablet {
@@ -512,25 +422,23 @@
     max-width: 60rem;
     margin: 5rem auto;
 
-    h1 { 
-      margin: 0 0 1rem; 
-      font-size: $h1-font-size; 
+    h1 {
+      margin: 0 0 1rem;
+      font-size: $h1-font-size;
     }
-    p { 
-      margin: 2rem 0; 
-      font-size: $p-font-size; 
+    p {
+      margin: 2rem 0;
+      font-size: $p-font-size;
     }
   }
   @include desktop {
     max-width: 40%;
 
-    h1 { 
-      margin: 0 0 1rem; 
-      font-size: $h1-font-size-desktop; 
+    h1 {
+      font-size: $h1-font-size-desktop;
     }
-    p { 
-      margin: 2rem 0; 
-      font-size: $p-font-size-desktop; 
+    p {
+      font-size: $p-font-size-desktop;
     }
   }
 }
@@ -544,79 +452,65 @@
   padding: 3rem 1.5rem;
   @include full-viewport-width;
 
-  h2 { 
-    color: $color-white; 
-    margin: 0.75rem 0 2.5rem; 
-    font-size: 1.5rem; 
+  h2 {
+    color: $color-white;
+    margin: 0.75rem 0 2.5rem;
+    font-size: 1.5rem;
   }
-  p { 
-    color: $color-white; 
-    margin-top: 1rem; 
-    letter-spacing: 0.35em; 
-    font-size: 0.8rem; 
+  p {
+    color: $color-white;
+    margin-top: 1rem;
+    letter-spacing: 0.35rem;
+    font-size: 0.8rem;
   }
 
   .submit-btn {
     border: none;
-    border-radius: 0.375rem;
+    border-radius: $border1;
     cursor: pointer;
-    @include transition(all 0.3s ease);
+    @include transition;
     padding: 1rem 1.5rem;
     background-color: $color-secondary;
     color: $color-white;
     width: 18.875rem;
     margin-top: 1rem;
     font-weight: 600;
-
-    &:hover {
-      background-color: $color-white;
-      color: $color-secondary;
-      border: 2px solid $color-secondary;
-    }
+    @include hover(
+      $background-color: $color-white,
+      $color: $color-secondary,
+      $border: 2px solid $color-secondary
+    );
   }
 
   @include tablet {
     padding: 2rem;
     width: 100vw;
+    max-width: 100%;
     height: 20.5rem;
 
-    h2 { 
-      margin: 0 12rem 1rem; 
-      font-size: 1.75rem; 
+    h2 {
+      margin: 0 12rem 1rem;
+      font-size: 1.75rem;
     }
-    p { 
-      margin-bottom: 0.5rem; 
+    p {
+      margin-bottom: 0.5rem;
     }
-    .submit-btn { 
-      margin-top: 0; 
-      width: auto; 
-      height: 3.136rem; 
+    .submit-btn {
+      margin-top: 0;
+      width: auto;
+      height: 3.136rem;
     }
   }
   @include desktop {
-    padding: 2rem;
-    width: 100vw;
-    height: 20.5rem;
-
-    h2 { 
-      margin: 0 32rem 1rem; 
-      font-size: 1.75rem; 
-    }
-    p { 
-      margin-bottom: 0.5rem; 
-    }
-    .submit-btn { 
-      margin-top: 0; 
-      width: auto; 
-      height: 3.136rem; 
+    h2 {
+      margin: 0 32rem 1rem;
     }
   }
-
 }
 
 .footertextbox {
   @include flex-center(column, space-evenly, center);
-  background-color: $color-primary2;
+  background-color: $color-primary-dark;
   @include full-viewport-width;
   min-height: 22.5rem;
   color: $color-white;
@@ -625,14 +519,14 @@
     text-decoration: none;
     color: inherit;
   }
-  
-  .logo-text { 
-    fill: white; 
+
+  .logo-text {
+    fill: white;
   }
 
-  p:hover { 
-    color: $color-secondary; 
-    cursor: pointer; 
+  p:hover {
+    color: $color-secondary;
+    cursor: pointer;
   }
 
   .smicons {
@@ -641,9 +535,7 @@
 
     img {
       cursor: pointer;
-      &:hover {
-        filter: invert(44%) sepia(92%) saturate(2829%) hue-rotate(330deg);
-      }
+      @include hover($filter: $filtercolor);
     }
   }
 
@@ -654,28 +546,15 @@
     gap: 3rem;
     min-height: auto;
 
-    p { 
-      margin: 0 1.5rem 0 0; 
+    p {
+      margin: 0 1.5rem 0 0;
     }
-    .smicons { 
-      margin-left: auto; 
-      gap: 2rem; 
+    .smicons {
+      margin-left: auto;
+      gap: 2rem;
     }
   }
   @include desktop {
-    flex-direction: row;
     justify-content: flex-start;
-    padding: 2rem 12rem;
-    gap: 3rem;
-    min-height: auto;
-
-    p { 
-      margin: 0 1.5rem 0 0; 
-    }
-    .smicons { 
-      margin-left: auto; 
-      gap: 2rem; 
-    }
   }
-
 }

@@ -1,4 +1,4 @@
-@use 'variables' as *;
+@use "variables" as *;
 
 @mixin flex-center($direction: column, $justify: center, $align: center) {
   display: flex;
@@ -9,10 +9,18 @@
 
 @mixin absolute-position($top: null, $right: null, $bottom: null, $left: null) {
   position: absolute;
-  @if $top { top: $top; }
-  @if $right { right: $right; }
-  @if $bottom { bottom: $bottom; }
-  @if $left { left: $left; }
+  @if $top {
+    top: $top;
+  }
+  @if $right {
+    right: $right;
+  }
+  @if $bottom {
+    bottom: $bottom;
+  }
+  @if $left {
+    left: $left;
+  }
 }
 
 @mixin full-viewport-width {
@@ -21,18 +29,37 @@
   margin-right: $center-margin;
 }
 
-@mixin transition($properties...) {
-  transition: $properties;
+@mixin transition {
+  transition: $transitionall;
 }
 
-@mixin box-shadow($shadow: 0 0.5rem 1.25rem rgba(0,0,0,0.1)) {
+@mixin box-shadow($shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.1)) {
   box-shadow: $shadow;
 }
 
-@mixin gray-text($margin: 0) {
+@mixin text-margin-color($margin: 0) {
   color: $color-gray;
   @if $margin != 0 {
     margin: $margin;
+  }
+}
+
+@mixin decorative-before(
+  $width: 130%,
+  $height: 85%,
+  $bottom: -1rem,
+  $right: -50%
+) {
+  &::before {
+    content: "";
+    background-color: $color-primary;
+    position: absolute;
+    bottom: $bottom;
+    right: $right;
+    width: $width;
+    height: $height;
+    border-radius: $border5;
+    z-index: $z-indexMinus;
   }
 }
 
@@ -58,24 +85,11 @@
   }
 }
 
-@mixin limbo {
-  @media (min-width: $breakpoint-lb) {
-    @content;
-  }
-}
-
 @mixin section-padding($mobile: 1rem 1.5rem, $desktop: 2rem) {
   padding: $mobile;
-  
+
   @include desktop {
     padding: $desktop;
-  }
-}
-
-@mixin button-width($desktop-width: auto) {
-  @include desktop {
-    width: $desktop-width;
-    background-color: $color-primary;
   }
 }
 
@@ -84,17 +98,33 @@
     @if $h1-margin != 0 {
       margin: $h1-margin;
     }
-    
+
     @include desktop {
       font-size: $h1-font-size-desktop;
     }
   }
-  
+
   p {
-    @include gray-text($p-margin);
-    
+    @include text-margin-color($p-margin);
+
     @include desktop {
       font-size: $p-font-size-desktop;
     }
+  }
+}
+
+@mixin hover(
+  $color: $color-secondary,
+  $background-color: $color-white,
+  $border: 2px solid transparent,
+  $cursor: pointer,
+  $filter: $filtercolor
+) {
+  &:hover {
+    color: $color;
+    background-color: $background-color;
+    border: $border;
+    cursor: $cursor;
+    filter: $filter;
   }
 }

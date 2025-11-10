@@ -1,18 +1,20 @@
 //Colors
 $color-primary: #5368df;
-$color-primary2: #242946;
+$color-primary-dark: #242946;
 $color-secondary: #fa5757;
 $color-dark: #242a45;
 $color-gray: #9194a1;
 $color-light-gray: #f7f7f7;
 $color-white: #ffffff;
 $color-shadow: rgba(128, 128, 128, 0.199);
+$bg-color-form: #5368df;
+$filtercolor: invert(44%) sepia(92%) saturate(2829%) hue-rotate(330deg);
 
 //Typo
-$h1-font-size: 1.5rem; 
+$h1-font-size: 1.5rem;
 $h2-font-size: 1.9rem;
 $p-font-size: 0.95rem;
-$p-font-size-desktop: 1.10rem;
+$p-font-size-desktop: 1.1rem;
 $h1-font-size-desktop: 2rem;
 $h2-font-size-desktop: 3rem;
 $p-line-height: 1.6rem;
@@ -22,9 +24,30 @@ $p-font-weight: 400;
 $buttons-font-weight: 700;
 
 //Breakpoints
-$breakpoint-lg: 1440px;
-$breakpoint-md: 768px;
-$breakpoint-lb: 928px;
+$breakpoint-lg: 90rem;
+$breakpoint-md: 48rem;
 
 // Centering helper
 $center-margin: calc(-50vw + 50%);
+
+// Z-index
+$z-indexMinus: -1;
+$z-index1: -1;
+$z-index10: 10;
+$z-index100: 100;
+$z-index200: 200;
+$z-index400: 400;
+
+// Transitions
+$transitionall: all 0.3s ease;
+
+//Borders
+
+$border1: 0.375rem;
+$border2: 0 0 0.5rem 0.5rem;
+$border3: 0.313rem;
+$border0: 0;
+$border5: 0 0 0 7rem;
+$border6: 0 0 7rem 0;
+$border7: 0.625rem;
+$border8: 0.5rem;

@@ -1,23 +1,30 @@
-@use 'variables' as *;
-@use 'mixins' as *;
+@use "variables" as *;
+@use "mixins" as *;
+
+// BODY
+
+body:has(.menu-toggle:checked) {
+  overflow: hidden;
+  position: fixed;
+}
 
 // FEATURES TABS
 .featurebuttons {
   @include flex-center(column, center, center);
-  width: 100%; 
-  margin: 1rem 0; 
+  width: 100%;
+  margin: 1rem 0;
 
   label {
-    position: relative; 
-    width: 100%; 
-    padding: 1.2em 1.25rem; 
-    text-align: center; 
-    font-size: 1.1rem; 
-    font-weight: $p-font-weight; 
-    color: $color-gray; 
-    background-color: $color-white; 
-    cursor: pointer; 
-    border: none; 
+    position: relative;
+    width: 100%;
+    padding: 1.2rem 1.25rem;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: $p-font-weight;
+    color: $color-gray;
+    background-color: $color-white;
+    cursor: pointer;
+    border: none;
     border-bottom: 0.063rem solid #ccc;
 
     &:first-of-type {
@@ -25,30 +32,28 @@
     }
 
     &::after {
-      content: ""; 
+      content: "";
       @include absolute-position($left: 50%, $bottom: 0);
-      width: 0; 
-      height: 0.25rem; 
-      background-color: $color-secondary; 
-      @include transition(width 0.2s ease, left 0.2s ease);
+      width: 0;
+      height: 0.25rem;
+      background-color: $color-secondary;
+      @include transition;
       transform: translateX(-50%);
     }
 
-    &:hover {
-      color: $color-secondary;
-    }
+    @include hover($color: $color-secondary);
   }
 
   input[type="radio"] {
     &:checked + label {
       color: $color-dark;
-      
+
       &::after {
         width: 50%;
       }
     }
   }
-  
+
   @include tablet {
     justify-content: center;
     align-items: center;
@@ -83,40 +88,6 @@
       height: 0;
     }
   }
-  @include desktop {
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    flex-direction: row;
-    margin: 0;
-
-    label {
-      font-size: 1.1rem;
-      border-top: none;
-      border-bottom: 2px solid $color-shadow;
-      max-width: 16rem;
-
-      &:first-of-type {
-        border-top: none;
-      }
-    }
-
-    input[type="radio"] {
-      &:checked + label {
-        border-bottom: 2px solid $color-secondary;
-
-        &::after {
-          width: 100%;
-        }
-      }
-    }
-
-    .break {
-      flex-basis: 100%;
-      height: 0;
-    }
-  }
-
 }
 
 // IMAGES TABS
@@ -133,7 +104,7 @@
     max-width: 20.438rem;
     height: auto;
     position: relative;
-    @include transition(opacity 0.3s ease);
+    @include transition;
     margin-top: 4rem;
   }
 
@@ -149,61 +120,23 @@
   }
   @include desktop {
     width: 100%;
-    max-width: 45rem;
     margin: 4rem auto 0;
     min-height: 33.46rem;
 
     img {
       min-width: 32rem;
-      margin: 0;
       left: 10%;
     }
   }
-
 }
 
 .featuretabimages .featuretabimages-wrapper {
-  &::before {
-  content: "";
-  position: absolute;
-  bottom: 10%;
-  right: 15%;
-  width: 155%;
-  height: 60%;
-  background-color: #5368df;
-  border-radius: 0 0 7rem 0;
-  z-index: -1;
-  }
+  @include decorative-before(155%, 60%, 10%, 15%);
 }
 
 @include tablet {
   .featuretabimages .featuretabimages-wrapper {
-    &::before {
-      content: "";
-      position: absolute;
-      bottom: 10%;
-      right: 30%;
-      width: 155%;
-      height: 60%;
-      background-color: #5368df;
-      border-radius: 0 0 7rem 0;
-      z-index: -1;
-    }
-  }
-}
-@include desktop {
-  .featuretabimages .featuretabimages-wrapper {
-    &::before {
-      content: "";
-      position: absolute;
-      bottom: 10%;
-      right: 30%;
-      width: 155%;
-      height: 60%;
-      background-color: #5368df;
-      border-radius: 0 0 7rem 0;
-      z-index: -1;
-    }
+    @include decorative-before(inherit, inherit, inherit, 30%);
   }
 }
 
@@ -221,7 +154,7 @@
     min-height: 12.948rem;
   }
 
-  .texttab2, 
+  .texttab2,
   .texttab3 {
     min-height: 12.948rem;
   }
@@ -233,9 +166,9 @@
   }
 
   p {
-    @include gray-text(1rem 1.5rem 2.1875rem);
+    @include text-margin-color(1rem 1.5rem 2.1875rem);
   }
-  
+
   @include tablet {
     display: flex;
     max-width: 30.125rem;
@@ -245,81 +178,46 @@
       font-size: $h1-font-size;
       text-align: center;
     }
-    
+
     p {
       font-size: $p-font-size;
       margin: 1rem 0 1rem 1.3rem;
     }
 
     .texttab1 {
-      min-height: 150px;
-      min-width: 450px;
+      min-height: 9.375rem;
+      min-width: 28.125rem;
     }
 
     .texttab2 {
-      min-height: 150px;
-      min-width: 450px;
+      min-height: 9.375rem;
+      min-width: 28.125rem;
     }
 
     .texttab3 {
-      min-height: 150px;
-      min-width: 450px;
-    }
-  }
-  @include limbo {
-    h1 {
-      font-size: $h1-font-size;
-      text-align: left;
-    }
-    
-    p {
-      font-size: $p-font-size;
-      margin: 1rem 0 1rem 1.3rem;
-      max-width: 85%;
-    }
-
-    .texttab1 {
-      min-height: 150px;
-      min-width: 450px;
-    }
-
-    .texttab2 {
-      min-height: 150px;
-      min-width: 450px;
-    }
-
-    .texttab3 {
-      min-height: 150px;
-      min-width: 450px;
+      min-height: 9.375rem;
+      min-width: 28.125rem;
     }
   }
   @include desktop {
-    display: flex;
-    max-width: 30.125rem;
-    text-align: left;
-
     h1 {
       font-size: $h1-font-size-desktop;
     }
-    
+
     p {
       font-size: $p-font-size-desktop;
-      margin: 1rem 0 1rem 1.3rem;
     }
 
     .texttab1 {
-      min-height: 192.77px;
-      min-width: 450px;
+      min-height: 12.048rem;
     }
 
     .texttab2 {
-      min-height: 192.77px;
-      min-width: 450px;
+      min-height: 12.048rem;
     }
 
     .texttab3 {
-      min-height: 192.77px;
-      min-width: 450px;
+      min-height: 12.048rem;
     }
   }
 }
@@ -339,11 +237,6 @@
     margin: 0 auto;
     padding: 0 2rem;
   }
-  @include desktop {
-    @include flex-center;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
 }
 
 // BROWSER CARDS
@@ -352,7 +245,7 @@
 .browser-cardopera {
   margin: 0 auto 4rem;
   background-color: $color-white;
-  border-radius: 0.625rem; 
+  border-radius: $border7;
   padding: 1rem 1.5rem;
   width: 100%;
   max-width: 18rem;
@@ -364,7 +257,7 @@
   }
 
   p {
-    @include gray-text(0.5rem 0 2.3rem);
+    @include text-margin-color(0.5rem 0 2.3rem);
   }
 
   .imgdots {
@@ -381,38 +274,18 @@
     height: 25rem;
   }
 
-  .browser-cardchrome { 
-    align-self: flex-start; 
-    margin: 0; 
+  .browser-cardchrome {
+    align-self: flex-start;
+    margin: 0;
   }
-  .browser-cardfirefox { 
-    align-self: center; 
-    margin: 0; 
+  .browser-cardfirefox {
+    align-self: center;
+    margin: 0;
   }
-  .browser-cardopera { 
-    align-self: flex-end; 
-    margin: 0; 
+  .browser-cardopera {
+    align-self: flex-end;
+    margin: 0;
   }
-@include desktop {
-  .downloadcards {
-    @include flex-center(row, center, flex-start);
-    gap: 2rem;
-    height: 25rem;
-  }
-
-  .browser-cardchrome { 
-    align-self: flex-start; 
-    margin: 0; 
-  }
-  .browser-cardfirefox { 
-    align-self: center; 
-    margin: 0; 
-  }
-  .browser-cardopera { 
-    align-self: flex-end; 
-    margin: 0; 
-  }
-}
 }
 
 // FAQ ACCORDION
@@ -420,7 +293,7 @@
   border-bottom: 0.0625rem solid #ccc;
   text-align: left;
   padding: 1.5rem 0;
-  margin: 0 1em;
+  margin: 0 1rem;
 
   p {
     margin: 2rem 0 0;
@@ -429,11 +302,11 @@
   summary {
     list-style: none;
     position: relative;
-    @include transition(all 0.3s ease);
+    @include transition;
     cursor: pointer;
 
-    &::-webkit-details-marker { 
-      display: none; 
+    &::-webkit-details-marker {
+      display: none;
     }
 
     &::after {
@@ -442,41 +315,35 @@
       transform: translateY(-50%);
       width: 1rem;
       height: 1rem;
-      background-image: url('../img/icon-arrow.svg');
+      background-image: url("../img/icon-arrow.svg");
       background-size: contain;
       background-repeat: no-repeat;
-      @include transition(transform 0.3s ease);
+      @include transition;
     }
-
-    &:hover {
-      color: $color-secondary;
-    }
+    @include hover($color: $color-secondary);
   }
 
   &[open] summary::after {
     transform: translateY(-50%) rotate(180deg);
-    filter: invert(22%) sepia(83%) saturate(7487%) hue-rotate(348deg) brightness(95%) contrast(95%);
+    filter: invert(22%) sepia(83%) saturate(7487%) hue-rotate(348deg)
+      brightness(95%) contrast(95%);
   }
 }
 
 // EMAIL FOOTER
-.emailbox { 
-  display: grid; 
-  place-items: center; 
+.emailbox {
+  display: grid;
+  place-items: center;
 
   form {
     @include tablet {
       @include flex-center(row, center, center);
       gap: 1rem;
     }
-    @include desktop {
-      @include flex-center(row, center, center);
-      gap: 1rem;
-    }
   }
 
   .email-wrapper {
-    border-radius: 0.5rem;
+    border-radius: $border8;
     width: 19.1rem;
     @include flex-center;
     background-color: transparent;
@@ -485,16 +352,16 @@
       background-color: $color-secondary;
       padding: 0.05rem 0.1rem 0.2rem;
 
-      p { 
+      p {
         display: block;
         margin: 0 0 0 0.75rem;
       }
 
       .email-input {
         border: 0.125rem solid $color-secondary;
-        background-image: url('../img/icon-error.svg');
+        background-image: url("../img/icon-error.svg");
         background-repeat: no-repeat;
-        background-position: right 0.8rem center; 
+        background-position: right 0.8rem center;
       }
     }
 
@@ -502,8 +369,8 @@
       display: none;
       align-self: flex-start;
       margin: 0.3rem 0 0 0.8rem;
-      font-size: 0.563em; 
-      color: $color-white; 
+      font-size: 0.563rem;
+      color: $color-white;
       letter-spacing: 0.05rem;
       font-style: italic;
     }
@@ -513,18 +380,14 @@
     background-color: $color-white;
     color: $color-dark;
     border: none;
-    border-radius: 0.375rem;
+    border-radius: $border1;
     font-size: $p-font-size;
     cursor: text;
     width: 18.875rem;
     padding: 1rem 3rem 1rem 1rem;
     text-align: left;
-    font-weight: $h1-font-weight;  
+    font-weight: $h1-font-weight;
     @include tablet {
-      height: 3.136rem;
-    }
-    
-    @include desktop {
       height: 3.136rem;
     }
   }

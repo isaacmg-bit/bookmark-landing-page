@@ -1,5 +1,5 @@
-@use 'variables' as *;
-@use 'mixins' as *;
+@use "variables" as *;
+@use "mixins" as *;
 
 // BASE
 * {
@@ -17,37 +17,29 @@ body {
   text-align: center;
 }
 
-body:has(.menu-toggle:checked) {
-  overflow: hidden;
-  position: fixed;
-}
-
 main {
   width: 100%;
   overflow-x: hidden;
 
-  @include desktop {
-    width: 90vw;
-  }
   @include tablet {
     width: 90vw;
+    max-width: 100%;
   }
-  
 }
 
 // TYPO
-h1 { 
-  font-size: $h1-font-size; 
-  font-weight: $h1-font-weight; 
+h1 {
+  font-size: $h1-font-size;
+  font-weight: $h1-font-weight;
 }
 
-h2 { 
-  font-size: $h2-font-size; 
-  font-weight: $h2-font-weight; 
+h2 {
+  font-size: $h2-font-size;
+  font-weight: $h2-font-weight;
 }
 
-p { 
-  font-size: $p-font-size; 
-  line-height: $p-line-height; 
-  font-weight: $p-font-weight; 
+p {
+  font-size: $p-font-size;
+  line-height: $p-line-height;
+  font-weight: $p-font-weight;
 }
