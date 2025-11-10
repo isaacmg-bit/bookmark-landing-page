@@ -8,6 +8,23 @@
   box-sizing: border-box;
 }
 
+.wrapper {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem; // Añade padding lateral en móvil
+
+  @include tablet {
+    max-width: 768px;
+    padding: 0 2rem; // Padding en tablet
+  }
+
+  @include desktop {
+    max-width: 1440px;
+    padding: 0 4rem; // Padding en desktop
+  }
+}
+
 body {
   font-family: "Rubik";
   background-color: $color-white;
@@ -23,7 +40,7 @@ main {
 
   @include tablet {
     width: 90vw;
-    max-width: 100%;
+    margin-left: calc(-50vw + 50%);
   }
 }
 

@@ -48,7 +48,8 @@
   $width: 130%,
   $height: 85%,
   $bottom: -1rem,
-  $right: -50%
+  $right: -50%,
+  $border-radius: $border5
 ) {
   &::before {
     content: "";
@@ -58,7 +59,7 @@
     right: $right;
     width: $width;
     height: $height;
-    border-radius: $border5;
+    border-radius: $border-radius;
     z-index: $z-indexMinus;
   }
 }
@@ -115,10 +116,10 @@
 
 @mixin hover(
   $color: $color-secondary,
-  $background-color: $color-white,
+  $background-color: transparent,
   $border: 2px solid transparent,
   $cursor: pointer,
-  $filter: $filtercolor
+  $filter: none
 ) {
   &:hover {
     color: $color;

@@ -12,6 +12,7 @@ body:has(.menu-toggle:checked) {
 .featurebuttons {
   @include flex-center(column, center, center);
   width: 100%;
+  margin-left: calc(-50vw + 50%);
   margin: 1rem 0;
 
   label {
@@ -60,7 +61,7 @@ body:has(.menu-toggle:checked) {
     flex-wrap: wrap;
     flex-direction: row;
     margin: 0;
-    width: 125%;
+    width: 100%;
 
     label {
       font-size: 1.1rem;
@@ -131,7 +132,7 @@ body:has(.menu-toggle:checked) {
 }
 
 .featuretabimages .featuretabimages-wrapper {
-  @include decorative-before(155%, 60%, 10%, 15%);
+  @include decorative-before($width: 155%, $height: 60%, $bottom: 10%, $right: 15%, $border-radius: $border6);
 }
 
 @include tablet {
@@ -249,6 +250,7 @@ body:has(.menu-toggle:checked) {
   padding: 1rem 1.5rem;
   width: 100%;
   max-width: 18rem;
+  list-style: none;
   @include box-shadow(0 0.625rem 0.938rem 0 $color-shadow);
 
   h1 {

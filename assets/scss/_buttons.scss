@@ -39,7 +39,7 @@
   @include hover(
     $background-color: $color-white,
     $color: $color-dark,
-    $border: 2px solid $color-dark
+    $border: 2px solid $color-primary
   );
   @include tablet {
     max-width: 6rem;
