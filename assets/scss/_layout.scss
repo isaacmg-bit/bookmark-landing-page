@@ -13,7 +13,7 @@
     margin-left: calc(-50vw + 50%);
     padding-right: 5rem;
   }
-  
+
   .nav {
     @include flex-center(row, space-between, center);
     width: 90%;
@@ -344,7 +344,6 @@
   @include tablet {
     margin-left: calc(-50vw + 50%);
     padding: 2rem;
-    
 
     .featurestextbox p {
       margin: 1.5rem 5rem;

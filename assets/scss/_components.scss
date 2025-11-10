@@ -62,9 +62,9 @@ body:has(.menu-toggle:checked) {
       border-top: none;
       border-bottom: 2px solid $color-shadow;
       max-width: 14rem;
-          &:first-of-type {
-      border-top: none;
-    }
+      &:first-of-type {
+        border-top: none;
+      }
     }
 
     input[type="radio"] {
@@ -129,13 +129,31 @@ body:has(.menu-toggle:checked) {
   }
 
   .featuretabimages-wrapper {
-    @include decorative-before($width: 155%, $height: 60%, $bottom: 10%, $right: 27%, $border-radius: $border6);
+    @include decorative-before(
+      $width: 155%,
+      $height: 60%,
+      $bottom: 10%,
+      $right: 27%,
+      $border-radius: $border6
+    );
 
     @include tablet {
-      @include decorative-before($width: 30%, $height: 60%, $bottom: 10%, $right: 45%, $border-radius: $border6);
+      @include decorative-before(
+        $width: 30%,
+        $height: 60%,
+        $bottom: 10%,
+        $right: 45%,
+        $border-radius: $border6
+      );
     }
     @include desktop {
-      @include decorative-before($width: 105%, $height: 60%, $bottom: 10%, $right: 25%, $border-radius: $border6);
+      @include decorative-before(
+        $width: 105%,
+        $height: 60%,
+        $bottom: 10%,
+        $right: 25%,
+        $border-radius: $border6
+      );
     }
   }
 }
@@ -152,7 +170,6 @@ body:has(.menu-toggle:checked) {
   > div {
     display: none;
     min-height: 12.948rem;
- 
   }
 
   .texttab2,
