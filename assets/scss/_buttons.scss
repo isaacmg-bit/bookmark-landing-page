@@ -26,57 +26,50 @@
 .btninfo,
 .btninfodesktop {
   @include buttonstyles;
+  width: 100%;
 }
 
-.btnbrowser {
-  background-color: $color-light-gray;
-  color: $color-dark;
+.btnbrowser,
+.btnbrowserchrome {
   box-shadow: 0 0.625rem 0.938rem 0 $color-shadow;
   font-size: 0.85rem;
-  width: 100%;
   text-align: center;
   font-weight: 500;
-  @include hover(
-    $background-color: $color-white,
-    $color: $color-dark,
-    $border: 2px solid $color-primary
-  );
+
   @include tablet {
-    max-width: 6rem;
+    max-width: 9rem;
   }
+
   @include desktop {
     min-width: 11rem;
   }
 }
 
+.btnbrowser {
+  background-color: $color-light-gray;
+  color: $color-dark;
+
+  @include hover(
+    $background-color: $color-white,
+    $color: $color-dark,
+    $border: 2px solid $color-primary
+  );
+}
+
 .btnbrowserchrome {
   background-color: $color-primary;
   color: $color-white;
-  box-shadow: 0 0.625rem 0.938rem 0 $color-shadow;
-  font-size: 0.85rem;
-  width: 100%;
-  text-align: center;
-  font-weight: 500;
 
   @include hover(
     $background-color: $color-white,
     $color: $color-primary,
     $border: 2px solid $color-primary
   );
-
-  @include tablet {
-    max-width: 6rem;
-  }
-
-  @include desktop {
-    min-width: 11rem;
-  }
 }
 
 .btnadd {
   background-color: $color-primary;
   color: $color-white;
-  width: 100%;
   font-size: 0.9rem;
   margin: 1.3rem 0 0.5rem;
 
@@ -88,9 +81,9 @@
   background-color: $color-primary;
   color: $color-white;
   font-size: 0.8rem;
-  width: 100%;
   max-width: fit-content;
   box-shadow: 0 0.625rem 0.938rem 0 $color-shadow;
+
   @include button-hover-inverse;
 }
 
@@ -111,6 +104,7 @@
     transform: translateY(-2rem);
     align-self: center;
   }
+
   @include desktop {
     align-self: flex-start;
   }

@@ -8,25 +8,22 @@
   width: 100%;
   position: relative;
   z-index: $z-index10;
-
-  @include desktop {
+  @include tablet {
     width: 100vw;
-    margin-left: calc(-50vw + 50%);;
-    padding-right: 15rem;
+    margin-left: calc(-50vw + 50%);
+    padding-right: 5rem;
   }
-
+  
   .nav {
     @include flex-center(row, space-between, center);
     width: 90%;
     margin: 0 auto;
-
     .bookmark-image,
     .bookmark-image-white {
       @include absolute-position($top: 1.5rem, $left: 2rem);
       @include transition;
       z-index: $z-index400;
     }
-
     @include tablet {
       width: 100%;
       .bookmark-image,
@@ -35,198 +32,194 @@
         top: 50%;
         transform: translateY(-50%);
       }
-
-      @include desktop {
-        .bookmark-image,
-        .bookmark-image-white {
-          margin-left: 5rem;
-        }
-      }
     }
-
-    .bookmark-image-white {
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    &:has(.menu-toggle:checked) {
-      .bookmark-image {
-        opacity: 0;
-      }
+    @include desktop {
+      .bookmark-image,
       .bookmark-image-white {
-        opacity: 1;
-      }
-      .menu-image {
-        content: url("../img/icon-close.svg");
+        margin-left: 5rem;
       }
     }
+  }
 
-    .menu-toggle {
-      display: none;
-    }
+  .bookmark-image-white {
+    opacity: 0;
+    pointer-events: none;
+  }
 
-    .menu-icon {
-      display: inline-block;
-      cursor: pointer;
-      margin-left: auto;
-      gap: 1.5rem;
-      z-index: $z-index200;
-
-      @include tablet {
-        display: block;
-      }
-
-      .menu-image {
-        width: auto;
-        height: auto;
-        display: block;
-        @include transition;
-
-        @include tablet {
-          display: none;
-        }
-      }
-    }
-
-    .menu {
-      list-style: none;
-      @include absolute-position($top: 100%, $left: 0, $right: 0);
-      @include flex-center(column, center, center);
-      display: none;
-      text-align: center;
-      gap: 1.5rem;
-      background: $color-white;
-      @include box-shadow;
-      border-radius: $border2;
-      width: 100%;
+  &:has(.menu-toggle:checked) {
+    .bookmark-image {
       opacity: 0;
+    }
+    .bookmark-image-white {
+      opacity: 1;
+    }
+    .menu-image {
+      content: url("../img/icon-close.svg");
+    }
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .menu-icon {
+    display: inline-block;
+    cursor: pointer;
+    margin-left: auto;
+    gap: 1.5rem;
+    z-index: $z-index200;
+
+    @include tablet {
+      display: block;
+    }
+
+    .menu-image {
+      width: auto;
+      height: auto;
+      display: block;
       @include transition;
 
-      .social-icons-item {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 3.125rem;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        margin-bottom: 2rem;
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+
+  .menu {
+    list-style: none;
+    @include absolute-position($top: 100%, $left: 0, $right: 0);
+    @include flex-center(column, center, center);
+    display: none;
+    text-align: center;
+    gap: 1.5rem;
+    background: $color-white;
+    @include box-shadow;
+    border-radius: $border2;
+    width: 100%;
+    opacity: 0;
+    @include transition;
+
+    .social-icons-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 3.125rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      margin-bottom: 2rem;
+      cursor: pointer;
+
+      img {
         cursor: pointer;
-
-        img {
-          cursor: pointer;
-          @include hover($filter: $filtercolor);
-        }
-
-        @include tablet {
-          display: none;
-        }
+        @include hover($filter: $filtercolor);
       }
 
+      @include tablet {
+        display: none;
+      }
+    }
+
+    li {
+      position: relative;
+
+      &:first-child::before,
+      &:not(.social-icons-item):not(:last-child):not(:has(.login-btn))::after {
+        @include separator-line;
+      }
+
+      &:not(.social-icons-item):first-child::before {
+        top: -1rem;
+      }
+
+      &:not(.social-icons-item):not(:last-child)::after {
+        bottom: -1rem;
+      }
+
+      a {
+        text-decoration: none;
+        color: $color-white;
+        font-weight: 400;
+        font-size: 1.5rem;
+        letter-spacing: 0.063rem;
+        @include transition;
+        @include hover($color: $color-secondary);
+      }
+
+      .login-btn {
+        display: grid;
+        background-color: $color-primary-dark;
+        color: $color-white;
+        border-radius: $border3;
+        font-weight: 400;
+        letter-spacing: 0.188rem;
+        font-size: 1.2rem;
+        padding: 0.6rem 8rem;
+        margin: 0.8rem 0 2rem;
+        @include hover(
+          $background-color: rgba(0, 0, 0, 0),
+          $color: $color-secondary,
+          $border: 0.125rem solid $color-secondary
+        );
+      }
+    }
+  }
+
+  .menu-toggle:checked ~ .menu {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $color-primary-dark;
+    opacity: 0.9;
+    @include flex-center(column, center, center);
+    gap: 2rem;
+    border-radius: $border0;
+    box-shadow: none;
+    z-index: $z-index100;
+  }
+
+  @include tablet {
+    justify-content: space-evenly;
+    margin-left: calc(-50vw + 50%);
+
+    .menu {
+      position: static;
+      @include flex-center(row, right, center);
+      gap: 2rem;
+      background: transparent;
+      opacity: 1;
+      box-shadow: none;
+      border-radius: $border0;
+
       li {
-        position: relative;
-
-        &:first-child::before,
-        &:not(.social-icons-item):not(:last-child):not(
-            :has(.login-btn)
-          )::after {
-          @include separator-line;
-        }
-
-        &:not(.social-icons-item):first-child::before {
-          top: -1rem;
-        }
-        &:not(.social-icons-item):not(:last-child)::after {
-          bottom: -1rem;
+        &::before,
+        &::after {
+          display: none;
         }
 
         a {
-          text-decoration: none;
-          color: $color-white;
-          font-weight: 400;
-          font-size: 1.5rem;
-          letter-spacing: 0.063rem;
-          @include transition;
-          @include hover($color: $color-secondary);
+          color: $color-dark;
+          font-size: 0.7rem;
+          letter-spacing: 0.1rem;
         }
 
         .login-btn {
-          display: grid;
-          background-color: $color-primary-dark;
-          color: $color-white;
-          border-radius: $border3;
-          font-weight: 400;
-          letter-spacing: 0.188rem;
-          font-size: 1.2rem;
-          padding: 0.6rem 8rem;
-          margin-top: 0.8rem;
-          margin-bottom: 2rem;
-          @include hover(
-            $background-color: rgba(0, 0, 0, 0),
-            $color: $color-secondary,
-            $border: 0.125rem solid $color-secondary
-          );
+          margin: auto;
+          padding: 0.6rem 1.7rem;
+          font-size: 0.7rem;
+          background-color: $color-secondary;
+          border-color: $color-secondary;
         }
       }
     }
+  }
 
-    .menu-toggle:checked ~ .menu {
-      display: flex;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: $color-primary-dark;
-      opacity: 0.9;
-      @include flex-center(column, center, center);
-      gap: 2rem;
-      border-radius: $border0;
-      box-shadow: none;
-      z-index: $z-index100;
-    }
-
-    @include tablet {
-      justify-content: space-evenly;
-      margin-left: calc(-50vw + 50%);;
-
-      .menu {
-        position: static;
-        @include flex-center(row, right, center);
-        gap: 2rem;
-        background: transparent;
-        opacity: 1;
-        box-shadow: none;
-        margin-left: calc(-50vw + 50%);;
-        border-radius: $border0;
-
-        li {
-          &::before,
-          &::after {
-            display: none;
-          }
-
-          a {
-            color: $color-dark;
-            font-size: 0.7rem;
-            letter-spacing: 0.1rem;
-          }
-
-          .login-btn {
-            margin: auto;
-            padding: 0.6rem 1.7rem;
-            font-size: 0.7rem;
-            background-color: $color-secondary;
-            border-color: $color-secondary;
-          }
-        }
-      }
-    }
-    @include desktop {
-      .menu {
-        margin-right: 3rem;
-        margin: 0;
-      }
+  @include desktop {
+    .menu {
+      margin-right: 3rem;
     }
   }
 }
@@ -234,7 +227,7 @@
 @include tablet {
   main {
     width: 100vw;
-    margin-left: calc(-50vw + 50%);;
+    margin-left: calc(-50vw + 50%);
   }
 }
 
@@ -242,7 +235,6 @@
 .hero {
   @include flex-center(column, center, center);
   @include section-padding(2rem 1.5rem, 4rem 2rem);
-  width: 100%;
   position: relative;
   isolation: isolate;
 
@@ -259,12 +251,10 @@
   .buttons {
     @include flex-center(row, center, center);
     gap: 0.8rem;
-    width: 100%;
   }
 
   .imghero-wrapper {
     position: relative;
-    width: 100%;
     max-width: 25rem;
     margin-bottom: 4rem;
 
@@ -274,18 +264,20 @@
       display: block;
       z-index: $z-index1;
     }
+
     @include decorative-before(130%, 85%, -1rem, -50%);
   }
 
   @include tablet {
     flex-direction: row-reverse;
-    margin-left: calc(-50vw + 50%);;
+    margin-left: calc(-50vw + 50%);
     gap: 4rem;
 
     .herotextbox {
       flex: 1;
       text-align: left;
       margin-bottom: 3rem;
+      max-width: 50%;
 
       h2 {
         font-size: $h2-font-size;
@@ -293,6 +285,7 @@
       p {
         margin: 1.5rem 1rem 1.5rem 0;
         font-size: $p-font-size;
+        max-width: 75%;
       }
     }
 
@@ -338,10 +331,10 @@
     }
   }
 }
+
 // FEATURES
 .features {
   @include flex-center;
-  width: 100%;
   padding: 7rem 1.5rem 3rem;
 
   .featurestextbox {
@@ -349,20 +342,18 @@
   }
 
   @include tablet {
-    margin-left: calc(-50vw + 50%);;
+    margin-left: calc(-50vw + 50%);
     padding: 2rem;
+    
 
-    .featurestextbox {
-      p {
-        margin: 1.5rem 5rem;
-      }
+    .featurestextbox p {
+      margin: 1.5rem 5rem;
     }
   }
+
   @include desktop {
-    .featurestextbox {
-      p {
-        margin: 1.5rem 22rem;
-      }
+    .featurestextbox p {
+      margin: 1.5rem 22rem;
     }
   }
 }
@@ -370,7 +361,6 @@
 // DOWNLOADS
 .downloads {
   @include flex-center;
-  width: 100%;
   @include section-padding;
 
   .downloadstextbox {
@@ -394,18 +384,16 @@
       }
     }
   }
+
   @include desktop {
-    .downloadstextbox {
-      p {
-        margin: 1rem 16rem;
-      }
+    .downloadstextbox p {
+      margin: 1rem 16rem;
     }
   }
 }
 
 // FAQ
 .faq-section {
-  width: 100%;
   margin: 3rem 0;
   padding: 0 1rem;
 
@@ -413,6 +401,7 @@
     margin: 0 4rem 1rem;
     line-height: 1.2;
   }
+
   p {
     @include text-margin-color(0 2rem 3rem);
   }
@@ -426,17 +415,20 @@
       margin: 0 0 1rem;
       font-size: $h1-font-size;
     }
+
     p {
       margin: 2rem 0;
       font-size: $p-font-size;
     }
   }
+
   @include desktop {
     max-width: 40%;
 
     h1 {
       font-size: $h1-font-size-desktop;
     }
+
     p {
       font-size: $p-font-size-desktop;
     }
@@ -444,7 +436,6 @@
 }
 
 // FOOTER
-
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -470,6 +461,7 @@
     margin: 0.75rem 0 2.5rem;
     font-size: 1.5rem;
   }
+
   p {
     color: $color-white;
     margin-top: 1rem;
@@ -505,15 +497,18 @@
       margin: 0 12rem 1rem;
       font-size: 1.75rem;
     }
+
     p {
       margin-bottom: 0.5rem;
     }
+
     .submit-btn {
       margin-top: 0;
       width: auto;
       height: 3.136rem;
     }
   }
+
   @include desktop {
     h2 {
       margin: 0 32rem 1rem;
@@ -565,11 +560,13 @@
     p {
       margin: 0 1.5rem 0 0;
     }
+
     .smicons {
       margin-left: auto;
       gap: 2rem;
     }
   }
+
   @include desktop {
     justify-content: flex-start;
   }

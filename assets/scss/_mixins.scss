@@ -9,18 +9,10 @@
 
 @mixin absolute-position($top: null, $right: null, $bottom: null, $left: null) {
   position: absolute;
-  @if $top {
-    top: $top;
-  }
-  @if $right {
-    right: $right;
-  }
-  @if $bottom {
-    bottom: $bottom;
-  }
-  @if $left {
-    left: $left;
-  }
+  @if $top { top: $top; }
+  @if $right { right: $right; }
+  @if $bottom { bottom: $bottom; }
+  @if $left { left: $left; }
 }
 
 @mixin full-viewport-width {
@@ -39,9 +31,7 @@
 
 @mixin text-margin-color($margin: 0) {
   color: $color-gray;
-  @if $margin != 0 {
-    margin: $margin;
-  }
+  margin: $margin;
 }
 
 @mixin decorative-before(
@@ -96,9 +86,7 @@
 
 @mixin text-container($h1-margin: 0, $p-margin: 0) {
   h1 {
-    @if $h1-margin != 0 {
-      margin: $h1-margin;
-    }
+    margin: $h1-margin;
 
     @include desktop {
       font-size: $h1-font-size-desktop;

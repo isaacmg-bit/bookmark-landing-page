@@ -10,18 +10,17 @@
 
 .wrapper {
   width: 100%;
-  max-width: 100%;
   margin: 0 auto;
-  padding: 0 1rem; // Añade padding lateral en móvil
+  padding: 0 1rem;
 
   @include tablet {
     max-width: 768px;
-    padding: 0 2rem; // Padding en tablet
+    padding: 0 2rem;
   }
 
   @include desktop {
     max-width: 1440px;
-    padding: 0 4rem; // Padding en desktop
+    padding: 0 4rem;
   }
 }
 
